@@ -1,0 +1,65 @@
+/PortSIP UC/Debug
+/PortSIP UC/.vs
+/PortSIP UC/PortGo.dsp
+/PortSIP UC/PortGo.dsw
+/PortSIP UC/PortGo_vs2003.sln
+/PortSIP UC/PortGo_vs2003.vcproj
+/PortSIP UC/PortGo_vs2005.sln
+/PortSIP UC/PortGo_vs2005.vcproj
+/PortSIP UC/PortGo_vs2008.sln
+/PortSIP UC/PortGo_vs2008.vcproj
+/PortSIP UC/PortGo_vs2010.sln
+/PortSIP UC/PortGo_vs2010.vcxproj
+/PortSIP UC/PortGo_vs2010.vcxproj.filters
+/PortSIP UC/PortGo_vs2012.sln
+/PortSIP UC/PortGo_vs2012.vcxproj
+/PortSIP UC/PortGo_vs2013.sln
+/PortSIP UC/PortGo_vs2013.vcxproj
+/PortSIP UC/PortGo_vs2015.sln
+/PortSIP UC/PortGo_vs2015.vcxproj
+/PortSIP UC/PortGo_vs2017.vcxproj.user
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+# Executables
+*.exe
+*.out
+*.app
+*.log
+*.tlog
+*.ipch
+*.VC.db
+/jsoncpp/Release
+/jsoncpp/Debug
+/Keeper/Release
+/PortSIPUC/.vs
+/build/Win32
+/build/ALL_BUILD.vcxproj
+/build/ALL_BUILD.vcxproj.filters
+/build/ALL_BUILD.vcxproj.user
+/build/cmake_install.cmake
+/build/CMakeCache.txt
+/build/PortGoClient.sln
+/build/ZERO_CHECK.vcxproj
+/build/ZERO_CHECK.vcxproj.filters
+/build/ZERO_CHECK.vcxproj.user
+/build/.vs
+/build/Bin
+/build/CMakeFiles
+/build/Debug
+/build/Keeper
+/build/PortSIPUC
+/build/Release
+/build/RelWithDebInfo
+/IUI/Release_vs2017u_MT
+/IUI/Debug_vs2017u_MDd
+/IUI/Debug_vs2017u_MTd

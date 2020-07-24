@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_TEXT_CHAT"/>
+		<Rect Size="700,300" Location="0,0"/>
+		<IsDrawBkColor Value="true"/>
+		<ActivatedBkColor Value="IDR_COLOR_WHITE"/>
+		<IsResizingBorder Value="true"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDW_TEXT_CHAT"/>
+				<name Value="IDC_CANVAS_TEXT_CHAT"/>
+				<Rect Size="640,294" Location="0,0"/>
+				<HAlign Value="Fill"/>
+				<VAlign Value="Fill"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<IMRichTextBox>
+						<Parent Name="IDC_CANVAS_TEXT_CHAT"/>
+						<name Value="IDC_IM_HISTORY"/>
+						<Rect Size="640,96" Location="0,1"/>
+						<IsTabStop Value="true"/>
+						<HAlign Value="Fill"/>
+						<VAlign Value="Fill"/>
+						<IsCombineImages Value="true"/>
+						<IsAutoVScroll Value="true"/>
+					</IMRichTextBox>
+					<Canvas>
+						<Parent Name="IDC_CANVAS_TEXT_CHAT"/>
+						<name Value="IDC_CANVAS_INPUT"/>
+						<Rect Size="640,194" Location="0,99"/>
+						<MouseTransparent Value="false"/>
+						<HAlign Value="Fill"/>
+						<VAlign Value="Bottom"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_WHITE"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+						<Controls>
+							<Label>
+								<Parent Name="IDC_CANVAS_INPUT"/>
+								<name Value="IDC_STA_SPLITTER_BAR"/>
+								<Rect Size="640,1" Location="0,0"/>
+								<MouseTransparent Value="true"/>
+								<HAlign Value="Fill"/>
+								<IsDrawBkColor Value="true"/>
+								<BkColorResN Value="IDR_COLOR_SPLITTER"/>
+								<IsCombineImages Value="true"/>
+								<ButtonClickArg Value=""/>
+							</Label>
+							<CheckBox>
+								<Parent Name="IDC_CANVAS_INPUT"/>
+								<name Value="IDC_CHK_EMOTICON"/>
+								<Rect Size="24,24" Location="33,19"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_emo.png"/>
+								<ButtonClickArg Value=""/>
+							</CheckBox>
+							<Button>
+								<Parent Name="IDC_CANVAS_INPUT"/>
+								<name Value="IDC_BTN_VIBRATE"/>
+								<Rect Size="24,24" Location="67,19"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_shock.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<CheckBox>
+								<Parent Name="IDC_CANVAS_INPUT"/>
+								<name Value="IDC_CHK_SCREENSHOT"/>
+								<Rect Size="24,24" Location="101,19"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_cut.png"/>
+								<ButtonClickArg Value=""/>
+							</CheckBox>
+							<Button>
+								<Parent Name="IDC_CANVAS_INPUT"/>
+								<name Value="IDC_BTN_SEND_IMAGE"/>
+								<Rect Size="24,24" Location="135,19"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_pic.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_INPUT"/>
+								<name Value="IDC_BTN_SEND_FILE"/>
+								<Rect Size="24,24" Location="169,19"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_file.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_INPUT"/>
+								<name Value="IDC_BTN_SEND_VIDEO"/>
+								<Rect Size="24,24" Location="203,19"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_video.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_INPUT"/>
+								<name Value="IDC_BTN_SEND_AUDIO"/>
+								<Rect Size="24,24" Location="240,19"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_audio.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<RichTextBox>
+								<Parent Name="IDC_CANVAS_INPUT"/>
+								<name Value="IDC_RE_INPUT"/>
+								<Rect Size="505,145" Location="33,48"/>
+								<IsTabStop Value="true"/>
+								<HAlign Value="Fill"/>
+								<VAlign Value="Fill"/>
+								<IsCombineImages Value="true"/>
+								<IsVScroll Value="true"/>
+								<IsAutoHScroll Value="false"/>
+								<IsAutoVScroll Value="true"/>
+								<IsMultiline Value="true"/>
+							</RichTextBox>
+							<Button>
+								<Parent Name="IDC_CANVAS_INPUT"/>
+								<name Value="IDC_BTN_SEND_MSG"/>
+								<Rect Size="40,40" Location="540,114"/>
+								<HAlign Value="Right"/>
+								<VAlign Value="Bottom"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="bt_send.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_INPUT"/>
+								<name Value="IDC_BTN_MSG_HISTORY"/>
+								<Rect Size="24,24" Location="600,19"/>
+								<HAlign Value="Right"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="Btn_History.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+						</Controls>
+					</Canvas>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

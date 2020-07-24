@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_EMOTICON"/>
+		<Rect Size="400,300" Location="0,0"/>
+		<TitleBarHeight Value="0"/>
+		<IsDrawBkColor Value="true"/>
+		<ActivatedBkColor Value="IDR_COLOR_WHITE"/>
+		<NineGridParam Left="15" Top="10" Right="15" Bottom="20"/>
+		<IsAppWindow Value="false"/>
+		<IsUpdateLayeredWindow Value="true"/>
+		<ShadowWindow ShadowBorderImage="ShadowBorder.png" Left="5" Top="5" Right="5" Bottom="5"/>
+		<Root>
+			<RadioButton>
+				<Parent Name="IDW_EMOTICON"/>
+				<name Value="IDC_RAD_CLASSICAL_EMOTICON"/>
+				<Rect Size="30,30" Location="25,249"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<IsSpecifyForegroundImages Value="true"/>
+				<ForegroundNormal Value="emoji-1.png"/>
+				<ForegroundHighlight Value="emoji-1.png"/>
+				<ForegroundSelected Value="emoji-1.png"/>
+				<ForegroundDisabled Value="emoji-1.png"/>
+				<ForegroundCheckedNormal RelativePath="emoji-1.png"/>
+				<ForegroundCheckedHighlight RelativePath="emoji-1.png"/>
+				<ForegroundCheckedSelected RelativePath="emoji-1.png"/>
+				<ForegroundCheckedDisabled RelativePath="emoji-1.png"/>
+				<ForegroundAlignMode Horizontal="Center"/>
+			</RadioButton>
+			<RadioButton>
+				<Parent Name="IDW_EMOTICON"/>
+				<name Value="IDC_RAD_SYMBOL_EMOTICON"/>
+				<Rect Size="30,30" Location="56,249"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<IsSpecifyForegroundImages Value="true"/>
+				<ForegroundNormal Value="emoji-2.png"/>
+				<ForegroundHighlight Value="emoji-2.png"/>
+				<ForegroundSelected Value="emoji-2.png"/>
+				<ForegroundDisabled Value="emoji-2.png"/>
+				<ForegroundCheckedNormal RelativePath="emoji-2.png"/>
+				<ForegroundCheckedHighlight RelativePath="emoji-2.png"/>
+				<ForegroundCheckedSelected RelativePath="emoji-2.png"/>
+				<ForegroundCheckedDisabled RelativePath="emoji-2.png"/>
+				<ForegroundAlignMode Horizontal="Center"/>
+			</RadioButton>
+			<TabControl>
+				<Parent Name="IDW_EMOTICON"/>
+				<name Value="IDC_PNL_TAB_EMOTICON"/>
+				<Rect Size="370,240" Location="14,10"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+			</TabControl>
+		</Root>
+	</Window>
+</IUI>

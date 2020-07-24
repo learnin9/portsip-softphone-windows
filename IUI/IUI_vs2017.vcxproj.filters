@@ -1,0 +1,986 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Control">
+      <UniqueIdentifier>{bb20075a-e16f-4d28-80e3-211a5f88ded2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore">
+      <UniqueIdentifier>{bd69a39a-c907-4886-9f9b-2d0393482d42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\Layout">
+      <UniqueIdentifier>{769e2af5-8f65-4654-9a06-22b71e3b3a6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\Window">
+      <UniqueIdentifier>{26f9c329-ad27-4d12-be41-6b84544fa834}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\Button">
+      <UniqueIdentifier>{168ff8e7-ec60-4834-8265-b2c590483500}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\ColumnHeader">
+      <UniqueIdentifier>{6192f29a-8d46-41e5-8a7c-2affddaa8e10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{7e1cf8fd-c4dd-4556-9552-b0df568db81d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\ListView">
+      <UniqueIdentifier>{612b04f3-c4c6-494b-b791-81c545427745}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\ComboBox">
+      <UniqueIdentifier>{9009f260-d428-42ee-9e21-e999e93e8037}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\HtmlView">
+      <UniqueIdentifier>{9b9bac7f-3089-4414-ac4a-525b45ff83c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\Label">
+      <UniqueIdentifier>{76431c40-7328-404a-908a-c7c7b9d9eb53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\Menu">
+      <UniqueIdentifier>{f6ce68f7-6ae3-4827-91a4-6bc8e69274e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\ProgressBar">
+      <UniqueIdentifier>{65cdf780-20b6-45e6-a934-5a31ee36f32c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\RichTextBox">
+      <UniqueIdentifier>{5eebdf68-7771-4053-a524-9a5bf4ce5f72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\ScrollBar">
+      <UniqueIdentifier>{eb978320-ee0b-4371-b909-52c1eb0738c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\Slider">
+      <UniqueIdentifier>{be83689c-b3d6-49c1-b82c-ded8d7f85e7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\SplitterBar">
+      <UniqueIdentifier>{f96b3739-d72d-42d1-bcec-47e85abef89b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\Tooltips">
+      <UniqueIdentifier>{e1b52de1-07db-4b02-8fe3-9556e8844b7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\TreeView">
+      <UniqueIdentifier>{e8b0787a-eb1f-4e40-85b5-1c6032d85474}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\Window">
+      <UniqueIdentifier>{78af253f-b61a-4266-84d3-60c3c838cdbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\Windowless">
+      <UniqueIdentifier>{9a2ed1e6-bfee-467b-afdb-6b9891bf9132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\DateTimePicker">
+      <UniqueIdentifier>{dbfd58e0-886a-4b0c-8f9d-d8e1543ae1df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\SpinButton">
+      <UniqueIdentifier>{bee36ccd-1cb5-4256-a305-92e1fcad5140}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\RichTextBox\RichEditInc">
+      <UniqueIdentifier>{8e10dde8-9ff8-4258-9bb3-2b2dcb046e2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\RichTextBox\RichEditSrc">
+      <UniqueIdentifier>{f198530c-1125-425f-84ed-1feb520ac3bc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="IUI.h" />
+    <ClInclude Include="Control\ControlCore\Menu\Menu.h">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\ControlMember.h">
+      <Filter>Control\ControlCore</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\Win32Global.h">
+      <Filter>Control\ControlCore</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\DropTargetEx.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Global.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ResourceMgr.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\WLWndMgr.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\_exchext.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\_mailext.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\_wmsui.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\addrbook.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\capext.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\capguid.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\caphelp.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\chico.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\comcrit.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\convert.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\csd.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\dbug32.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\dbugit.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\exchext.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\freedoc.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\global.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\imeshare.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\library.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\lmsmapi.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\mailext.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\mailexts.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\mailview.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\mlcfg.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\mlfind.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\mlrmui.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\mni.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\msmail.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\ole2ui.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\olenls.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\olestd.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\ourmac.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\ourtypes.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\preinc.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\profiles.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\prsht.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\richedit.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\sc.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\statbar.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\tchar16.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\tom.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\unitable.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\unknwn.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\vlb.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\win2mac.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\winwlm.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\wlmimm.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\wmsui.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\wmsuiext.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditInc\zmouse.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditInc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_antievt.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_array.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_callmgr.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_cfpf.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_clasfyc.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_coleobj.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_common.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_devdsc.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_devstk.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_devstki.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_dfreeze.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_disp.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_dispml.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_dispprt.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_dispsl.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_doc.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_dragdrp.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_drwinfo.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_dte.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_dxfrobj.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_edit.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_font.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_format.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_frunptr.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_host.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_ime.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_invar.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_ldte.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_line.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_m_undo.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_magelln.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_measure.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_nlsprcs.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_notmgr.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_objmgr.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_osdc.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_pensup.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_range.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_render.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_rtext.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_rtfconv.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_rtflog.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_rtfread.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_rtfwrit.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_runptr.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_select.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_sift.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_text.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_tomdoc.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_tomfmt.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_undoid.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_urlsup.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_util.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\_uwrap.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\drawdata.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\hash.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\resource.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\textserv.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\tokens.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\wrapdefs.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\wrapfns.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\RichTextBox\RichEditSrc\ReGlobal.h">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Control\ControlCore\Button\ButtonCore.cpp">
+      <Filter>Control\ControlCore\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Control\ControlCore\ListView\ListViewCore.cpp">
+      <Filter>Control\ControlCore\ListView</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\ComboBox\ComboBoxCore.cpp">
+      <Filter>Control\ControlCore\ComboBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\HtmlView\HtmlViewCore.cpp">
+      <Filter>Control\ControlCore\HtmlView</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Label\LabelCore.cpp">
+      <Filter>Control\ControlCore\Label</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\menu.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\menuc.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\mnchange.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\mncreate.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\mndraw.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\mndstry.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\mnkey.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\mnloop.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\mnpopup.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\mnstate.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\ProgressBar\ProgressBarCore.cpp">
+      <Filter>Control\ControlCore\ProgressBar</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\IMRichTextBoxCore.cpp">
+      <Filter>Control\ControlCore\RichTextBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\OleControlCore.cpp">
+      <Filter>Control\ControlCore\RichTextBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichTextBoxCore.cpp">
+      <Filter>Control\ControlCore\RichTextBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\ScrollBar\ScrollBarCore.cpp">
+      <Filter>Control\ControlCore\ScrollBar</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Slider\trackbar.cpp">
+      <Filter>Control\ControlCore\Slider</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\SplitterBar\SplitterBarCore.cpp">
+      <Filter>Control\ControlCore\SplitterBar</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Tooltips\TooltipsCore.cpp">
+      <Filter>Control\ControlCore\Tooltips</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\TreeView\TreeViewCore.cpp">
+      <Filter>Control\ControlCore\TreeView</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Window\WindowHelper.cpp">
+      <Filter>Control\ControlCore\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Windowless\WindowlessCore.cpp">
+      <Filter>Control\ControlCore\Windowless</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Win32Global.cpp">
+      <Filter>Control\ControlCore</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Layout\Canvas.cpp">
+      <Filter>Control\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Layout\DockPanel.cpp">
+      <Filter>Control\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Layout\TabControl.cpp">
+      <Filter>Control\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Window\Tooltips.cpp">
+      <Filter>Control\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Window\UIColorDialog.cpp">
+      <Filter>Control\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Window\UIFileDialog.cpp">
+      <Filter>Control\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Window\UIFontDialog.cpp">
+      <Filter>Control\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Button.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ColumnHeader.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ComboBox.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\HostWnd.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\HtmlView.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\IMRichTextBox.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Label.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ListView.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ProgressBar.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\RichTextBox.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ScrollBar.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Slider.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\SplitterBar.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\TreeView.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Window.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\WLWnd.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Animation.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ControlProp.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\CreateControls.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\crit.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\DropTargetEx.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Global.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\IUIFont.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\IUIImage.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\IUIProject.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\JScript.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\MemStdioFile.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ParseLanguageFile.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ParseResourceFile.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Render.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ResourceMgr.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\State.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\tls.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\UIParse.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\UIVariant.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Utils.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\WLWndMgr.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\ImageOleCtrl.cpp">
+      <Filter>Control\ControlCore\RichTextBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Layout\StackPanel.cpp">
+      <Filter>Control\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\ProtectedDragSource.cpp">
+      <Filter>Control\ControlCore\RichTextBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\IUIStringA.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\IUIStringW.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\DateTimePicker.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\DateTimePicker\DateTimePickerCore.cpp">
+      <Filter>Control\ControlCore\DateTimePicker</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\RepeatButton.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\SpinButton\SpinButtonCore.cpp">
+      <Filter>Control\ControlCore\SpinButton</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\SpinButton.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\antievt.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\array.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\callmgr.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\cfpf.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\clasifyc.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\coleobj.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\devdsc.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\dfreeze.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\disp.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\dispml.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\dispprt.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\dispsl.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\doc.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\dragdrp.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\dxfrobj.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\edit.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\font.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\format.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\frunptr.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\hash.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\ime.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\ldte.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\line.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\m_undo.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\macddrop.cxx">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\magellan.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\measure.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\nlsprocs.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\notmgr.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\object.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\objmgr.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\osdc.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\pensup.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\propchg.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\range.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\reinit.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\remain.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\rtext.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\rtflex.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\rtflog.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\rtfread.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\rtfread2.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\rtfwrit.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\rtfwrit2.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\runptr.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\select.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\sift.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\text.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\textserv.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\tokens.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\tomdoc.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\tomfmt.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\tomrange.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\tomsel.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\unicwrap.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\urlsup.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\util.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\uuid.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\win2mac.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\ReGlobal.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\Rerender.cpp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\ColumnHeader\ColumnHeaderCore.cpp">
+      <Filter>Control\ControlCore\ColumnHeader</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\HWLWNDDropTarget.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\_measure.s">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\docmake">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\dragcopy.cur">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\dragmove.cur">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\dragnone.cur">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\east.cur">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\makefile">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\mssccprj.scc">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\ne.cur">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\nomove2d.cur">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\nomoveh.cur">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\nomovev.cur">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\north.cur">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\nw.cur">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\resource.hm">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\richaxp.mak">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\riched20.def">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\riched20.r">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\riched32.def">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\richedit.aps">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\richedit.mak">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\richedit.rc2">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\se.cur">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\selbar.cur">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\selbarm.cur">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\south.cur">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\sw.cur">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\tom.tlb">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+    <None Include="Control\ControlCore\RichTextBox\RichEditSrc\west.cur">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Control\ControlCore\RichTextBox\RichEditSrc\1dhscrol.bmp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </Image>
+    <Image Include="Control\ControlCore\RichTextBox\RichEditSrc\1dvscrol.bmp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </Image>
+    <Image Include="Control\ControlCore\RichTextBox\RichEditSrc\2dscrol.bmp">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\new.rc">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="Control\ControlCore\RichTextBox\RichEditSrc\richedit.rc">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Control\ControlCore\RichTextBox\RichEditSrc\test.log">
+      <Filter>Control\ControlCore\RichTextBox\RichEditSrc</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

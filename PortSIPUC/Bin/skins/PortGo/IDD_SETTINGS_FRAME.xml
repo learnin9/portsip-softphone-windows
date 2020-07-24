@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDD_SETTINGS_FRAME"/>
+		<Rect Size="710,600" Location="0,0"/>
+		<IsDrawBkColor Value="true"/>
+		<ActivatedBkColor Value="IDR_COLOR_WHITE"/>
+		<NineGridParam Left="9" Top="9" Right="9" Bottom="9"/>
+		<IsAppWindow Value="false"/>
+		<ShadowWindow ShadowBorderImage="ShadowBorder.png" Left="5" Top="5" Right="5" Bottom="5" ResizingShadow="false"/>
+		<Root>
+			<TreeView>
+				<Parent Name="IDD_SETTINGS_FRAME"/>
+				<name Value="IDC_TREECTRL_NAVIGATE"/>
+				<Rect Size="164,397" Location="10,114"/>
+				<IsCombineImages Value="true"/>
+				<IsFullRowSel Value="true"/>
+				<IsShowSelAlways Value="true"/>
+				<DefaultItemHeight Value="false"/>
+				<ItemHeight Value="40"/>
+				<ItemLine Enable="false"/>
+				<FocusItemBackground ColorResID="IDR_COLOR_GRAY"/>
+				<FocusItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+				<SelectedItemBackground ColorResID="IDR_COLOR_GRAY"/>
+				<SelectedItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+				<HighlightItemBackground Enable="false" Type="Color"/>
+				<HighlightItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+				<ScrollBarWidth Value="10"/>
+				<HorizontalScrollbarStyleID Value=""/>
+				<VerticalScrollbarStyleID Value=""/>
+			</TreeView>
+			<Label>
+				<Parent Name="IDD_SETTINGS_FRAME"/>
+				<name Value="IDC_STA_TITLE"/>
+				<Rect Size="203,24" Location="254,19"/>
+				<IsCombineImages Value="true"/>
+				<Content Value="More Settings"/>
+				<ButtonClickArg Value=""/>
+				<TextAlignment Horizontal="Center"/>
+			</Label>
+			<Button>
+				<Parent Name="IDD_SETTINGS_FRAME"/>
+				<name Value="IDC_BTN_CLOSE"/>
+				<Rect Size="45,24" Location="656,0"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="BtnClose.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+				<ButtonType Value="CloseBox"/>
+			</Button>
+			<Label>
+				<Parent Name="IDD_SETTINGS_FRAME"/>
+				<name Value="IDC_STA_SPLITTER"/>
+				<Rect Size="1,500" Location="173,68"/>
+				<IsDrawBkColor Value="true"/>
+				<BkColorResN Value="IDR_COLOR_GRAY"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+			</Label>
+			<TabControl>
+				<Parent Name="IDD_SETTINGS_FRAME"/>
+				<name Value="IDC_PNL_TAB_SETTINGS_PAGE"/>
+				<Rect Size="532,456" Location="173,69"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+			</TabControl>
+			<Button>
+				<Parent Name="IDD_SETTINGS_FRAME"/>
+				<name Value="IDC_BTN_SAVE"/>
+				<Rect Size="140,40" Location="539,529"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="Btn_Login.png"/>
+				<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+				<IsDrawBorderColor Value="false"/>
+				<Content Value="Save"/>
+				<TextColorResN Value="IDR_COLOR_WHITE"/>
+				<TextColorResH Value="IDR_COLOR_WINDOW"/>
+				<TextColorResP Value="IDR_COLOR_WHITE"/>
+				<TextColorResD Value="IDR_COLOR_GRAY"/>
+				<ButtonClickArg Value=""/>
+				<TextAlignment Horizontal="Center"/>
+			</Button>
+		</Root>
+	</Window>
+</IUI>

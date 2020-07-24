@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IUI_vs2013", "IUI_vs2013.vcxproj", "{F1BCB865-B68E-474D-869F-47FC4C5F6934}"
+EndProject
+Global
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Unicode MTd|Win32 = Debug Unicode MTd|Win32
+		Debug Unicode|Win32 = Debug Unicode|Win32
+		Release Unicode MT|Win32 = Release Unicode MT|Win32
+		Release Unicode|Win32 = Release Unicode|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1BCB865-B68E-474D-869F-47FC4C5F6934}.Debug Unicode MTd|Win32.ActiveCfg = Debug Unicode MTd|Win32
+		{F1BCB865-B68E-474D-869F-47FC4C5F6934}.Debug Unicode MTd|Win32.Build.0 = Debug Unicode MTd|Win32
+		{F1BCB865-B68E-474D-869F-47FC4C5F6934}.Debug Unicode|Win32.ActiveCfg = Debug Unicode|Win32
+		{F1BCB865-B68E-474D-869F-47FC4C5F6934}.Debug Unicode|Win32.Build.0 = Debug Unicode|Win32
+		{F1BCB865-B68E-474D-869F-47FC4C5F6934}.Release Unicode MT|Win32.ActiveCfg = Release Unicode MT|Win32
+		{F1BCB865-B68E-474D-869F-47FC4C5F6934}.Release Unicode MT|Win32.Build.0 = Release Unicode MT|Win32
+		{F1BCB865-B68E-474D-869F-47FC4C5F6934}.Release Unicode|Win32.ActiveCfg = Release Unicode|Win32
+		{F1BCB865-B68E-474D-869F-47FC4C5F6934}.Release Unicode|Win32.Build.0 = Release Unicode|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

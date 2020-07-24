@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_OLE_FILE"/>
+		<Rect Size="400,300" Location="0,0"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDW_OLE_FILE"/>
+				<name Value="IDC_CANVAS_OLE_FILE"/>
+				<Rect Size="200,74" Location="45,35"/>
+				<IsCombineImages Value="false"/>
+				<BackgroundNormal image="OleFileBk.png"/>
+				<NineGridParam Left="30" Top="30" Right="30" Bottom="30"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Label>
+						<Parent Name="IDC_CANVAS_OLE_FILE"/>
+						<name Value="IDC_STA_ICON"/>
+						<Rect Size="40,40" Location="10,17"/>
+						<VAlign Value="Center"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_OLE_FILE"/>
+						<name Value="IDC_STA_FILE_NAME"/>
+						<Rect Size="116,24" Location="60,18"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Button>
+						<Parent Name="IDC_CANVAS_OLE_FILE"/>
+						<name Value="IDC_BTN_MORE"/>
+						<Rect Size="22,22" Location="175,6"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="bt_more.png"/>
+						<IsDrawBorderColor Value="false"/>
+						<ButtonClickArg Value=""/>
+					</Button>
+					<ProgressBar>
+						<Parent Name="IDC_CANVAS_OLE_FILE"/>
+						<name Value="IDC_PRG_UPLOAD"/>
+						<Rect Size="116,6" Location="60,50"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_BORDER"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+						<IsDrawThumbColor Value="true"/>
+						<ThumbBkColorRes Value="IDR_COLOR_RED"/>
+					</ProgressBar>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

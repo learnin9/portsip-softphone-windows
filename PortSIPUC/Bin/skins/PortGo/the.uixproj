@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<!--1584793892@qq.com-->
+<!--IUI-->
+<Project>
+	<Windows>
+		<Filter Name="Login">
+			<ProjectItem Path="IDW_LOGIN.xml"/>
+			<ProjectItem Path="IDW_LOGIN_SETTINGS.xml"/>
+			<ProjectItem Path="IDW_LOGIG_ACCOUNT_ITEM.xml"/>
+		</Filter>
+		<Filter Name="Main">
+			<Filter Name="MainFrameTabControl">
+				<Filter Name="MainPanel">
+					<Filter Name="MainTabControl">
+						<Filter Name="InboxPanel">
+							<ProjectItem Path="IDW_INBOX_PANEL.xml"/>
+							<ProjectItem Path="IDW_INBOX_PAGE.xml"/>
+							<ProjectItem Path="IDW_INBOX_CALLS_ITEM.xml"/>
+							<ProjectItem Path="IDW_INBOX_VOICEMAILS_ITEM.xml"/>
+							<ProjectItem Path="IDW_INBOX_MESSAGES_ITEM.xml"/>
+							<ProjectItem Path="IDW_INBOX_RECORD_VIDEO_ITEM.xml"/>
+						</Filter>
+						<Filter Name="ContactsPanel">
+							<ProjectItem Path="IDW_CONTACTS_PANEL.xml"/>
+							<ProjectItem Path="IDW_CONTACTS_LOCAL_CONTACTS_ITEM.xml"/>
+						</Filter>
+						<Filter Name="ChatPanel">
+							<Filter Name="CallingPageDialog">
+								<Filter Name="CallingPageTransfer">
+									<ProjectItem Path="IDD_CALLING_TRANSFER.xml"/>
+									<ProjectItem Path="IDD_CALLING_TRANSFER_SEARCH.xml"/>
+									<ProjectItem Path="IDD_CALLING_TRANSFER_ASK.xml"/>
+									<ProjectItem Path="IDD_CALLING_TRANSFER_OK.xml"/>
+									<ProjectItem Path="IDD_CALLING_TRANSFER_RESULT_ITEM.xml"/>
+									<ProjectItem Path="IDD_CALLER_ADD.xml"/>
+								</Filter>
+							</Filter>
+							<ProjectItem Path="IDW_CHAT_PANEL.xml"/>
+							<ProjectItem Path="IDW_TEXT_CHAT_PAGE.xml"/>
+							<ProjectItem Path="IDW_AUDIO_PAGE.xml"/>
+							<ProjectItem Path="IDW_MEDIA_TOOLBAR.xml"/>
+							<ProjectItem Path="IDW_VIDEO_PAGE.xml"/>
+							<ProjectItem Path="IDW_MINI_KEYBOARD.xml"/>
+							<ProjectItem Path="IDW_PROFILE.xml"/>
+							<ProjectItem Path="IDW_POPUP_VIDEO.xml"/>
+							<ProjectItem Path="IDW_VIDEO_HOST.xml"/>
+						</Filter>
+					</Filter>
+					<ProjectItem Path="IDW_MAIN.xml"/>
+					<ProjectItem Path="IDW_ORG_TEMPLATE.xml"/>
+				</Filter>
+				<Filter Name="SearchPanel">
+					<ProjectItem Path="IDW_SEARCH_PAGE.xml"/>
+					<ProjectItem Path="IDW_SEARCH_CONTACTS_ITEM.xml"/>
+					<ProjectItem Path="IDW_SEARCH_MESSAGE_ITEM.xml"/>
+				</Filter>
+				<Filter Name="CallPanel">
+					<ProjectItem Path="IDW_CALL_PAGE.xml"/>
+				</Filter>
+			</Filter>
+			<Filter Name="IMOle">
+				<ProjectItem Path="IDW_OLE_FILE.xml"/>
+				<ProjectItem Path="IDW_OLE_VIDEO.xml"/>
+				<ProjectItem Path="IDW_OLE_AUDIO.xml"/>
+			</Filter>
+			<Filter Name="Settings">
+				<ProjectItem Path="IDD_SETTINGS_FRAME.xml"/>
+				<ProjectItem Path="IDW_SETTINGS_APPLICATION.xml"/>
+				<ProjectItem Path="IDW_SETTINGS_AUDIO_CODECS.xml"/>
+				<ProjectItem Path="IDW_SETTINGS_VIDEO_CODECS.xml"/>
+				<ProjectItem Path="IDW_SETTINGS_MEDIA_QUALITY.xml"/>
+				<ProjectItem Path="IDW_SETTINGS_MISC.xml"/>
+				<ProjectItem Path="IDW_SETTINGS_LANGUAGES.xml"/>
+				<ProjectItem Path="IDW_CODEC_ITEM.xml"/>
+			</Filter>
+			<ProjectItem Path="IDW_MAIN_FRAME.xml"/>
+			<ProjectItem Path="IDD_POPUP_CHAT.xml"/>
+			<ProjectItem Path="IDW_TEXT_CHAT.xml"/>
+			<ProjectItem Path="IDW_EMOTICON.xml"/>
+			<ProjectItem Path="IDW_EMOTICON_PAGE.xml"/>
+			<ProjectItem Path="IDD_SPEAKER.xml"/>
+			<ProjectItem Path="IDW_EMOTICON_ICON.xml"/>
+			<ProjectItem Path="IDW_MEETING.xml"/>
+			<ProjectItem Path="IDW_MEETING_LIST_ITEM.xml"/>
+			<ProjectItem Path="IDW_CALLER_BAR.xml"/>
+			<ProjectItem Path="IDW_INFO.xml"/>
+			<ProjectItem Path="IDW_TRAY_MSG.xml"/>
+			<ProjectItem Path="IDW_TRAY_MSG_ITEM.xml"/>
+			<ProjectItem Path="IDW_MSG_HISTORY.xml"/>
+			<ProjectItem Path="IDW_ADD_CONTACT.xml"/>
+			<ProjectItem Path="IDW_ADD_EXISTING_CONTACT.xml"/>
+			<ProjectItem Path="IDW_ADD_EXISTING_CONTACT_ITEM.xml"/>
+			<ProjectItem Path="IDW_GROUP_MEMBER_ITEM.xml"/>
+		</Filter>
+	</Windows>
+	<Resources>
+		<Fonts>
+			<DefaultFont>
+				<FONT>
+					<Font Height="-13" Width="0" lfEscapement="0" Orientation="0" Weight="400" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="微软雅黑"/>
+				</FONT>
+			</DefaultFont>
+			<GeneralFonts>
+				<FONT>
+					<name Value="IDF_TAHOMA_9"/>
+					<Font Height="-12" Width="0" lfEscapement="0" Orientation="0" Weight="400" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="Tahoma"/>
+				</FONT>
+				<FONT>
+					<name Value="IDF_YAHEI_START_CONNECT"/>
+					<Font Height="-27" Width="0" lfEscapement="0" Orientation="0" Weight="400" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="0" ClipPrecision="0" Quality="0" PitchAndFamily="34" FaceName="微软雅黑"/>
+				</FONT>
+				<FONT>
+					<name Value="IDF_YAHEI_12__BOLD"/>
+					<Font Height="-14" Width="0" lfEscapement="0" Orientation="0" Weight="700" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="0" ClipPrecision="0" Quality="0" PitchAndFamily="34" FaceName="微软雅黑"/>
+				</FONT>
+				<FONT>
+					<name Value="IDF_YAHEI_10_UNDERLINE"/>
+					<Font Height="-13" Width="0" lfEscapement="0" Orientation="0" Weight="400" Italic="0" Underline="1" StrikeOut="0" CharSet="0" OutPrecision="0" ClipPrecision="0" Quality="0" PitchAndFamily="34" FaceName="微软雅黑"/>
+				</FONT>
+				<FONT>
+					<name Value="IDF_MAX_NAME"/>
+					<Font Height="-75" Width="0" lfEscapement="0" Orientation="0" Weight="400" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="0" ClipPrecision="0" Quality="0" PitchAndFamily="34" FaceName="Tahoma"/>
+				</FONT>
+			</GeneralFonts>
+		</Fonts>
+		<Colors>
+			<DefaultColor>
+				<COLOR>
+					<Color Value="#0025211B"/>
+				</COLOR>
+			</DefaultColor>
+			<GeneralColors>
+				<COLOR>
+					<name Value="IDR_COLOR_RED"/>
+					<Color Value="#000000FF"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_WINDOW"/>
+					<Color Value="#00F0F0F0"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_BORDER"/>
+					<Color Value="#008D560F"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_WHITE"/>
+					<Color Value="#00FFFFFF"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_CONTACT_TREE_BK"/>
+					<Color Value="#00FAFAFA"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_GRAY"/>
+					<Color Value="#007E7E7E"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_TREE_ITEM_BK"/>
+					<Color Value="#00ECEBEB"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_CONTACT_BK"/>
+					<Color Value="#00ECE7E5"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_BLACK"/>
+					<Color Value="#0025211B"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_ADVANCE_N"/>
+					<Color Value="#00F67547"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_ADVANCE_H"/>
+					<Color Value="#00C65D38"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_ADVANCE_D"/>
+					<Color Value="#00FBBAA3"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_TOOLBAR"/>
+					<Color Value="#00532C12"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_TOOLBAR_TEXT"/>
+					<Color Value="#00958978"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_TOOLBAR_CONTACT"/>
+					<Color Value="#00E8E3DD"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_NAVIGATE"/>
+					<Color Value="#00F4F4F4"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_SPLITTER"/>
+					<Color Value="#00E8E3DD"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_NAVIGATEH"/>
+					<Color Value="#00E2E2E2"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_EEEEEE"/>
+					<Color Value="#00EEEEEE"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_122C53"/>
+					<Color Value="#00532C12"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_E5F2FF"/>
+					<Color Value="#00FFF2E5"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_102444"/>
+					<Color Value="#00442410"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_E4EAEE"/>
+					<Color Value="#00EEEAE4"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_4775F6"/>
+					<Color Value="#00F67547"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_EBF2F9"/>
+					<Color Value="#00F9F2EB"/>
+				</COLOR>
+				<COLOR>
+					<name Value="IDR_COLOR_12B7F5"/>
+					<Color Value="#00F5B712"/>
+				</COLOR>
+			</GeneralColors>
+		</Colors>
+	</Resources>
+	<Styles>
+		<PushButtons>
+			<STYLE_PUSHBUTTON>
+				<name Value="IDC_BTN_RESEND_BUTTON"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="Btn_ResendMsg.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</STYLE_PUSHBUTTON>
+			<STYLE_PUSHBUTTON>
+				<name Value="IDC_BTN_SHOW_MORE_MSG"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<IsDrawBorderColor Value="false"/>
+				<TextColorResN Value="IDR_COLOR_12B7F5"/>
+				<TextColorResH Value="IDR_COLOR_12B7F5"/>
+				<TextColorResP Value="IDR_COLOR_12B7F5"/>
+				<TextColorResD Value="IDR_COLOR_12B7F5"/>
+				<FontResH Value="IDF_YAHEI_10_UNDERLINE"/>
+				<FontResS Value="IDF_YAHEI_10_UNDERLINE"/>
+				<ButtonClickArg Value=""/>
+				<TextAlignment Horizontal="Center"/>
+			</STYLE_PUSHBUTTON>
+		</PushButtons>
+		<CheckBoxes/>
+		<RadioButtons/>
+		<ComboBoxes/>
+		<Statics>
+			<STYLE_STATIC>
+				<name Value="IDC_STA_IM_LABEL"/>
+				<HAlign Value="Center"/>
+				<IsCombineImages Value="true"/>
+				<TextColorResN Value="IDR_COLOR_12B7F5"/>
+				<ButtonClickArg Value=""/>
+				<TextAlignment Horizontal="Center"/>
+			</STYLE_STATIC>
+		</Statics>
+		<Edits/>
+		<Sliders/>
+		<Progresses>
+			<STYLE_PROGRESS>
+				<name Value="IDC_PRG_IMAGE_OLE"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="Ole_SliderBk.png"/>
+				<ButtonClickArg Value=""/>
+				<IsDrawThumbColor Value="true"/>
+				<ThumbBkColorRes Value="IDR_COLOR_RED"/>
+			</STYLE_PROGRESS>
+		</Progresses>
+		<Spins/>
+		<ListControls/>
+		<TreeControls/>
+		<HtmlControls/>
+		<DateTimes/>
+		<Headers/>
+		<HorScrollbars>
+			<STYLE_SCROLLBAR>
+				<name Value="IDC_SBEX_VER"/>
+				<IsCombineBackgroundImages Value="false"/>
+				<NineGridParam Left="3" Top="10" Right="3" Bottom="10"/>
+				<IsCombineThumbImage Value="true"/>
+				<ThumbCombine RelativePath="SCROLL_V.png"/>
+				<ThumbResize Left="3" Top="10" Right="3" Bottom="10"/>
+				<LeftUpButtonSize Value="0"/>
+				<RightDownButtonSize Value="0"/>
+			</STYLE_SCROLLBAR>
+		</HorScrollbars>
+		<ToolTips/>
+	</Styles>
+</Project>

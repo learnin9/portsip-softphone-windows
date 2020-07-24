@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IUI_vs2017", "IUI_vs2017.vcxproj", "{D023B113-AD0D-44CA-8464-8370B5CD0BF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Unicode MDd With RichEdit Source|x64 = Debug Unicode MDd With RichEdit Source|x64
+		Debug Unicode MDd With RichEdit Source|x86 = Debug Unicode MDd With RichEdit Source|x86
+		Debug Unicode MDd|x64 = Debug Unicode MDd|x64
+		Debug Unicode MDd|x86 = Debug Unicode MDd|x86
+		Debug Unicode MTd|x64 = Debug Unicode MTd|x64
+		Debug Unicode MTd|x86 = Debug Unicode MTd|x86
+		Release Unicode MT|x64 = Release Unicode MT|x64
+		Release Unicode MT|x86 = Release Unicode MT|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D023B113-AD0D-44CA-8464-8370B5CD0BF9}.Debug Unicode MDd With RichEdit Source|x64.ActiveCfg = Debug Unicode MDd With RichEdit Source|x64
+		{D023B113-AD0D-44CA-8464-8370B5CD0BF9}.Debug Unicode MDd With RichEdit Source|x64.Build.0 = Debug Unicode MDd With RichEdit Source|x64
+		{D023B113-AD0D-44CA-8464-8370B5CD0BF9}.Debug Unicode MDd With RichEdit Source|x86.ActiveCfg = Debug Unicode MDd With RichEdit Source|Win32
+		{D023B113-AD0D-44CA-8464-8370B5CD0BF9}.Debug Unicode MDd With RichEdit Source|x86.Build.0 = Debug Unicode MDd With RichEdit Source|Win32
+		{D023B113-AD0D-44CA-8464-8370B5CD0BF9}.Debug Unicode MDd|x64.ActiveCfg = Debug Unicode MDd|x64
+		{D023B113-AD0D-44CA-8464-8370B5CD0BF9}.Debug Unicode MDd|x64.Build.0 = Debug Unicode MDd|x64
+		{D023B113-AD0D-44CA-8464-8370B5CD0BF9}.Debug Unicode MDd|x86.ActiveCfg = Debug Unicode MDd|Win32
+		{D023B113-AD0D-44CA-8464-8370B5CD0BF9}.Debug Unicode MDd|x86.Build.0 = Debug Unicode MDd|Win32
+		{D023B113-AD0D-44CA-8464-8370B5CD0BF9}.Debug Unicode MTd|x64.ActiveCfg = Debug Unicode MTd|x64
+		{D023B113-AD0D-44CA-8464-8370B5CD0BF9}.Debug Unicode MTd|x64.Build.0 = Debug Unicode MTd|x64
+		{D023B113-AD0D-44CA-8464-8370B5CD0BF9}.Debug Unicode MTd|x86.ActiveCfg = Debug Unicode MTd|Win32
+		{D023B113-AD0D-44CA-8464-8370B5CD0BF9}.Debug Unicode MTd|x86.Build.0 = Debug Unicode MTd|Win32
+		{D023B113-AD0D-44CA-8464-8370B5CD0BF9}.Release Unicode MT|x64.ActiveCfg = Release Unicode MT|x64
+		{D023B113-AD0D-44CA-8464-8370B5CD0BF9}.Release Unicode MT|x64.Build.0 = Release Unicode MT|x64
+		{D023B113-AD0D-44CA-8464-8370B5CD0BF9}.Release Unicode MT|x86.ActiveCfg = Release Unicode MT|Win32
+		{D023B113-AD0D-44CA-8464-8370B5CD0BF9}.Release Unicode MT|x86.Build.0 = Release Unicode MT|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {739CB836-B701-40CB-99CA-8108A9190E21}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_EMOTICON_ICON"/>
+		<Rect Size="400,300" Location="0,0"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDW_EMOTICON_ICON"/>
+				<name Value="IDC_CANVAS_EMOTICON"/>
+				<Rect Size="36,36" Location="155,34"/>
+				<HAlign Value="Fill"/>
+				<VAlign Value="Fill"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Label>
+						<Parent Name="IDC_CANVAS_EMOTICON"/>
+						<name Value="IDC_STA_EMOTICON"/>
+						<Rect Size="24,24" Location="6,6"/>
+						<HAlign Value="Center"/>
+						<VAlign Value="Center"/>
+						<IsCombineImages Value="false"/>
+						<BackgroundNormal image="dahaqi3x.png"/>
+						<BkImageResizeMode Value="KeepRate"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

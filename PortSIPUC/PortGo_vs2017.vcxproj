@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0B985058-5E20-43D2-9B35-AF34BE5E35DF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>PortGo</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)_D</TargetName>
+    <OutDir>$(SolutionDir)Bin\</OutDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(IUIINCLUDE);$(IncludePath)</IncludePath>
+    <LibraryPath>$(IUILIB);$(LibraryPath)</LibraryPath>
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)_D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Bin\</OutDir>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(IUIINCLUDE);$(IncludePath)</IncludePath>
+    <LibraryPath>$(IUILIB);$(LibraryPath)</LibraryPath>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>BUILDING_LIBCURL;HTTP_ONLY;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\Program Files (x86)\Visual Leak Detector\include;../IUI/;../jsoncpp/include/;./;include;include/ICUC4;include/libvlc_include;include/SDL;include/breakpad</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <AdditionalDependencies>libvlc.lib;libvlccore.lib;ws2_32.lib;winmm.lib;wldap32.lib;ExportClass.lib;libbreakpadd.lib;libbreakpad_clientd.lib;libdisasmd.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Program Files (x86)\Visual Leak Detector\lib\Win32;lib/x86;lib/libvlc_lib;lib</AdditionalLibraryDirectories>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+    </Link>
+    <Manifest>
+      <EnableDPIAwareness>true</EnableDPIAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libprotobufd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>lib/x86</AdditionalLibraryDirectories>
+    </Link>
+    <Manifest>
+      <EnableDPIAwareness>true</EnableDPIAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>BUILDING_LIBCURL;HTTP_ONLYWIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>../IUI/;../jsoncpp/include/;./;include;include/ICUC4;include/libvlc_include;include/SDL;include/breakpad</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;winmm.lib;wldap32.lib;libvlc.lib;libvlccore.lib;libjson.lib;ExportClass.lib;libbreakpad.lib;libbreakpad_client.lib;libdisasm.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>lib/x86;lib/libvlc_lib;lib;</AdditionalLibraryDirectories>
+      <AdditionalOptions>/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
+      <UACExecutionLevel>HighestAvailable</UACExecutionLevel>
+    </Link>
+    <Manifest>
+      <EnableDPIAwareness>true</EnableDPIAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>libprotobuf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>lib/x86</AdditionalLibraryDirectories>
+    </Link>
+    <Manifest>
+      <EnableDPIAwareness>true</EnableDPIAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="AddContactWnd.h" />
+    <ClInclude Include="AVPlay\AVPlayer.h" />
+    <ClInclude Include="CommonDef.h" />
+    <ClInclude Include="db\AVCodec.h" />
+    <ClInclude Include="db\CallHistory.h" />
+    <ClInclude Include="db\ChatRecord.h" />
+    <ClInclude Include="db\Contact.h" />
+    <ClInclude Include="db\DBParam.h" />
+    <ClInclude Include="db\Options.h" />
+    <ClInclude Include="db\portsql.hxx" />
+    <ClInclude Include="db\TalkGroup.h" />
+    <ClInclude Include="db\TalkGroupNumber.h" />
+    <ClInclude Include="db\User.h" />
+    <ClInclude Include="db\VARecord.h" />
+    <ClInclude Include="db\VoiceMail.h" />
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="Login\LoginDlg.h" />
+    <ClInclude Include="Login\LoginLoadingDlg.h" />
+    <ClInclude Include="Login\LoginSettingsWnd.h" />
+    <ClInclude Include="log\Logger.h" />
+    <ClInclude Include="Main\CallerBarWnd.h" />
+    <ClInclude Include="Main\CallerBarWndMgr.h" />
+    <ClInclude Include="Main\EmoticonPageCanvasHandler.h" />
+    <ClInclude Include="Main\EmoticonWnd.h" />
+    <ClInclude Include="Main\InfoWnd.h" />
+    <ClInclude Include="Main\InfoWndMgr.h" />
+    <ClInclude Include="Main\MainFrameTabControl\CallPanel\CallCanvasHandler.h" />
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainCanvasHandler.h" />
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\AudioPageCanvasHandler.h" />
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer\AddCallerCanvasHandler.h" />
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer\AddCallerDlg.h" />
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer\CallingTransferDlg.h" />
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\ChatTabControlHandler.h" />
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\MediaToolbarWnd.h" />
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\MiniKeyboardWnd.h" />
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\ProfileCanvasHandler.h" />
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\ScreenPrint.h" />
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\TextChatPageCanvasHandler.h" />
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\VideoCanvasHandler.h" />
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\VideoHostWnd.h" />
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ContactsPanel\ContactsCanvasHandler.h" />
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\InboxPanel\InboxCanvasHandler.h" />
+    <ClInclude Include="Main\MainFrameTabControl\SearchPanel\SearchCanvasHandler.h" />
+    <ClInclude Include="Main\MainWnd.h" />
+    <ClInclude Include="Main\MeetingWnd.h" />
+    <ClInclude Include="Main\MsgHistoryWnd.h" />
+    <ClInclude Include="Main\PopupChatDlg.h" />
+    <ClInclude Include="Main\SpeakerDlg.h" />
+    <ClInclude Include="Main\TextChatCanvasHandler.h" />
+    <ClInclude Include="OleAudioCanvasHandler.h" />
+    <ClInclude Include="OleFileCanvasHandler.h" />
+    <ClInclude Include="OleImageCanvasHandler.h" />
+    <ClInclude Include="OleVideoCanvasHandler.h" />
+    <ClInclude Include="PopupVideoWnd.h" />
+    <ClInclude Include="PortGo.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Settings\SettingsApplicationPageHandler.h" />
+    <ClInclude Include="Settings\SettingsAudioCodecsPageHandler.h" />
+    <ClInclude Include="Settings\SettingsFrameDlg.h" />
+    <ClInclude Include="Settings\SettingsLanguagesCanvasHandler.h" />
+    <ClInclude Include="Settings\SettingsMediaQualityHandler.h" />
+    <ClInclude Include="Settings\SettingsMiscCanvasHandler.h" />
+    <ClInclude Include="Settings\SettingsVideoCodecsPageHandler.h" />
+    <ClInclude Include="Settings\TreeItemDrag.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="System\Aes.hxx" />
+    <ClInclude Include="System\BaseThread.h" />
+    <ClInclude Include="System\ConferenceStatusSubMgr.h" />
+    <ClInclude Include="System\emojires.h" />
+    <ClInclude Include="System\HttpClient.h" />
+    <ClInclude Include="System\MimeType.h" />
+    <ClInclude Include="System\OnLineStatusMgr.h" />
+    <ClInclude Include="System\RestAPI.h" />
+    <ClInclude Include="System\SystemEx.h" />
+    <ClInclude Include="System\VoipCallBackEvent.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TrayMsgWnd.h" />
+    <ClInclude Include="Utility\BitmapHelper.h" />
+    <ClInclude Include="Utility\DynamicText.h" />
+    <ClInclude Include="Utility\utility.hxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AddContactWnd.cpp" />
+    <ClCompile Include="AVPlay\AVPlayer.cpp" />
+    <ClCompile Include="db\AVCodec.cpp" />
+    <ClCompile Include="db\CallHistory.cpp" />
+    <ClCompile Include="db\ChatRecord.cpp" />
+    <ClCompile Include="db\Contact.cpp" />
+    <ClCompile Include="db\Options.cpp" />
+    <ClCompile Include="db\portsql.cpp" />
+    <ClCompile Include="db\TalkGroup.cpp" />
+    <ClCompile Include="db\TalkGroupNumber.cpp" />
+    <ClCompile Include="db\User.cpp" />
+    <ClCompile Include="db\VARecord.cpp" />
+    <ClCompile Include="db\VoiceMail.cpp" />
+    <ClCompile Include="Global.cpp" />
+    <ClCompile Include="Login\LoginDlg.cpp" />
+    <ClCompile Include="Login\LoginLoadingDlg.cpp" />
+    <ClCompile Include="Login\LoginSettingsWnd.cpp" />
+    <ClCompile Include="log\Logger.cpp" />
+    <ClCompile Include="Main\CallerBarWnd.cpp" />
+    <ClCompile Include="Main\CallerBarWndMgr.cpp" />
+    <ClCompile Include="Main\EmoticonPageCanvasHandler.cpp" />
+    <ClCompile Include="Main\EmoticonWnd.cpp" />
+    <ClCompile Include="Main\InfoWnd.cpp" />
+    <ClCompile Include="Main\InfoWndMgr.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\CallPanel\CallCanvasHandler.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainCanvasHandler.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\AudioPageCanvasHandler.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer\AddCallerCanvasHandler.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer\AddCallerDlg.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer\CallingTransferDlg.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\ChatTabControlHandler.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\MediaToolbarWnd.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\MiniKeyboardWnd.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\ProfileCanvasHandler.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\TextChatPageCanvasHandler.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\VideoCanvasHandler.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\VideoHostWnd.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ContactsPanel\ContactsCanvasHandler.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\InboxPanel\InboxCanvasHandler.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\SearchPanel\SearchCanvasHandler.cpp" />
+    <ClCompile Include="Main\MainWnd.cpp" />
+    <ClCompile Include="Main\MeetingWnd.cpp" />
+    <ClCompile Include="Main\MsgHistoryWnd.cpp" />
+    <ClCompile Include="Main\PopupChatDlg.cpp" />
+    <ClCompile Include="Main\SpeakerDlg.cpp" />
+    <ClCompile Include="Main\TextChatCanvasHandler.cpp" />
+    <ClCompile Include="OleAudioCanvasHandler.cpp" />
+    <ClCompile Include="OleFileCanvasHandler.cpp" />
+    <ClCompile Include="OleImageCanvasHandler.cpp" />
+    <ClCompile Include="OleVideoCanvasHandler.cpp" />
+    <ClCompile Include="PopupVideoWnd.cpp" />
+    <ClCompile Include="PortGo.cpp" />
+    <ClCompile Include="Settings\SettingsApplicationPageHandler.cpp" />
+    <ClCompile Include="Settings\SettingsAudioCodecsPageHandler.cpp" />
+    <ClCompile Include="Settings\SettingsFrameDlg.cpp" />
+    <ClCompile Include="Settings\SettingsLanguagesCanvasHandler.cpp" />
+    <ClCompile Include="Settings\SettingsMediaQualityHandler.cpp" />
+    <ClCompile Include="Settings\SettingsMiscCanvasHandler.cpp" />
+    <ClCompile Include="Settings\SettingsVideoCodecsPageHandler.cpp" />
+    <ClCompile Include="Settings\TreeItemDrag.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="System\Aes.cxx" />
+    <ClCompile Include="System\BaseThread.cpp" />
+    <ClCompile Include="System\ConferenceStatusSubMgr.cpp" />
+    <ClCompile Include="System\HttpClient.cpp" />
+    <ClCompile Include="System\MimeType.cpp" />
+    <ClCompile Include="System\OnLineStatusMgr.cpp" />
+    <ClCompile Include="System\RestAPI.cpp" />
+    <ClCompile Include="System\Session.cpp" />
+    <ClCompile Include="System\SystemEx.cpp" />
+    <ClCompile Include="System\VoipCallBackEvent.cpp" />
+    <ClCompile Include="TrayMsgWnd.cpp" />
+    <ClCompile Include="Utility\BitmapHelper.cpp" />
+    <ClCompile Include="Utility\DynamicText.cpp" />
+    <ClCompile Include="Utility\utility.cxx">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PortGo.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="HideTrayIcon.ico" />
+    <Image Include="icon1.ico" />
+    <Image Include="PortGo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IUI\IUI_vs2017.vcxproj">
+      <Project>{d023b113-ad0d-44ca-8464-8370b5cd0bf9}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

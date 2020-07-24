@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_PROFILE"/>
+		<Rect Size="500,475" Location="0,0"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDW_PROFILE"/>
+				<name Value="IDC_CANVAS_PROFILE"/>
+				<Rect Size="400,435" Location="43,27"/>
+				<TitleBarHeight Value="-1"/>
+				<HAlign Value="Right"/>
+				<VAlign Value="Fill"/>
+				<IsDrawBkColor Value="true"/>
+				<BkColorResN Value="IDR_COLOR_WHITE"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Label>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_STA_USER_NAME"/>
+						<Rect Size="210,24" Location="20,20"/>
+						<HAlign Value="Fill"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Button>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_BTN_CLOSE_PROFILE"/>
+						<Rect Size="45,24" Location="355,0"/>
+						<HAlign Value="Right"/>
+						<VAlign Value="Top"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="BtnClose.png"/>
+						<IsDrawBorderColor Value="false"/>
+						<ButtonClickArg Value=""/>
+					</Button>
+					<Label>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_STA_FACE"/>
+						<Rect Size="40,40" Location="20,60"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_STA_ABOUT_TITLE"/>
+						<Rect Size="90,24" Location="80,60"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="ABOUT"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_STA_ABOUT"/>
+						<Rect Size="200,24" Location="177,60"/>
+						<HAlign Value="Fill"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_STA_WORK_TITLE"/>
+						<Rect Size="90,24" Location="80,90"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Work"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_STA_WORK"/>
+						<Rect Size="200,24" Location="177,90"/>
+						<HAlign Value="Fill"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_STA_EMAIL_TITLE"/>
+						<Rect Size="90,24" Location="80,120"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Email"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_STA_EMAIL"/>
+						<Rect Size="200,24" Location="177,120"/>
+						<HAlign Value="Fill"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_STA_SPLITTER_1"/>
+						<Rect Size="352,1" Location="24,170"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_SPLITTER"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_STA_SHARED_NOTE_TITLE"/>
+						<Rect Size="150,24" Location="24,190"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Shared Note"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_STA_SHARED_NOTE"/>
+						<Rect Size="352,45" Location="24,218"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_STA_SPLITTER_2"/>
+						<Rect Size="352,1" Location="24,278"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_SPLITTER"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_STA_EMAILS_TITLE"/>
+						<Rect Size="150,24" Location="24,300"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="EMAILLS"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Button>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_BTN_VIEW_ALL_EMAILS"/>
+						<Rect Size="70,24" Location="306,300"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<IsDrawBorderColor Value="false"/>
+						<Content Value="View all"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Right"/>
+					</Button>
+					<Label>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_STA_14"/>
+						<Rect Size="352,45" Location="24,326"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_STA_SPILTTER_3"/>
+						<Rect Size="352,1" Location="24,386"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_SPLITTER"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_PROFILE"/>
+						<name Value="IDC_STA_SPLITTER_4"/>
+						<Rect Size="1,435" Location="0,0"/>
+						<VAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_SPLITTER"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

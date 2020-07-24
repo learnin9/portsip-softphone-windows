@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_INBOX_PAGE"/>
+		<Rect Size="300,200" Location="0,0"/>
+		<HAlign Value="Fill"/>
+		<VAlign Value="Fill"/>
+		<Root>
+			<TreeView>
+				<Parent Name="IDW_INBOX_PAGE"/>
+				<name Value="IDC_TREECTRL_INBOX"/>
+				<Rect Size="300,200" Location="0,0"/>
+				<HAlign Value="Fill"/>
+				<VAlign Value="Fill"/>
+				<IsCombineImages Value="true"/>
+				<IsFullRowSel Value="true"/>
+				<IsShowSelAlways Value="true"/>
+				<DefaultItemHeight Value="false"/>
+				<ItemHeight Value="70"/>
+				<ItemLine Enable="true" ColorResID="IDR_COLOR_NAVIGATEH"/>
+				<FocusItemBackground ColorResID="IDR_COLOR_NAVIGATEH"/>
+				<FocusItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+				<SelectedItemBackground ColorResID="IDR_COLOR_SPLITTER"/>
+				<SelectedItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+				<HighlightItemBackground Enable="true" Type="Color" ColorResID="IDR_COLOR_TREE_ITEM_BK"/>
+				<HighlightItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+				<ScrollBarWidth Value="10"/>
+				<HorizontalScrollbarStyleID Value=""/>
+				<VerticalScrollbarStyleID Value=""/>
+			</TreeView>
+		</Root>
+	</Window>
+</IUI>

@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_CALL_PAGE"/>
+		<Rect Size="780,695" Location="0,0"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDW_CALL_PAGE"/>
+				<name Value="IDC_CANVAS_CALL"/>
+				<Rect Size="740,632" Location="18,18"/>
+				<HAlign Value="Fill"/>
+				<VAlign Value="Fill"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Label>
+						<Parent Name="IDC_CANVAS_CALL"/>
+						<name Value="IDC_STA_CALL_TITLE"/>
+						<Rect Size="600,42" Location="70,85"/>
+						<HAlign Value="Center"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="NEW CALL AS Portsip"/>
+						<TextColorResN Value="IDR_COLOR_BLACK"/>
+						<TextColorResD Value="IDR_COLOR_BLACK"/>
+						<FontResN Value="IDF_YAHEI_START_CONNECT"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</Label>
+					<Button>
+						<Parent Name="IDC_CANVAS_CALL"/>
+						<name Value="IDC_BTN_CLOSE_CALL_PAGE"/>
+						<Rect Size="40,40" Location="580,85"/>
+						<HAlign Value="Right"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="bt_search_close.png"/>
+						<IsDrawBorderColor Value="false"/>
+						<ButtonClickArg Value=""/>
+					</Button>
+					<RichTextBox>
+						<Parent Name="IDC_CANVAS_CALL"/>
+						<name Value="IDC_RE_INPUT"/>
+						<Rect Size="740,50" Location="0,167"/>
+						<IsTabStop Value="true"/>
+						<HAlign Value="Center"/>
+						<IsCombineImages Value="false"/>
+						<BackgroundNormal image="Inbox_TabBk.png"/>
+						<NineGridParam Left="0" Top="0" Right="0" Bottom="4"/>
+						<FontResN Value="IDF_YAHEI_START_CONNECT"/>
+						<TextAlignment Horizontal="Center"/>
+					</RichTextBox>
+					<Canvas>
+						<Parent Name="IDC_CANVAS_CALL"/>
+						<name Value="IDC_CANVAS_KEYBOARD"/>
+						<Rect Size="292,396" Location="224,232"/>
+						<HAlign Value="Center"/>
+						<VAlign Value="Center"/>
+						<Margin Left="0" Top="250" Right="0" Bottom="0"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+						<Controls>
+							<Button>
+								<Parent Name="IDC_CANVAS_KEYBOARD"/>
+								<name Value="IDC_BTN_NUM1"/>
+								<Rect Size="64,65" Location="0,0"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="home_call_1.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_KEYBOARD"/>
+								<name Value="IDC_BTN_NUM2"/>
+								<Rect Size="64,65" Location="114,0"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="home_call_2.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_KEYBOARD"/>
+								<name Value="IDC_BTN_NUM3"/>
+								<Rect Size="64,65" Location="228,0"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="home_call_3.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_KEYBOARD"/>
+								<name Value="IDC_BTN_NUM4"/>
+								<Rect Size="64,65" Location="0,85"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="home_call_4.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_KEYBOARD"/>
+								<name Value="IDC_BTN_NUM5"/>
+								<Rect Size="64,65" Location="114,85"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="home_call_5.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_KEYBOARD"/>
+								<name Value="IDC_BTN_NUM6"/>
+								<Rect Size="64,65" Location="228,85"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="home_call_6.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_KEYBOARD"/>
+								<name Value="IDC_BTN_NUM7"/>
+								<Rect Size="64,65" Location="0,170"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="home_call_7.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_KEYBOARD"/>
+								<name Value="IDC_BTN_NUM8"/>
+								<Rect Size="64,65" Location="114,170"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="home_call_8.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_KEYBOARD"/>
+								<name Value="IDC_BTN_NUM9"/>
+								<Rect Size="64,65" Location="228,170"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="home_call_9.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_KEYBOARD"/>
+								<name Value="IDC_BTN_NUMXING"/>
+								<Rect Size="64,65" Location="0,255"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="home_call__.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_KEYBOARD"/>
+								<name Value="IDC_BTN_NUM0"/>
+								<Rect Size="64,65" Location="114,255"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="home_call_0.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_KEYBOARD"/>
+								<name Value="IDC_BTN_NUMSHARP"/>
+								<Rect Size="64,65" Location="228,255"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="home_call_#.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_KEYBOARD"/>
+								<name Value="IDC_BTN_AUDIO"/>
+								<Rect Size="64,65" Location="0,330"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="home_call_voice.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_KEYBOARD"/>
+								<name Value="IDC_BTN_CALLING"/>
+								<Rect Size="64,65" Location="114,330"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="home_call_call.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_KEYBOARD"/>
+								<name Value="IDC_BTN_VIDEO"/>
+								<Rect Size="64,65" Location="228,330"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="home_call_video.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+						</Controls>
+					</Canvas>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

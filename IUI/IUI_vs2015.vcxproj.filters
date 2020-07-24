@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Control">
+      <UniqueIdentifier>{9f0a1749-2d14-41aa-9e2d-90cddc72f42c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{967cc066-b7cb-45b9-a0d0-9c0e75a6d306}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore">
+      <UniqueIdentifier>{58c6cf3e-09f0-418a-b270-3df9f38917bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\Windowless">
+      <UniqueIdentifier>{81713ff9-7d7d-4803-ab63-fbf5ac48cc73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\Window">
+      <UniqueIdentifier>{f48caa4d-f26a-4f24-9ea7-4e1c729fc9b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\TreeView">
+      <UniqueIdentifier>{043dd169-d4ce-499e-80db-55f7ff927eca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\Tooltips">
+      <UniqueIdentifier>{0fd929b9-4235-431a-85ce-bab364ce06e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\SplitterBar">
+      <UniqueIdentifier>{13105962-4641-433a-8437-abd3c095c48b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\Slider">
+      <UniqueIdentifier>{f9223e3a-5ddd-45fb-b121-8b983fd1d55a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\ScrollBar">
+      <UniqueIdentifier>{18b77aee-7fcc-4a9d-bb06-77d0a28464da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\RichTextBox">
+      <UniqueIdentifier>{5875bd1b-1f20-4441-9ed6-01ca3c67f677}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\ProgressBar">
+      <UniqueIdentifier>{778ade01-0995-4808-85ff-d4fd3bc5b069}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\Menu">
+      <UniqueIdentifier>{5a11bd52-b661-41a4-9975-2495891c7985}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\Button">
+      <UniqueIdentifier>{50dc57f8-1498-424f-a012-265ea63a246f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\ColumnHeader">
+      <UniqueIdentifier>{198c80f4-cf20-4875-abb2-d2ab3f132cd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\ComboBox">
+      <UniqueIdentifier>{c086c2c6-7e3d-4bc4-8fe4-2aca2545d719}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\HtmlView">
+      <UniqueIdentifier>{154a29c9-fd61-4c31-9b86-0985194d4d41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\Label">
+      <UniqueIdentifier>{dbfdf981-8ebc-40e8-9fef-ec694e806d58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\ListView">
+      <UniqueIdentifier>{e8c58963-9419-47c5-b643-9bc0fef34bec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\Layout">
+      <UniqueIdentifier>{6f77918a-e15e-4b7f-9b46-b7e9d730b4ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\Window">
+      <UniqueIdentifier>{ca6701e0-81bf-424c-93ce-2eb744b4bc81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\DateTimePicker">
+      <UniqueIdentifier>{7ea81971-a102-421a-b3de-ff1c4a022ec6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control\ControlCore\SpinButton">
+      <UniqueIdentifier>{efcf69ea-bd18-4415-aa9d-de5b4e63adb9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Control\ControlCore\ControlMember.h">
+      <Filter>Control\ControlCore</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\Win32Global.h">
+      <Filter>Control\ControlCore</Filter>
+    </ClInclude>
+    <ClInclude Include="Control\ControlCore\Menu\Menu.h">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\DropTargetEx.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Global.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ResourceMgr.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\WLWndMgr.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="IUI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Control\ControlCore\Win32Global.cpp">
+      <Filter>Control\ControlCore</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Button\ButtonCore.cpp">
+      <Filter>Control\ControlCore\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\ComboBox\ComboBoxCore.cpp">
+      <Filter>Control\ControlCore\ComboBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\HtmlView\HtmlViewCore.cpp">
+      <Filter>Control\ControlCore\HtmlView</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Label\LabelCore.cpp">
+      <Filter>Control\ControlCore\Label</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\ListView\ListViewCore.cpp">
+      <Filter>Control\ControlCore\ListView</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\menu.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\menuc.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\mnchange.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\mncreate.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\mndraw.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\mndstry.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\mnkey.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\mnloop.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\mnpopup.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Menu\mnstate.cpp">
+      <Filter>Control\ControlCore\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\ProgressBar\ProgressBarCore.cpp">
+      <Filter>Control\ControlCore\ProgressBar</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\IMRichTextBoxCore.cpp">
+      <Filter>Control\ControlCore\RichTextBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\OleControlCore.cpp">
+      <Filter>Control\ControlCore\RichTextBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichTextBoxCore.cpp">
+      <Filter>Control\ControlCore\RichTextBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\ScrollBar\ScrollBarCore.cpp">
+      <Filter>Control\ControlCore\ScrollBar</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Slider\trackbar.cpp">
+      <Filter>Control\ControlCore\Slider</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\SplitterBar\SplitterBarCore.cpp">
+      <Filter>Control\ControlCore\SplitterBar</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Tooltips\TooltipsCore.cpp">
+      <Filter>Control\ControlCore\Tooltips</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\TreeView\TreeViewCore.cpp">
+      <Filter>Control\ControlCore\TreeView</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Window\WindowHelper.cpp">
+      <Filter>Control\ControlCore\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\Windowless\WindowlessCore.cpp">
+      <Filter>Control\ControlCore\Windowless</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Layout\Canvas.cpp">
+      <Filter>Control\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Layout\DockPanel.cpp">
+      <Filter>Control\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Layout\TabControl.cpp">
+      <Filter>Control\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Window\Tooltips.cpp">
+      <Filter>Control\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Window\UIColorDialog.cpp">
+      <Filter>Control\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Window\UIFileDialog.cpp">
+      <Filter>Control\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Window\UIFontDialog.cpp">
+      <Filter>Control\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Button.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ColumnHeader.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ComboBox.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\HostWnd.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\HtmlView.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\IMRichTextBox.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Label.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ListView.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ProgressBar.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\RepeatButton.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\RichTextBox.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ScrollBar.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Slider.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\SplitterBar.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\TreeView.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Window.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\WLWnd.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Animation.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ControlProp.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\CreateControls.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\crit.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\DropTargetEx.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Global.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\JScript.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\MemStdioFile.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ParseLanguageFile.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ParseResourceFile.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Render.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ResourceMgr.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\State.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\tls.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\UIParse.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\UIVariant.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Utils.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\WLWndMgr.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\IUIFont.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\IUIImage.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\IUIProject.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Core\IUIStringA.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\IUIStringW.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\Layout\StackPanel.cpp">
+      <Filter>Control\Layout</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\ImageOleCtrl.cpp">
+      <Filter>Control\ControlCore\RichTextBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\RichTextBox\ProtectedDragSource.cpp">
+      <Filter>Control\ControlCore\RichTextBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\ColumnHeader\ColumnHeaderCore.cpp">
+      <Filter>Control\ControlCore\ColumnHeader</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\DateTimePicker\DateTimePickerCore.cpp">
+      <Filter>Control\ControlCore\DateTimePicker</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\ControlCore\SpinButton\SpinButtonCore.cpp">
+      <Filter>Control\ControlCore\SpinButton</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\DateTimePicker.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Control\SpinButton.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

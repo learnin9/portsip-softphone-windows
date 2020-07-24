@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_VIDEO_HOST"/>
+		<Rect Size="400,300" Location="0,0"/>
+		<Visibility Value="false"/>
+		<TitleBarHeight Value="0"/>
+		<IsAppWindow Value="false"/>
+		<Root>
+			<Label>
+				<Parent Name="IDW_VIDEO_HOST"/>
+				<name Value="IDC_STA_WAIT"/>
+				<Rect Size="658,154" Location="68,47"/>
+				<HAlign Value="Center"/>
+				<VAlign Value="Center"/>
+				<IsCombineImages Value="false"/>
+				<BackgroundNormal image="Callerloading.gif"/>
+				<BkImageResizeMode Value="Stretch"/>
+				<ButtonClickArg Value=""/>
+			</Label>
+		</Root>
+	</Window>
+</IUI>

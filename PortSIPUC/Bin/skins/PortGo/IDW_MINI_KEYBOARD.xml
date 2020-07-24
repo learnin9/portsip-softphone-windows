@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_MINI_KEYBOARD"/>
+		<Rect Size="192,270" Location="0,0"/>
+		<ActivatedBkImage image="bg_call.png"/>
+		<IsAppWindow Value="false"/>
+		<IsLayeredWindow Value="true"/>
+		<IsUpdateLayeredWindow Value="true"/>
+		<Root>
+			<Button>
+				<Parent Name="IDW_MINI_KEYBOARD"/>
+				<name Value="IDC_BTN_1"/>
+				<Rect Size="64,65" Location="0,0"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="dia_call_1.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+			<Button>
+				<Parent Name="IDW_MINI_KEYBOARD"/>
+				<name Value="IDC_BTN_2"/>
+				<Rect Size="64,65" Location="64,0"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="dia_call_2.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+			<Button>
+				<Parent Name="IDW_MINI_KEYBOARD"/>
+				<name Value="IDC_BTN_3"/>
+				<Rect Size="64,65" Location="128,0"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="dia_call_3.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+			<Button>
+				<Parent Name="IDW_MINI_KEYBOARD"/>
+				<name Value="IDC_BTN_4"/>
+				<Rect Size="64,65" Location="0,65"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="dia_call_4.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+			<Button>
+				<Parent Name="IDW_MINI_KEYBOARD"/>
+				<name Value="IDC_BTN_5"/>
+				<Rect Size="64,65" Location="64,65"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="dia_call_5.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+			<Button>
+				<Parent Name="IDW_MINI_KEYBOARD"/>
+				<name Value="IDC_BTN_6"/>
+				<Rect Size="64,65" Location="128,65"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="dia_call_6.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+			<Button>
+				<Parent Name="IDW_MINI_KEYBOARD"/>
+				<name Value="IDC_BTN_7"/>
+				<Rect Size="64,65" Location="0,130"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="dia_call_7.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+			<Button>
+				<Parent Name="IDW_MINI_KEYBOARD"/>
+				<name Value="IDC_BTN_8"/>
+				<Rect Size="64,65" Location="64,130"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="dia_call_8.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+			<Button>
+				<Parent Name="IDW_MINI_KEYBOARD"/>
+				<name Value="IDC_BTN_9"/>
+				<Rect Size="64,65" Location="128,130"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="dia_call_9.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+			<Button>
+				<Parent Name="IDW_MINI_KEYBOARD"/>
+				<name Value="IDC_BTN_XING"/>
+				<Rect Size="64,65" Location="0,195"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="dia_call_xing.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+			<Button>
+				<Parent Name="IDW_MINI_KEYBOARD"/>
+				<name Value="IDC_BTN_0"/>
+				<Rect Size="64,65" Location="64,195"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="dia_call_0.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+			<Button>
+				<Parent Name="IDW_MINI_KEYBOARD"/>
+				<name Value="IDC_BTN_SHARP"/>
+				<Rect Size="64,65" Location="128,195"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="dia_call_#.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+		</Root>
+	</Window>
+</IUI>

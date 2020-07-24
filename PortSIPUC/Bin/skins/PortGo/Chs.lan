@@ -1,0 +1,2652 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI LANGUAGE FILE!-->
+<IUI_LANGUAGE>
+	<Version Version="-1-1" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_LOGIN"/>
+		<Root>
+			<Button>
+				<name Value="IDC_BTN_MIN"/>
+				<Content Value=""/>
+			</Button>
+			<CheckBox>
+				<name Value="IDC_CHK_MAX"/>
+				<Content Value=""/>
+			</CheckBox>
+			<Button>
+				<name Value="IDC_BTN_CLOSE"/>
+				<Content Value=""/>
+			</Button>
+			<Canvas>
+				<name Value="IDC_CANVAS_MAIN"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_LOGO"/>
+						<Content Value=""/>
+					</Label>
+					<ComboBox>
+						<name Value="IDC_CMB_ACCOUNT"/>
+					</ComboBox>
+					<RichTextBox>
+						<name Value="IDC_RE_PASSWORD"/>
+					</RichTextBox>
+					<RichTextBox>
+						<name Value="IDC_RE_DOMAIN"/>
+					</RichTextBox>
+					<CheckBox>
+						<name Value="IDC_CHK_REMEMBER_ACCOUNT"/>
+						<Content Value="记住密码"/>
+					</CheckBox>
+					<CheckBox>
+						<name Value="IDC_CHK_AUTO_LOGIN"/>
+						<Content Value="自动登录"/>
+					</CheckBox>
+					<Button>
+						<name Value="IDC_BTN_ADVANCED"/>
+						<Content Value="高级"/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_LOGIN"/>
+						<Content Value="登录"/>
+					</Button>
+					<Label>
+						<name Value="IDC_STA_START"/>
+						<Content Value="Start Connect Today"/>
+					</Label>
+				</Controls>
+			</Canvas>
+			<Canvas>
+				<name Value="IDC_CANVAS_LOGGING"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_LOGGING"/>
+						<Content Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_LOGIN_SETTINGS"/>
+		<Root>
+			<Button>
+				<name Value="IDC_BTN_MIN"/>
+				<Content Value=""/>
+			</Button>
+			<CheckBox>
+				<name Value="IDC_CHK_MAX"/>
+				<Content Value=""/>
+			</CheckBox>
+			<Button>
+				<name Value="IDC_BTN_CLOSE"/>
+				<Content Value=""/>
+			</Button>
+			<Canvas>
+				<name Value="IDC_CANVAS_MAIN"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_SETTINGS"/>
+						<Content Value="设置"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_ACCOUNT"/>
+						<Content Value="账户"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_DISPLAY_NAME"/>
+						<Content Value="显示名"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_DISPLAY_NAME"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_AUTHROIZATION_NAME"/>
+						<Content Value="认证用户名"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_AUTHROIZATION_NAME"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_OUTBOUND_SERVER"/>
+						<Content Value="出站代理"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_OUTBOUND_SERVER"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_TRANSPORT"/>
+						<Content Value="传输协议"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_SIGNALING_TRANSPORT"/>
+						<Content Value="信令传输协议"/>
+					</Label>
+					<ComboBox>
+						<name Value="IDC_CMB_SIGNALING_TRANSPORT"/>
+					</ComboBox>
+					<Label>
+						<name Value="IDC_STA_SRTP"/>
+						<Content Value="SRTP"/>
+					</Label>
+					<ComboBox>
+						<name Value="IDC_CMB_SRTP"/>
+					</ComboBox>
+					<CheckBox>
+						<name Value="IDC_CHK_VERIFY_TLS"/>
+						<Content Value="TLS 证书校验"/>
+					</CheckBox>
+					<Label>
+						<name Value="IDC_STA_PRESNECE"/>
+						<Content Value="Presnece"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_PRESENCE_MODE"/>
+						<Content Value="Presence mode"/>
+					</Label>
+					<ComboBox>
+						<name Value="IDC_CMB_PRESENCE_MODE"/>
+					</ComboBox>
+					<Label>
+						<name Value="IDC_STA_POLL_TIME"/>
+						<Content Value="订阅刷新 (Seconds)"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_POLL_TIME"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_REFRESH_INTERVAL"/>
+						<Content Value="发布刷新 (Seconds)"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_REFRESH_INTERVAL"/>
+					</RichTextBox>
+					<Button>
+						<name Value="IDC_BTN_RETURN"/>
+						<Content Value="返回"/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_SAVE"/>
+						<Content Value="保存"/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_LOGIG_ACCOUNT_ITEM"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_LOGIN_ACCOUNT_ITEM"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_ACCOUNT_ITEM"/>
+						<Content Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_INBOX_PANEL"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_INBOX"/>
+				<Content Value="通话管理"/>
+				<Controls>
+					<RadioButton>
+						<name Value="IDC_RAD_CALLS"/>
+						<Content Value="通话记录"/>
+						<Controls>
+							<Label>
+								<name Value="IDC_STA_UNREAD_CALLS"/>
+								<Content Value=""/>
+							</Label>
+						</Controls>
+					</RadioButton>
+					<RadioButton>
+						<name Value="IDC_RAD_MISSED"/>
+						<Content Value="未接来电"/>
+						<Controls>
+							<Label>
+								<name Value="IDC_STA_UNREAD_MISSED"/>
+								<Content Value=""/>
+							</Label>
+						</Controls>
+					</RadioButton>
+					<RadioButton>
+						<name Value="IDC_RAD_VOICE_MAILS"/>
+						<Content Value="语音邮件"/>
+						<Controls>
+							<Label>
+								<name Value="IDC_STA_UNREAD_VOICEMAIL"/>
+								<Content Value=""/>
+							</Label>
+						</Controls>
+					</RadioButton>
+					<RadioButton>
+						<name Value="IDC_RAD_RECORDINGS"/>
+						<Content Value="录音录像"/>
+						<Controls>
+							<Label>
+								<name Value="IDC_STA_UNREAD_RECORD"/>
+								<Content Value=""/>
+							</Label>
+						</Controls>
+					</RadioButton>
+					<RadioButton>
+						<name Value="IDC_RAD_MESSAGES"/>
+						<Content Value="消息"/>
+						<Controls>
+							<Label>
+								<name Value="IDC_STA_UNREAD_MESSAGE"/>
+								<Content Value=""/>
+							</Label>
+						</Controls>
+					</RadioButton>
+					<TabControl>
+						<name Value="IDC_PNL_TAB_INBOX"/>
+						<Content Value=""/>
+					</TabControl>
+					<Label>
+						<name Value="IDC_STA_SPLITTER"/>
+						<Content Value=""/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_FIRST_PAGE"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_PRE_PAGE"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_NEXT_PAGE"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_LAST_PAGE"/>
+						<Content Value=""/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_INBOX_PAGE"/>
+		<Root>
+			<TreeView>
+				<name Value="IDC_TREECTRL_INBOX"/>
+			</TreeView>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_INBOX_CALLS_ITEM"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_INBOX__CALLS_ITEM"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_ICON"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_FROM"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_STATE"/>
+						<Content Value=""/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_AUDIO"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_VIDEO"/>
+						<Content Value=""/>
+					</Button>
+					<Label>
+						<name Value="IDC_STA_TIME"/>
+						<Content Value=""/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_MORE"/>
+						<Content Value=""/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_INBOX_VOICEMAILS_ITEM"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_INBOX_VOICEMAILS_ITEM"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_ICON"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_NAME"/>
+						<Content Value=""/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_START_PAUSE"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Slider>
+						<name Value="IDC_SLD_VOLUMN"/>
+					</Slider>
+					<Label>
+						<name Value="IDC_STA_DURATION"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_RECEIVE_TIME"/>
+						<Content Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_INBOX_MESSAGES_ITEM"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_INBOX_MESSAGES_ITEM"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_ICON"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_NAME"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_MESSAGE"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_RECEIVE_TIME"/>
+						<Content Value=""/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_MORE"/>
+						<Content Value=""/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_INBOX_VOICEMAILS_ITEM"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_INBOX_VOICEMAILS_ITEM"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_ICON"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_NAME"/>
+						<Content Value=""/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_PLAY"/>
+						<Content Value=""/>
+					</Button>
+					<Label>
+						<name Value="IDC_STA_DURATION"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_RECEIVE_TIME"/>
+						<Content Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_CONTACS_PANEL"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_CONTACTS"/>
+				<Content Value=""/>
+				<Controls>
+					<RadioButton>
+						<name Value="IDC_RAD_FAVORITES"/>
+						<Content Value="收藏联系人"/>
+					</RadioButton>
+					<RadioButton>
+						<name Value="IDC_RAD_LOCAL_CONTACTS"/>
+						<Content Value="本地联系人"/>
+					</RadioButton>
+					<RadioButton>
+						<name Value="IDC_RAD_REMOTE_CONTACTS"/>
+						<Content Value="PBX联系人"/>
+					</RadioButton>
+					<RadioButton>
+						<name Value="IDC_RAD_EXTENSIONS"/>
+						<Content Value="分机号"/>
+					</RadioButton>
+					<TabControl>
+						<name Value="IDC_PNL_TAB_CONTACTS"/>
+						<Content Value=""/>
+					</TabControl>
+					<Label>
+						<name Value="IDC_STA_SPLITTER"/>
+						<Content Value=""/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_FIRST_PAGE"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_PRE_PAGE"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_NEXT_PAGE"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_LAST_PAGE"/>
+						<Content Value=""/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_CONTACTS_LOCAL_CONTACTS_ITEM"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_CONTACTS_LOCAL_CONTACTS_ITEM"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_ICON"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_FROM"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_STATE"/>
+						<Content Value=""/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_AUDIO"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_VIDEO"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_MORE"/>
+						<Content Value=""/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDD_CALLING_TRANSFER"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_MAIN"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_TITLE"/>
+						<Content Value="TRANSFER"/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_CLOSE"/>
+						<Content Value=""/>
+					</Button>
+					<Label>
+						<name Value="IDC_STA_SPLITTER1"/>
+						<Content Value=""/>
+					</Label>
+					<TabControl>
+						<name Value="IDC_PNL_TAB_TRANSFER"/>
+						<Content Value=""/>
+					</TabControl>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDD_CALLING_TRANSFER_SEARCH"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_TRANSFER_SEARCH"/>
+				<Content Value=""/>
+				<Controls>
+					<RichTextBox>
+						<name Value="IDC_RE_SEARCH"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_SPLITTER2"/>
+						<Content Value=""/>
+					</Label>
+					<TreeView>
+						<name Value="IDC_TREECTRL_RESULT"/>
+					</TreeView>
+					<Button>
+						<name Value="IDC_BTN_GO"/>
+						<Content Value="GO"/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDD_CALLING_TRANSFER_ASK"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_TRANSFER_ASK"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_ASK_TITLE"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_FACE"/>
+						<Content Value=""/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_ASK_FIRST"/>
+						<Content Value="询问"/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_TRANSFER_NOW"/>
+						<Content Value="直接转移"/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDD_CALLING_TRANSFER_OK"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_TRANSFER_OK"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_TITLE_OK"/>
+						<Content Value="sdfsdfsdf"/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_OK"/>
+						<Content Value=""/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDD_CALLING_TRANSFER_RESULT_ITEM"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_2"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_FACE"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_NAME"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_PHONE"/>
+						<Content Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDD_CALLER_ADD"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_ADD_CALLER"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_ADD_CALLER_TITLE"/>
+						<Content Value="Calling Jim"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_ADD_CALLER_FACE"/>
+						<Content Value=""/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_ADD_CALLER_CANCEL"/>
+						<Content Value="CANCEL"/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_CHAT_PANEL"/>
+		<Root>
+			<TabControl>
+				<name Value="IDC_PNL_TAB_CHAT"/>
+				<Content Value=""/>
+			</TabControl>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_TEXT_CHAT_PAGE"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_TEXT_CHAT_PAGE"/>
+				<Content Value=""/>
+				<Controls>
+					<Button>
+						<name Value="IDC_BTN_FACE"/>
+						<Content Value=""/>
+					</Button>
+					<Label>
+						<name Value="IDC_STA_ACCOUNT"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_SIGN"/>
+						<Content Value=""/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_PHONE"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_VIDEO"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_PROFILE"/>
+						<Content Value=""/>
+					</Button>
+					<Label>
+						<name Value="IDC_STA_SPLITTER"/>
+						<Content Value=""/>
+					</Label>
+					<Canvas>
+						<name Value="IDC_CANVAS_CHAT"/>
+						<Content Value=""/>
+					</Canvas>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_AUDIO_PAGE"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_CALLING_PAGE"/>
+				<Content Value=""/>
+				<Controls>
+					<Canvas>
+						<name Value="IDC_CANVAS_CENTER"/>
+						<Content Value=""/>
+						<Controls>
+							<Label>
+								<name Value="IDC_STA_FACE"/>
+								<Content Value=""/>
+							</Label>
+							<Label>
+								<name Value="IDC_STA_NAME"/>
+								<Content Value=""/>
+							</Label>
+							<Label>
+								<name Value="IDC_STA_SIGN"/>
+								<Content Value=""/>
+							</Label>
+							<CheckBox>
+								<name Value="IDC_CHK_REC"/>
+								<Content Value=""/>
+							</CheckBox>
+							<CheckBox>
+								<name Value="IDC_CHK_MUTE"/>
+								<Content Value=""/>
+							</CheckBox>
+							<CheckBox>
+								<name Value="IDC_CHK_PAUSE"/>
+								<Content Value=""/>
+							</CheckBox>
+							<Button>
+								<name Value="IDC_BTN_TRANSFER"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_ADD"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_KEYBOARD"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_SHARE"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_MSG"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_NO_VIDEO"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_HANGUP"/>
+								<Content Value=""/>
+							</Button>
+							<Label>
+								<name Value="IDC_STA_STATE"/>
+								<Content Value=""/>
+							</Label>
+						</Controls>
+					</Canvas>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_MEDIA_TOOLBAR"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_MEDIA_TOOLBAR"/>
+				<Content Value=""/>
+				<Controls>
+					<CheckBox>
+						<name Value="IDC_CHK_REC"/>
+						<Content Value=""/>
+					</CheckBox>
+					<CheckBox>
+						<name Value="IDC_CHK_MUTE"/>
+						<Content Value=""/>
+					</CheckBox>
+					<CheckBox>
+						<name Value="IDC_CHK_PAUSE"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Button>
+						<name Value="IDC_BTN_TRANSFER"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_ADD"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_KEYBOARD"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_SHARE"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_MSG"/>
+						<Content Value=""/>
+					</Button>
+					<CheckBox>
+						<name Value="IDC_CHK_NO_VIDEO"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Button>
+						<name Value="IDC_BTN_HANGUP"/>
+						<Content Value=""/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_VIDEO_PAGE"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_VIDEO"/>
+				<Content Value=""/>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_MINI_KEYBOARD"/>
+		<Root>
+			<Button>
+				<name Value="IDC_BTN_1"/>
+				<Content Value=""/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_2"/>
+				<Content Value=""/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_3"/>
+				<Content Value=""/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_4"/>
+				<Content Value=""/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_5"/>
+				<Content Value=""/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_6"/>
+				<Content Value=""/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_7"/>
+				<Content Value=""/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_8"/>
+				<Content Value=""/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_9"/>
+				<Content Value=""/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_XING"/>
+				<Content Value=""/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_0"/>
+				<Content Value=""/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_SHARP"/>
+				<Content Value=""/>
+			</Button>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_PROFILE"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_PROFILE"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_USER_NAME"/>
+						<Content Value=""/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_CLOSE_PROFILE"/>
+						<Content Value=""/>
+					</Button>
+					<Label>
+						<name Value="IDC_STA_FACE"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_ABOUT_TITLE"/>
+						<Content Value="关于"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_ABOUT"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_WORK_TITLE"/>
+						<Content Value="职位"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_WORK"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_EMAIL_TITLE"/>
+						<Content Value="邮箱"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_EMAIL"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_SPLITTER_1"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_SHARED_NOTE_TITLE"/>
+						<Content Value="签名"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_SHARED_NOTE"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_SPLITTER_2"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_EMAILS_TITLE"/>
+						<Content Value="EMAILLS"/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_VIEW_ALL_EMAILS"/>
+						<Content Value="查看全部"/>
+					</Button>
+					<Label>
+						<name Value="IDC_STA_14"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_SPILTTER_3"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_SPLITTER_4"/>
+						<Content Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_POPUP_VIDEO"/>
+		<Root>
+			<Button>
+				<name Value="IDC_BTN_MIN"/>
+				<Content Value=""/>
+			</Button>
+			<CheckBox>
+				<name Value="IDC_CHK_MAX"/>
+				<Content Value=""/>
+			</CheckBox>
+			<Button>
+				<name Value="IDC_BTN_CLOSE"/>
+				<Content Value=""/>
+			</Button>
+			<Canvas>
+				<name Value="IDC_CANVAS_VIDEO"/>
+				<Content Value=""/>
+			</Canvas>
+			<CheckBox>
+				<name Value="IDC_CHK_PLAY_PAUSE"/>
+				<Content Value=""/>
+			</CheckBox>
+			<Label>
+				<name Value="IDC_STA_DURATION"/>
+				<Content Value="0:00 / 1:30"/>
+			</Label>
+			<Slider>
+				<name Value="IDC_SLD_DURATION"/>
+			</Slider>
+			<CheckBox>
+				<name Value="IDC_CHK_MUTE"/>
+				<Content Value=""/>
+			</CheckBox>
+			<Slider>
+				<name Value="IDC_SLD_VOLUME"/>
+			</Slider>
+			<Button>
+				<name Value="IDC_BTN_FULL_SCREEN"/>
+				<Content Value=""/>
+			</Button>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_VIDEO_HOST"/>
+		<Root>
+			<Label>
+				<name Value="IDC_STA_WAIT"/>
+				<Content Value=""/>
+			</Label>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_MAIN"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_MAIN"/>
+				<Content Value=""/>
+				<Controls>
+					<Canvas>
+						<name Value="IDC_CANVAS_TOOLBAR"/>
+						<Content Value=""/>
+						<Controls>
+							<Button>
+								<name Value="IDC_BTN_CALL"/>
+								<Content Value="呼叫"/>
+							</Button>
+							<Label>
+								<name Value="IDC_STA_TOOLBAR_SPLITTER"/>
+								<Content Value=""/>
+							</Label>
+							<Button>
+								<name Value="IDC_BTN_MEETINGS"/>
+								<Content Value="会议"/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_SPEAKER"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_PREV"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_NEXT"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_REFRESH"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_SEARCH"/>
+								<Content Value=""/>
+								<Controls>
+									<Label>
+										<name Value="IDC_STA_SEARCH_ICON"/>
+										<Content Value=""/>
+									</Label>
+									<Label>
+										<name Value="IDC_STA_SEARCH"/>
+										<Content Value="查找"/>
+									</Label>
+								</Controls>
+							</Button>
+							<Label>
+								<name Value="IDC_STA_CONTACT"/>
+								<Content Value=""/>
+							</Label>
+							<Label>
+								<name Value="IDC_STA_CONTACT_STATE"/>
+								<Content Value=""/>
+							</Label>
+							<Button>
+								<name Value="IDC_BTN_MY_FACE"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_FACE_MENU"/>
+								<Content Value=""/>
+							</Button>
+						</Controls>
+					</Canvas>
+					<TabControl>
+						<name Value="IDC_PNL_TAB_MAIN"/>
+						<Content Value=""/>
+					</TabControl>
+					<Canvas>
+						<name Value="IDC_CANVAS_NAVIGATE"/>
+						<Content Value=""/>
+						<Controls>
+							<RadioButton>
+								<name Value="IDC_RAD_INBOX"/>
+								<Content Value="通话管理"/>
+							</RadioButton>
+							<RadioButton>
+								<name Value="IDC_RAD_CONTACTS"/>
+								<Content Value="联系人"/>
+							</RadioButton>
+							<Label>
+								<name Value="IDC_STA_SPLITTER"/>
+								<Content Value=""/>
+							</Label>
+							<Label>
+								<name Value="IDC_STA_RECENT_CONTACTS"/>
+								<Content Value="最近联系人"/>
+							</Label>
+							<TreeView>
+								<name Value="IDC_TREECTRL_RECENT_CONTACTS"/>
+							</TreeView>
+						</Controls>
+					</Canvas>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_ORG_TEMPLATE"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_CONTACT_ITEM"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_FACE"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_NAME"/>
+						<Content Value="XUI"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_UNREAD"/>
+						<Content Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_SEARCH_PAGE"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_SEARCH"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_SEARCH_TITLE"/>
+						<Content Value="Search contacts and messages"/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_CLOSE_SEARCH_PAGE"/>
+						<Content Value=""/>
+					</Button>
+					<RichTextBox>
+						<name Value="IDC_RE_SEARCH"/>
+					</RichTextBox>
+					<TreeView>
+						<name Value="IDC_TREECTRL_SERACH_RESULT"/>
+					</TreeView>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_SEARCH_CONTACTS_ITEM"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_SEARCH_CONTACTS_ITEM"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_ICON"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_NAME"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_PHONE"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_STATE"/>
+						<Content Value=""/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_AUDIO"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_VIDEO"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_MORE"/>
+						<Content Value=""/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_SEARCH_MESSAGE_ITEM"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_SEARCH_MESSAGE_ITEM"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_ICON"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_MSG_TITLE"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_MSG_TIME"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_MSG_CONTENT"/>
+						<Content Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_CALL_PAGE"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_CALL"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_CALL_TITLE"/>
+						<Content Value="电话号码"/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_CLOSE_CALL_PAGE"/>
+						<Content Value=""/>
+					</Button>
+					<RichTextBox>
+						<name Value="IDC_RE_INPUT"/>
+					</RichTextBox>
+					<Canvas>
+						<name Value="IDC_CANVAS_KEYBOARD"/>
+						<Content Value=""/>
+						<Controls>
+							<Button>
+								<name Value="IDC_BTN_NUM1"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_NUM2"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_NUM3"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_NUM4"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_NUM5"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_NUM6"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_NUM7"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_NUM8"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_NUM9"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_NUMXING"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_NUM0"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_NUMSHARP"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_AUDIO"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_CALLING"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_VIDEO"/>
+								<Content Value=""/>
+							</Button>
+						</Controls>
+					</Canvas>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_OLE_FILE"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_OLE_FILE"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_ICON"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_FILE_NAME"/>
+						<Content Value=""/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_MORE"/>
+						<Content Value=""/>
+					</Button>
+					<ProgressBar>
+						<name Value="IDC_PRG_UPLOAD"/>
+						<Content Value=""/>
+					</ProgressBar>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_OLE_VIDEO"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_OLE_VIDEO"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_VIDEO"/>
+						<Content Value=""/>
+						<Controls>
+							<ProgressBar>
+								<name Value="IDC_PRG_UPLOAD"/>
+								<Content Value=""/>
+							</ProgressBar>
+							<Button>
+								<name Value="IDC_BTN_PLAY"/>
+								<Content Value=""/>
+							</Button>
+							<Label>
+								<name Value="IDC_STA_UPLOAD_FAILED"/>
+								<Content Value=""/>
+							</Label>
+						</Controls>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_OLE_AUDIO"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_OLE_AUDIO"/>
+				<Content Value=""/>
+				<Controls>
+					<Canvas>
+						<name Value="IDC_CANVAS_TOOLBAR"/>
+						<Content Value=""/>
+						<Controls>
+							<CheckBox>
+								<name Value="IDC_CHK_PLAY_PAUSE"/>
+								<Content Value=""/>
+							</CheckBox>
+							<Label>
+								<name Value="IDC_STA_DURATION"/>
+								<Content Value=""/>
+							</Label>
+							<Slider>
+								<name Value="IDC_SLD_PROGRESS"/>
+							</Slider>
+							<CheckBox>
+								<name Value="IDC_CHK_MUTE"/>
+								<Content Value=""/>
+							</CheckBox>
+							<Slider>
+								<name Value="IDC_SLD_VOLUMN"/>
+							</Slider>
+						</Controls>
+					</Canvas>
+					<Label>
+						<name Value="IDC_STA_FILE"/>
+						<Content Value=""/>
+					</Label>
+					<ProgressBar>
+						<name Value="IDC_PRG_AUDIO_UPLOAD"/>
+						<Content Value=""/>
+					</ProgressBar>
+					<Label>
+						<name Value="IDC_STA_INFO"/>
+						<Content Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDD_SETTINGS_FRAME"/>
+		<Root>
+			<TreeView>
+				<name Value="IDC_TREECTRL_NAVIGATE"/>
+			</TreeView>
+			<Label>
+				<name Value="IDC_STA_TITLE"/>
+				<Content Value="更多配置"/>
+			</Label>
+			<Button>
+				<name Value="IDC_BTN_CLOSE"/>
+				<Content Value=""/>
+			</Button>
+			<Label>
+				<name Value="IDC_STA_SPLITTER"/>
+				<Content Value=""/>
+			</Label>
+			<TabControl>
+				<name Value="IDC_PNL_TAB_SETTINGS_PAGE"/>
+				<Content Value=""/>
+			</TabControl>
+			<Button>
+				<name Value="IDC_BTN_SAVE"/>
+				<Content Value="保存"/>
+			</Button>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_SETTINGS_APPLICATION"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_APPLICATION"/>
+				<Content Value="系统参数"/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_SET_DEFAULT"/>
+						<Content Value="将PortGo设置为默认的sip客户端"/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_READ_RECEIPTS"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Label>
+						<name Value="IDC_STA_FILE_LOCATION"/>
+						<Content Value="文件目录"/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_BROWSER"/>
+						<Content Value="更改目录"/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_OPEN_FOLDER"/>
+						<Content Value="打开目录"/>
+					</Button>
+					<RichTextBox>
+						<name Value="IDC_RE_FILE"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_PROMPT_UPGRADE"/>
+						<Content Value="在会议房间时不显示本地视频"/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_PROMPT_UPGRADE"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Label>
+						<name Value="IDC_STA_DISPLAY_IDLE"/>
+						<Content Value="如果十分钟内没有使用则将状态设置为离开"/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_DISPLAY_IDLE"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Label>
+						<name Value="IDC_STA_START_WITH_SYSTEM"/>
+						<Content Value="当windows启动时自动运行PortGo"/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_START_WITH_SYSTEM"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Label>
+						<name Value="IDC_STA_SHOW_TIMESTAMP"/>
+						<Content Value="聊天消息显示时间戳"/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_SHOW_TIMESTAMP"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Label>
+						<name Value="IDC_STA_SPLITTER1"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_SPLITTER2"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_SPLITTER3"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_SPLITTER4"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_SPLITTER5"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_SPITTER6"/>
+						<Content Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_SETTINGS_AUDIO_CODECS"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_AUDIO_CODECS"/>
+				<Content Value="音频参数"/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_SELECT_CODEC"/>
+						<Content Value="从上面列表中选择一个编码器，并查看相关属性"/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_TO_RIGHT"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_TO_LEFT"/>
+						<Content Value=""/>
+					</Button>
+					<Label>
+						<name Value="IDC_STA_BEST_QUALITY"/>
+						<Content Value="最佳质量:"/>
+					</Label>
+					<ProgressBar>
+						<name Value="IDC_PRG_BEST_QUALITY"/>
+						<Content Value=""/>
+					</ProgressBar>
+					<TreeView>
+						<name Value="IDC_TREECTRL_CODEC_SOURCE"/>
+					</TreeView>
+					<TreeView>
+						<name Value="IDC_TREECTRL_CODEC_TARGET"/>
+					</TreeView>
+					<Label>
+						<name Value="IDC_STA_DESCRIPTION"/>
+						<Content Value="描述:"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_DESCRIPTION_VALUE"/>
+						<Content Value="AMR Codecs"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_BPS"/>
+						<Content Value="码流(bps):"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_BPS_VALUE"/>
+						<Content Value="475"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_FIDELITY"/>
+						<Content Value="高保真:"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_FIDELITY_VALUE"/>
+						<Content Value="8000"/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_SETTINGS_VIDEO_CODECS"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_VIDEO_CODECS"/>
+				<Content Value="视频参数"/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_SELECT_CODEC"/>
+						<Content Value="从上面列表中选择一个编码器，并查看相关属性"/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_TO_RIGHT"/>
+						<Content Value=""/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_TO_LEFT"/>
+						<Content Value=""/>
+					</Button>
+					<Label>
+						<name Value="IDC_STA_BEST_QUALITY"/>
+						<Content Value="最佳质量:"/>
+					</Label>
+					<ProgressBar>
+						<name Value="IDC_PRG_BEST_QUALITY"/>
+						<Content Value=""/>
+					</ProgressBar>
+					<TreeView>
+						<name Value="IDC_TREECTRL_CODEC_SOURCE"/>
+					</TreeView>
+					<TreeView>
+						<name Value="IDC_TREECTRL_CODEC_TARGET"/>
+					</TreeView>
+					<Label>
+						<name Value="IDC_STA_DESCRIPTION"/>
+						<Content Value="描述:"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_DESCRIPTION_VALUE"/>
+						<Content Value="H.264 Codecs"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_CPU_USAGE"/>
+						<Content Value="CPU使用率:"/>
+					</Label>
+					<ProgressBar>
+						<name Value="IDC_PRG_CPU"/>
+						<Content Value=""/>
+					</ProgressBar>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_SETTINGS_MEDIA_QUALITY"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_MEDIA_QUALITY"/>
+				<Content Value="媒体参数"/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_AES"/>
+						<Content Value="回声消除"/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_AES"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Label>
+						<name Value="IDC_STA_SPLITTER1"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_REDUCE_NOISE"/>
+						<Content Value="噪音消除"/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_REDUCE_NOISE"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Label>
+						<name Value="IDC_STA_SPLITTER2"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_AUTOMATIC_CONTROL"/>
+						<Content Value="麦克风自动增益"/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_AUTOMATIC_CONTROL"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Label>
+						<name Value="IDC_STA_SPLITTER3"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_VOICE_DETECTION"/>
+						<Content Value="静音检测"/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_VOICE_DETECTION"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Label>
+						<name Value="IDC_STA_SPLITTER4"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_COMFORT_NOISE_GENERATOR"/>
+						<Content Value="舒适噪音"/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_COMFORT_NOISE_GENERATOR"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Label>
+						<name Value="IDC_STA_SPLITTER5"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_ENABLE_AUDIO_QOS"/>
+						<Content Value="启用音频Qos"/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_ENABLE_AUDIO_QOS"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Label>
+						<name Value="IDC_STA_SPLITTER6"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_ENABLE_VIDEO_QOS"/>
+						<Content Value="启用视频Qos"/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_ENABLE_VIDEO_QOS"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Label>
+						<name Value="IDC_STA_SPLITTER7"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_VIDEO_QUALITY"/>
+						<Content Value="视频质量"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_DES"/>
+						<Content Value="高分辨率可以提升视频质量并提供更清晰的画面，但是需要消耗更多的网络带宽"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_RESOLUTION"/>
+						<Content Value="分辨率:"/>
+					</Label>
+					<ComboBox>
+						<name Value="IDC_CMB_RESOLUTION"/>
+					</ComboBox>
+					<Label>
+						<name Value="IDC_STA_BITRATE"/>
+						<Content Value="码流:"/>
+					</Label>
+					<ComboBox>
+						<name Value="IDC_CMB_BITRATE"/>
+					</ComboBox>
+					<Label>
+						<name Value="IDC_STA_KBPS"/>
+						<Content Value="Kbps"/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_SETTINGS_MISC"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_MISC"/>
+				<Content Value="其他参数"/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_RTP_PORTS"/>
+						<Content Value="RTP端口"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_VIDEO_RANGE"/>
+						<Content Value="视频通话的RTP端口范围"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_VIDEO_FROM"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_TO"/>
+						<Content Value="-"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_VIDEO_TO"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_AUDIO_RANGE"/>
+						<Content Value="音频通话的RTP端口范围"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_AUDIO_FROM"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_AUDIO_TO"/>
+						<Content Value="-"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_AUDIO_TO"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_ENABLE_RTP"/>
+						<Content Value="启用RTP心跳包机制"/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_ENABLE_RTP"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Label>
+						<name Value="IDC_STA_SPLITTER3"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_ENABLE_MWI"/>
+						<Content Value="启用语音邮件检查"/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_ENABLE_MWI"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Label>
+						<name Value="IDC_STA_SPLITTER4"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_ENABLE_SESSION_TIMER"/>
+						<Content Value="启用"/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_ENABLE_SESSION_TIMER"/>
+						<Content Value=""/>
+					</CheckBox>
+					<RichTextBox>
+						<name Value="IDC_RE_SESSION_TIMER"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_SESSION_TIMER"/>
+						<Content Value="seconds"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_SPLITTER5"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_ALWAYS_FORWARD_TO"/>
+						<Content Value="总是转移至:"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_ALWAYS_FORWARD_TO"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_SPLITTER6"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_ON_PHONE"/>
+						<Content Value="正在通话时，转移至:"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_ON_PHONE"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_SPLITTER7"/>
+						<Content Value=""/>
+					</Label>
+					<CheckBox>
+						<name Value="IDC_CHK_ALWAYS_FORWARD_TO"/>
+						<Content Value=""/>
+					</CheckBox>
+					<CheckBox>
+						<name Value="IDC_CHK_ON_PHONE"/>
+						<Content Value=""/>
+					</CheckBox>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_SETTINGS_LANGUAGES"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_LANGUAGES"/>
+				<Content Value="语言设置"/>
+				<Controls>
+					<RadioButton>
+						<name Value="IDC_RAD_ENGLISH"/>
+						<Content Value="English"/>
+					</RadioButton>
+					<Label>
+						<name Value="IDC_STA_SPLITTER1"/>
+						<Content Value=""/>
+					</Label>
+					<RadioButton>
+						<name Value="IDC_RAD_CHS"/>
+						<Content Value="中文（简体）"/>
+					</RadioButton>
+					<Label>
+						<name Value="IDC_STA_SPLITTER2"/>
+						<Content Value=""/>
+					</Label>
+					<RadioButton>
+						<name Value="IDC_RAD_CHT"/>
+						<Content Value="中文（繁体）"/>
+					</RadioButton>
+					<Label>
+						<name Value="IDC_STA_SPLITTER3"/>
+						<Content Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_MAIN_FRAME"/>
+		<Root>
+			<Button>
+				<name Value="IDC_BTN_ICON"/>
+				<Content Value=""/>
+			</Button>
+			<Label>
+				<name Value="IDC_STA_TITLE"/>
+				<Content Value="XUI Demo"/>
+			</Label>
+			<Button>
+				<name Value="IDC_BTN_MIN"/>
+				<Content Value=""/>
+			</Button>
+			<CheckBox>
+				<name Value="IDC_CHK_MAX"/>
+				<Content Value=""/>
+			</CheckBox>
+			<Button>
+				<name Value="IDC_BTN_CLOSE"/>
+				<Content Value=""/>
+			</Button>
+			<TabControl>
+				<name Value="IDC_PNL_TAB_MAIN_FRAME"/>
+				<Content Value=""/>
+			</TabControl>
+			<Canvas>
+				<name Value="IDC_CANVAS_MODAL_MASK"/>
+				<Content Value=""/>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDD_POPUP_CHAT"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_VIDEO_CHAT"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_TITLE"/>
+						<Content Value="Zoom Group Chat"/>
+					</Label>
+					<Button>
+						<name Value="IDC_BTN_MIN"/>
+						<Content Value=""/>
+					</Button>
+					<CheckBox>
+						<name Value="IDC_CHK_MAX"/>
+						<Content Value=""/>
+					</CheckBox>
+					<Button>
+						<name Value="IDC_BTN_CLOSE"/>
+						<Content Value=""/>
+					</Button>
+					<Label>
+						<name Value="IDC_STA_SPLITTER"/>
+						<Content Value=""/>
+					</Label>
+					<DockPanel>
+						<name Value="IDC_PNL_DOCK_MAIN"/>
+						<Content Value=""/>
+						<Controls>
+							<Canvas>
+								<name Value="IDC_CANVAS_GROUP_CONTACTS"/>
+								<Content Value=""/>
+								<Controls>
+									<Label>
+										<name Value="IDC_STA_GROUP_TITLE"/>
+										<Content Value="参会者（5）"/>
+									</Label>
+									<TreeView>
+										<name Value="IDC_TREECTRL_GROUP_CONTACTS"/>
+									</TreeView>
+									<Button>
+										<name Value="IDC_BTN_FORBIDDEN_TONE"/>
+										<Content Value="全体禁音"/>
+									</Button>
+									<Button>
+										<name Value="IDC_BTN_RELIEVE_FORBIDDEN_TONE"/>
+										<Content Value="解除全体禁音"/>
+									</Button>
+									<Button>
+										<name Value="IDC_BTN_MORE"/>
+										<Content Value="更多"/>
+									</Button>
+								</Controls>
+							</Canvas>
+							<Canvas>
+								<name Value="IDC_CANVAS_TEXT_CHAT"/>
+								<Content Value=""/>
+							</Canvas>
+						</Controls>
+					</DockPanel>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_TEXT_CHAT"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_TEXT_CHAT"/>
+				<Content Value=""/>
+				<Controls>
+					<IMRichTextBox>
+						<name Value="IDC_IM_HISTORY"/>
+					</IMRichTextBox>
+					<Canvas>
+						<name Value="IDC_CANVAS_INPUT"/>
+						<Content Value=""/>
+						<Controls>
+							<Label>
+								<name Value="IDC_STA_SPLITTER_BAR"/>
+								<Content Value=""/>
+							</Label>
+							<CheckBox>
+								<name Value="IDC_CHK_EMOTICON"/>
+								<Content Value=""/>
+							</CheckBox>
+							<Button>
+								<name Value="IDC_BTN_VIBRATE"/>
+								<Content Value=""/>
+							</Button>
+							<CheckBox>
+								<name Value="IDC_CHK_SCREENSHOT"/>
+								<Content Value=""/>
+							</CheckBox>
+							<Button>
+								<name Value="IDC_BTN_SEND_IMAGE"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_SEND_FILE"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_SEND_VIDEO"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_SEND_AUDIO"/>
+								<Content Value=""/>
+							</Button>
+							<RichTextBox>
+								<name Value="IDC_RE_INPUT"/>
+							</RichTextBox>
+							<Button>
+								<name Value="IDC_BTN_SEND_MSG"/>
+								<Content Value=""/>
+							</Button>
+							<Button>
+								<name Value="IDC_BTN_MSG_HISTORY"/>
+								<Content Value=""/>
+							</Button>
+						</Controls>
+					</Canvas>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_EMOTICON"/>
+		<Root>
+			<RadioButton>
+				<name Value="IDC_RAD_CLASSICAL_EMOTICON"/>
+				<Content Value=""/>
+			</RadioButton>
+			<RadioButton>
+				<name Value="IDC_RAD_SYMBOL_EMOTICON"/>
+				<Content Value=""/>
+			</RadioButton>
+			<TabControl>
+				<name Value="IDC_PNL_TAB_EMOTICON"/>
+				<Content Value=""/>
+			</TabControl>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_EMOTICON_PAGE"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_EMOTICON_PAGE"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_EMOTICON_TITLE"/>
+						<Content Value=""/>
+					</Label>
+					<ListView>
+						<name Value="IDC_LSTCTRL_EMOTICON"/>
+					</ListView>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDD_SPEAKER"/>
+		<Root>
+			<Label>
+				<name Value="IDC_STA_TITLE"/>
+				<Content Value="设备配置"/>
+			</Label>
+			<Button>
+				<name Value="IDC_BTN_CLOSE"/>
+				<Content Value=""/>
+			</Button>
+			<Label>
+				<name Value="IDC_STA_PIC"/>
+				<Content Value=""/>
+			</Label>
+			<Label>
+				<name Value="IDC_STA_CAMERA_ON"/>
+				<Content Value="摄像头"/>
+			</Label>
+			<CheckBox>
+				<name Value="IDC_CHK_CAMERA_ON"/>
+				<Content Value=""/>
+			</CheckBox>
+			<Label>
+				<name Value="IDC_STA_SPEAKER"/>
+				<Content Value="扬声器"/>
+			</Label>
+			<CheckBox>
+				<name Value="IDC_CHK_SPEAKER"/>
+				<Content Value=""/>
+			</CheckBox>
+			<ComboBox>
+				<name Value="IDC_CMB_SPEAKER"/>
+			</ComboBox>
+			<Button>
+				<name Value="IDC_BTN_TEST_SOUND"/>
+				<Content Value="Test Sound"/>
+			</Button>
+			<Label>
+				<name Value="IDC_STA_MICROPHONE"/>
+				<Content Value="麦克风"/>
+			</Label>
+			<CheckBox>
+				<name Value="IDC_CHK_MICROPHONE"/>
+				<Content Value=""/>
+			</CheckBox>
+			<ComboBox>
+				<name Value="IDC_CMB_MICROPHONE"/>
+			</ComboBox>
+			<Button>
+				<name Value="IDC_BTN_OK"/>
+				<Content Value="OK"/>
+			</Button>
+			<ComboBox>
+				<name Value="IDC_CMB_SELECT_DEVICE"/>
+			</ComboBox>
+			<Slider>
+				<name Value="IDC_SLD_SPEAKER"/>
+			</Slider>
+			<Slider>
+				<name Value="IDC_SLD_MICROPHONE"/>
+			</Slider>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_EMOTICON_ICON"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_EMOTICON"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_EMOTICON"/>
+						<Content Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_MEETING"/>
+		<Root>
+			<Button>
+				<name Value="IDC_BTN_NEW_MEETING"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_ICON"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_NEW_MEETING"/>
+						<Content Value="NEW MEETING"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_START_OR_SCHEDULE"/>
+						<Content Value="Start or schedule"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_SPLITTER"/>
+						<Content Value=""/>
+					</Label>
+				</Controls>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_MEETING_LIST"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_ICON2"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_MEETING_LIST"/>
+						<Content Value="MEETING LIST"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_JOIN_BY_MEETING_ID"/>
+						<Content Value="Join by meeting ID"/>
+					</Label>
+				</Controls>
+			</Button>
+			<TreeView>
+				<name Value="IDC_TREECTRL_MEETING_LIST"/>
+			</TreeView>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_MEETING_LIST_ITEM"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_MEETING_ITEM"/>
+				<Content Value=""/>
+				<Controls>
+					<Button>
+						<name Value="IDC_BTN_MEETING"/>
+						<Content Value=""/>
+						<Controls>
+							<Label>
+								<name Value="IDC_STA_TIME"/>
+								<Content Value=""/>
+							</Label>
+							<Label>
+								<name Value="IDC_STA_MEETING_NAME"/>
+								<Content Value=""/>
+							</Label>
+							<Label>
+								<name Value="IDC_STA_DURATION"/>
+								<Content Value=""/>
+							</Label>
+							<Label>
+								<name Value="IDC_STA_DATE"/>
+								<Content Value=""/>
+							</Label>
+						</Controls>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_CALLER_BAR"/>
+		<Root>
+			<Label>
+				<name Value="IDC_STA_FACE"/>
+				<Content Value=""/>
+			</Label>
+			<Label>
+				<name Value="IDC_STA_CALLER"/>
+				<Content Value="Jim Green"/>
+			</Label>
+			<Button>
+				<name Value="IDC_BTN_AUDIO"/>
+				<Content Value=""/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_VIDEO"/>
+				<Content Value=""/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_HANGUP"/>
+				<Content Value=""/>
+			</Button>
+			<Label>
+				<name Value="IDC_STA_PHONE_NUMBER"/>
+				<Content Value="(720) 877-1072"/>
+			</Label>
+			<Label>
+				<name Value="IDC_STA_SIGN"/>
+				<Content Value="Juan Ferguson"/>
+			</Label>
+			<Label>
+				<name Value="IDC_STA_CALL"/>
+				<Content Value="Call"/>
+			</Label>
+			<Label>
+				<name Value="IDC_STA_SPLITTER"/>
+				<Content Value=""/>
+			</Label>
+			<Label>
+				<name Value="IDC_STA_CALL2"/>
+				<Content Value="Call"/>
+			</Label>
+			<Label>
+				<name Value="IDC_STA_CALLER2"/>
+				<Content Value="Jim Green"/>
+			</Label>
+			<Label>
+				<name Value="IDC_STA_PHONE_NUMBER2"/>
+				<Content Value="(720) 877-1072"/>
+			</Label>
+			<Label>
+				<name Value="IDC_STA_SIGN2"/>
+				<Content Value="Juan Ferguson"/>
+			</Label>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_INFO"/>
+		<Root>
+			<Label>
+				<name Value="IDC_STA_TITLE"/>
+				<Content Value=""/>
+			</Label>
+			<Label>
+				<name Value="IDC_STA_INFO"/>
+				<Content Value=""/>
+			</Label>
+			<Button>
+				<name Value="IDC_BTN_CLOSE"/>
+				<Content Value=""/>
+			</Button>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_TRAY_MSG"/>
+		<Root>
+			<Label>
+				<name Value="IDC_STA_NAME"/>
+				<Content Value=""/>
+			</Label>
+			<Button>
+				<name Value="IDC_BTN_IGNORE"/>
+				<Content Value="忽略全部"/>
+			</Button>
+			<TreeView>
+				<name Value="IDC_TREECTRL_MSG"/>
+			</TreeView>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_TRAY_MSG_ITEM"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_MSG_ITEM"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_FACE"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_NAME"/>
+						<Content Value="aaab"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_NUMBER"/>
+						<Content Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_MSG_HISTORY"/>
+		<Root>
+			<Button>
+				<name Value="IDC_BTN_ICON"/>
+				<Content Value=""/>
+			</Button>
+			<Label>
+				<name Value="IDC_STA_TITLE"/>
+				<Content Value="Message History"/>
+			</Label>
+			<Button>
+				<name Value="IDC_BTN_MIN"/>
+				<Content Value=""/>
+			</Button>
+			<CheckBox>
+				<name Value="IDC_CHK_MAX"/>
+				<Content Value=""/>
+			</CheckBox>
+			<Button>
+				<name Value="IDC_BTN_CLOSE"/>
+				<Content Value=""/>
+			</Button>
+			<RadioButton>
+				<name Value="IDC_RAD_ALL_MSG"/>
+				<Content Value="All"/>
+			</RadioButton>
+			<RadioButton>
+				<name Value="IDC_RAD_PIC_MSG"/>
+				<Content Value="Picture"/>
+			</RadioButton>
+			<RadioButton>
+				<name Value="IDC_RAD_FILE_MSG"/>
+				<Content Value="File"/>
+			</RadioButton>
+			<Button>
+				<name Value="IDC_BTN_FIRST_PAGE"/>
+				<Content Value="|&lt;"/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_PRE_PAGE"/>
+				<Content Value="&lt;"/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_NEXT_PAGE"/>
+				<Content Value="&gt;"/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_LAST_PAGE"/>
+				<Content Value="&gt;|"/>
+			</Button>
+			<IMRichTextBox>
+				<name Value="IDC_IM_HISTORY"/>
+			</IMRichTextBox>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_ADD_CONTACT"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_ADD_CONTACT"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_TITLE"/>
+						<Content Value="添加联系人"/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_FACE"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_FIRST_NAME"/>
+						<Content Value="姓"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_FIRST_NAME"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_LAST_NAME"/>
+						<Content Value="名"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_LAST_NAME"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_EMAIL_ADDRESS"/>
+						<Content Value="邮箱"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_EMAIL_ADDRESS"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_HOME_NUMBER"/>
+						<Content Value="家庭号码"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_HOME_NUMBER"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_MOBILE_NUMBER"/>
+						<Content Value="手机号码"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_MOBILE_NUMBER"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_WORK_NUMBER"/>
+						<Content Value="工作号码"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_WORK_NUMBER"/>
+					</RichTextBox>
+					<Label>
+						<name Value="IDC_STA_SIP_NUMBER"/>
+						<Content Value="Sip号码"/>
+					</Label>
+					<RichTextBox>
+						<name Value="IDC_RE_SIP_NUMBER"/>
+					</RichTextBox>
+					<Button>
+						<name Value="IDC_BTN_DELETE"/>
+						<Content Value="删除"/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_ADD_SIP_NUMBER"/>
+						<Content Value="添加"/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_RETURN"/>
+						<Content Value="返回"/>
+					</Button>
+					<Button>
+						<name Value="IDC_BTN_SAVE"/>
+						<Content Value="保存"/>
+					</Button>
+				</Controls>
+			</Canvas>
+			<Button>
+				<name Value="IDC_BTN_MIN"/>
+				<Content Value=""/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_CLOSE"/>
+				<Content Value=""/>
+			</Button>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_ADD_EXISTING_CONTACT"/>
+		<Root>
+			<Label>
+				<name Value="IDC_STA_TITLE"/>
+				<Content Value="Add to an existing contact"/>
+			</Label>
+			<Button>
+				<name Value="IDC_BTN_CLOSE"/>
+				<Content Value=""/>
+			</Button>
+			<RichTextBox>
+				<name Value="IDC_RE_NAME"/>
+			</RichTextBox>
+			<Label>
+				<name Value="IDC_STA_0"/>
+				<Content Value=""/>
+			</Label>
+			<TreeView>
+				<name Value="IDC_TREECTRL_CONTACT"/>
+			</TreeView>
+			<Button>
+				<name Value="IDC_BTN_BACK"/>
+				<Content Value="BACK"/>
+			</Button>
+			<Button>
+				<name Value="IDC_BTN_CONFIRM"/>
+				<Content Value="CONFIRM"/>
+			</Button>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_ADD_EXISTING_CONTACT_ITEM"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_ADD_EXISTING_CONTACT_ITEM"/>
+				<Content Value=""/>
+				<Controls>
+					<Label>
+						<name Value="IDC_STA_FACE"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_NAME"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_NUM"/>
+						<Content Value=""/>
+					</Label>
+					<Label>
+						<name Value="IDC_STA_FLAG"/>
+						<Content Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+	<Window>
+		<name Value="IDW_GROUP_MEMBER_ITEM"/>
+		<Root>
+			<Canvas>
+				<name Value="IDC_CANVAS_TREE_ITEM"/>
+				<Content Value=""/>
+				<Controls>
+					<Canvas>
+						<name Value="IDC_CANVAS_GROUP_MEMBER_ITEM"/>
+						<Content Value=""/>
+						<Controls>
+							<Label>
+								<name Value="IDC_STA_FACE"/>
+								<Content Value=""/>
+							</Label>
+							<DockPanel>
+								<name Value="IDC_PNL_DOCK_MEMBER"/>
+								<Content Value=""/>
+								<Controls>
+									<Button>
+										<name Value="IDC_BTN_RIGHT"/>
+										<Content Value=""/>
+									</Button>
+									<Button>
+										<name Value="IDC_BTN_LEFT"/>
+										<Content Value=""/>
+									</Button>
+									<Label>
+										<name Value="IDC_STA_USER"/>
+										<Content Value=""/>
+									</Label>
+								</Controls>
+							</DockPanel>
+						</Controls>
+					</Canvas>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI_LANGUAGE>

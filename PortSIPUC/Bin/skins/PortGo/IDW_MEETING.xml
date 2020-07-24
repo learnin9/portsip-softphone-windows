@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_MEETING"/>
+		<Rect Size="340,237" Location="0,0"/>
+		<TitleBarHeight Value="0"/>
+		<IsDrawBkColor Value="true"/>
+		<ActivatedBkColor Value="IDR_COLOR_WHITE"/>
+		<IsAppWindow Value="false"/>
+		<Root>
+			<Button>
+				<Parent Name="IDW_MEETING"/>
+				<name Value="IDC_BTN_NEW_MEETING"/>
+				<Rect Size="340,58" Location="0,0"/>
+				<HAlign Value="Fill"/>
+				<BkColorResN Value="IDR_COLOR_122C53"/>
+				<BkColorResH Value="IDR_COLOR_102444"/>
+				<IsCombineImages Value="true"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Label>
+						<Parent Name="IDC_BTN_NEW_MEETING"/>
+						<name Value="IDC_STA_ICON"/>
+						<Rect Size="37,37" Location="20,11"/>
+						<MouseTransparent Value="true"/>
+						<VAlign Value="Center"/>
+						<IsCombineImages Value="false"/>
+						<BackgroundNormal image="ic1.png"/>
+						<BackgroundDisabled RelativePath="ic1.png"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_BTN_NEW_MEETING"/>
+						<name Value="IDC_STA_NEW_MEETING"/>
+						<Rect Size="225,24" Location="77,5"/>
+						<MouseTransparent Value="true"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="NEW MEETING"/>
+						<TextColorResN Value="IDR_COLOR_WHITE"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_BTN_NEW_MEETING"/>
+						<name Value="IDC_STA_START_OR_SCHEDULE"/>
+						<Rect Size="225,24" Location="77,29"/>
+						<MouseTransparent Value="true"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Start or schedule"/>
+						<TextColorResN Value="IDR_COLOR_WHITE"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_BTN_NEW_MEETING"/>
+						<name Value="IDC_STA_SPLITTER"/>
+						<Rect Size="340,1" Location="0,57"/>
+						<MouseTransparent Value="true"/>
+						<HAlign Value="Fill"/>
+						<VAlign Value="Bottom"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+				</Controls>
+			</Button>
+			<Button>
+				<Parent Name="IDW_MEETING"/>
+				<name Value="IDC_BTN_MEETING_LIST"/>
+				<Rect Size="340,58" Location="0,58"/>
+				<HAlign Value="Fill"/>
+				<BkColorResN Value="IDR_COLOR_122C53"/>
+				<BkColorResH Value="IDR_COLOR_102444"/>
+				<IsCombineImages Value="true"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Label>
+						<Parent Name="IDC_BTN_MEETING_LIST"/>
+						<name Value="IDC_STA_ICON2"/>
+						<Rect Size="37,37" Location="20,11"/>
+						<MouseTransparent Value="true"/>
+						<IsCombineImages Value="false"/>
+						<BackgroundNormal image="ic2.png"/>
+						<BackgroundDisabled RelativePath="ic2.png"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_BTN_MEETING_LIST"/>
+						<name Value="IDC_STA_MEETING_LIST"/>
+						<Rect Size="225,24" Location="77,5"/>
+						<MouseTransparent Value="true"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="MEETING LIST"/>
+						<TextColorResN Value="IDR_COLOR_WHITE"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_BTN_MEETING_LIST"/>
+						<name Value="IDC_STA_JOIN_BY_MEETING_ID"/>
+						<Rect Size="225,24" Location="77,29"/>
+						<MouseTransparent Value="true"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Join by meeting ID"/>
+						<TextColorResN Value="IDR_COLOR_WHITE"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+				</Controls>
+			</Button>
+			<TreeView>
+				<Parent Name="IDW_MEETING"/>
+				<name Value="IDC_TREECTRL_MEETING_LIST"/>
+				<Rect Size="340,120" Location="0,116"/>
+				<HAlign Value="Fill"/>
+				<IsCombineImages Value="true"/>
+				<IsFullRowSel Value="true"/>
+				<ItemLine Enable="false"/>
+				<FocusItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+				<SelectedItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+				<HighlightItemBackground Enable="false" Type="Color"/>
+				<HighlightItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+				<ScrollBarWidth Value="10"/>
+				<HorizontalScrollbarStyleID Value=""/>
+				<VerticalScrollbarStyleID Value=""/>
+			</TreeView>
+		</Root>
+	</Window>
+</IUI>

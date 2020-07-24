@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_AUDIO_PAGE"/>
+		<Rect Size="730,520" Location="0,0"/>
+		<IsResizingBorder Value="true"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDW_AUDIO_PAGE"/>
+				<name Value="IDC_CANVAS_CALLING_PAGE"/>
+				<Rect Size="681,471" Location="25,25"/>
+				<HAlign Value="Fill"/>
+				<VAlign Value="Fill"/>
+				<IsDrawBkColor Value="true"/>
+				<BkColorResN Value="IDR_COLOR_EEEEEE"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Canvas>
+						<Parent Name="IDC_CANVAS_CALLING_PAGE"/>
+						<name Value="IDC_CANVAS_CENTER"/>
+						<Rect Size="580,428" Location="50,21"/>
+						<HAlign Value="Center"/>
+						<VAlign Value="Center"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+						<Controls>
+							<Label>
+								<Parent Name="IDC_CANVAS_CENTER"/>
+								<name Value="IDC_STA_FACE"/>
+								<Rect Size="190,190" Location="195,0"/>
+								<HAlign Value="Center"/>
+								<IsCombineImages Value="true"/>
+								<ButtonClickArg Value=""/>
+							</Label>
+							<Label>
+								<Parent Name="IDC_CANVAS_CENTER"/>
+								<name Value="IDC_STA_NAME"/>
+								<Rect Size="470,24" Location="55,240"/>
+								<IsCombineImages Value="true"/>
+								<ButtonClickArg Value=""/>
+								<TextAlignment Horizontal="Center"/>
+							</Label>
+							<Label>
+								<Parent Name="IDC_CANVAS_CENTER"/>
+								<name Value="IDC_STA_SIGN"/>
+								<Rect Size="470,24" Location="55,277"/>
+								<IsCombineImages Value="true"/>
+								<ButtonClickArg Value=""/>
+								<TextAlignment Horizontal="Center"/>
+							</Label>
+							<CheckBox>
+								<Parent Name="IDC_CANVAS_CENTER"/>
+								<name Value="IDC_CHK_REC"/>
+								<Rect Size="40,40" Location="0,388"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_calling_1.png"/>
+								<BkImageResizeMode Value="Stretch"/>
+								<ButtonClickArg Value=""/>
+							</CheckBox>
+							<CheckBox>
+								<Parent Name="IDC_CANVAS_CENTER"/>
+								<name Value="IDC_CHK_MUTE"/>
+								<Rect Size="40,40" Location="60,388"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_calling_2.png"/>
+								<BkImageResizeMode Value="Stretch"/>
+								<ButtonClickArg Value=""/>
+							</CheckBox>
+							<CheckBox>
+								<Parent Name="IDC_CANVAS_CENTER"/>
+								<name Value="IDC_CHK_PAUSE"/>
+								<Rect Size="40,40" Location="120,388"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_calling_3.png"/>
+								<BkImageResizeMode Value="Stretch"/>
+								<ButtonClickArg Value=""/>
+							</CheckBox>
+							<Button>
+								<Parent Name="IDC_CANVAS_CENTER"/>
+								<name Value="IDC_BTN_TRANSFER"/>
+								<Rect Size="40,40" Location="180,388"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_calling_4.png"/>
+								<BkImageResizeMode Value="Stretch"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_CENTER"/>
+								<name Value="IDC_BTN_ADD"/>
+								<Rect Size="40,40" Location="240,388"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_calling_5.png"/>
+								<BkImageResizeMode Value="Stretch"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_CENTER"/>
+								<name Value="IDC_BTN_KEYBOARD"/>
+								<Rect Size="40,40" Location="300,388"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_calling_6.png"/>
+								<BkImageResizeMode Value="Stretch"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_CENTER"/>
+								<name Value="IDC_BTN_SHARE"/>
+								<Rect Size="40,40" Location="360,388"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_calling_7.png"/>
+								<BkImageResizeMode Value="Stretch"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_CENTER"/>
+								<name Value="IDC_BTN_MSG"/>
+								<Rect Size="40,40" Location="420,388"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_calling_8.png"/>
+								<BkImageResizeMode Value="Stretch"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_CENTER"/>
+								<name Value="IDC_BTN_NO_VIDEO"/>
+								<Rect Size="40,40" Location="480,388"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_calling_no_video.png"/>
+								<BkImageResizeMode Value="Stretch"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_CENTER"/>
+								<name Value="IDC_BTN_HANGUP"/>
+								<Rect Size="40,40" Location="540,388"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="ic_calling_10.png"/>
+								<BkImageResizeMode Value="Stretch"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Label>
+								<Parent Name="IDC_CANVAS_CENTER"/>
+								<name Value="IDC_STA_STATE"/>
+								<Rect Size="470,24" Location="55,315"/>
+								<IsCombineImages Value="true"/>
+								<ButtonClickArg Value=""/>
+								<TextAlignment Horizontal="Center"/>
+							</Label>
+						</Controls>
+					</Canvas>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

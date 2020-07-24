@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_VIDEO_PAGE"/>
+		<Rect Size="630,400" Location="0,0"/>
+		<IsResizingBorder Value="true"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDW_VIDEO_PAGE"/>
+				<name Value="IDC_CANVAS_VIDEO"/>
+				<Rect Size="580,350" Location="25,25"/>
+				<MouseTransparent Value="false"/>
+				<HAlign Value="Fill"/>
+				<VAlign Value="Fill"/>
+				<IsDrawBkColor Value="true"/>
+				<BkColorResN Value="IDR_COLOR_ADVANCE_N"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Label>
+						<Parent Name="IDC_CANVAS_VIDEO"/>
+						<name Value="IDC_STA_WAIT"/>
+						<Rect Size="658,494" Location="-49,-74"/>
+						<HAlign Value="Center"/>
+						<VAlign Value="Center"/>
+						<IsCombineImages Value="false"/>
+						<BackgroundNormal image="loading3.gif"/>
+						<BkImageResizeMode Value="Stretch"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

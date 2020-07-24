@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_MAIN"/>
+		<Rect Size="1070,610" Location="0,0"/>
+		<IsUpdateLayeredWindow Value="true"/>
+		<IsResizingBorder Value="true"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDW_MAIN"/>
+				<name Value="IDC_CANVAS_MAIN"/>
+				<Rect Size="998,558" Location="36,26"/>
+				<HAlign Value="Fill"/>
+				<VAlign Value="Fill"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Canvas>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_CANVAS_TOOLBAR"/>
+						<Rect Size="998,80" Location="0,0"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_TOOLBAR"/>
+						<BkColorResD Value="IDR_COLOR_TOOLBAR"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+						<Controls>
+							<Button>
+								<Parent Name="IDC_CANVAS_TOOLBAR"/>
+								<name Value="IDC_BTN_CALL"/>
+								<Rect Size="60,56" Location="45,12"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<IsDrawBorderColor Value="false"/>
+								<Content Value="Call"/>
+								<TextColorResN Value="IDR_COLOR_TOOLBAR_TEXT"/>
+								<TextColorResH Value="IDR_COLOR_TOOLBAR_CONTACT"/>
+								<TextColorResP Value="IDR_COLOR_TOOLBAR_TEXT"/>
+								<TextColorResD Value="IDR_COLOR_TOOLBAR_TEXT"/>
+								<ButtonClickArg Value=""/>
+								<TextAlignment Horizontal="Center" Vertical="Bottom"/>
+								<IsSpecifyForegroundImages Value="true"/>
+								<IsCombineForegroundImages Value="true"/>
+								<ForeGroundCombine Value="Btn_Call.png"/>
+								<ForegroundAlignMode Horizontal="Center" Vertical="Top"/>
+								<ForegroundMargin Left="0" Top="10" Right="0" Bottom="0"/>
+							</Button>
+							<Label>
+								<Parent Name="IDC_CANVAS_TOOLBAR"/>
+								<name Value="IDC_STA_TOOLBAR_SPLITTER"/>
+								<Rect Size="1,50" Location="150,15"/>
+								<IsDrawBkColor Value="true"/>
+								<BkColorResN Value="IDR_COLOR_TOOLBAR_TEXT"/>
+								<IsCombineImages Value="true"/>
+								<ButtonClickArg Value=""/>
+							</Label>
+							<Button>
+								<Parent Name="IDC_CANVAS_TOOLBAR"/>
+								<name Value="IDC_BTN_MEETINGS"/>
+								<Rect Size="100,56" Location="175,12"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<IsDrawBorderColor Value="false"/>
+								<Content Value="Meetings"/>
+								<TextColorResN Value="IDR_COLOR_TOOLBAR_TEXT"/>
+								<TextColorResH Value="IDR_COLOR_TOOLBAR_CONTACT"/>
+								<TextColorResP Value="IDR_COLOR_TOOLBAR_TEXT"/>
+								<TextColorResD Value="IDR_COLOR_TOOLBAR_TEXT"/>
+								<ButtonClickArg Value=""/>
+								<TextAlignment Horizontal="Center" Vertical="Bottom"/>
+								<IsSpecifyForegroundImages Value="true"/>
+								<IsCombineForegroundImages Value="true"/>
+								<ForeGroundCombine Value="Btn_Meetings.png"/>
+								<ForegroundAlignMode Horizontal="Center" Vertical="Top"/>
+								<ForegroundMargin Left="0" Top="10" Right="0" Bottom="0"/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_TOOLBAR"/>
+								<name Value="IDC_BTN_SPEAKER"/>
+								<Rect Size="30,30" Location="300,25"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="Btn_Speaker.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+								<IsCombineForegroundImages Value="true"/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_TOOLBAR"/>
+								<name Value="IDC_BTN_PREV"/>
+								<Rect Size="30,30" Location="351,25"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="Btn_Prev.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+								<IsCombineForegroundImages Value="true"/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_TOOLBAR"/>
+								<name Value="IDC_BTN_NEXT"/>
+								<Rect Size="30,30" Location="391,25"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="Btn_Next.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+								<IsCombineForegroundImages Value="true"/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_TOOLBAR"/>
+								<name Value="IDC_BTN_REFRESH"/>
+								<Rect Size="30,30" Location="431,25"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="Btn_Refresh.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+								<IsCombineForegroundImages Value="true"/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_TOOLBAR"/>
+								<name Value="IDC_BTN_SEARCH"/>
+								<Rect Size="253,41" Location="473,20"/>
+								<HAlign Value="Center"/>
+								<Margin Left="260" Top="0" Right="0" Bottom="0"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="false"/>
+								<BackgroundNormal image="Btn_Search.png"/>
+								<BackgroundHighlight RelativePath="Btn_Search.png"/>
+								<BackgroundSelected RelativePath="Btn_Search.png"/>
+								<BackgroundDisabled RelativePath="Btn_Search.png"/>
+								<NineGridParam Left="21" Top="19" Right="21" Bottom="19"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+								<Controls>
+									<Label>
+										<Parent Name="IDC_BTN_SEARCH"/>
+										<name Value="IDC_STA_SEARCH_ICON"/>
+										<Rect Size="16,17" Location="104,12"/>
+										<enabled Value="false"/>
+										<IsCombineImages Value="false"/>
+										<BackgroundNormal image="Sta_Search.png"/>
+										<BackgroundDisabled RelativePath="Sta_Search.png"/>
+										<ButtonClickArg Value=""/>
+									</Label>
+									<Label>
+										<Parent Name="IDC_BTN_SEARCH"/>
+										<name Value="IDC_STA_SEARCH"/>
+										<Rect Size="60,24" Location="126,8"/>
+										<enabled Value="false"/>
+										<IsCombineImages Value="true"/>
+										<Content Value="Search"/>
+										<TextColorResN Value="IDR_COLOR_TOOLBAR_TEXT"/>
+										<TextColorResD Value="IDR_COLOR_TOOLBAR_TEXT"/>
+										<ButtonClickArg Value=""/>
+									</Label>
+								</Controls>
+							</Button>
+							<Label>
+								<Parent Name="IDC_CANVAS_TOOLBAR"/>
+								<name Value="IDC_STA_CONTACT"/>
+								<Rect Size="132,24" Location="739,16"/>
+								<HAlign Value="Right"/>
+								<IsCombineImages Value="true"/>
+								<TextColorResN Value="IDR_COLOR_TOOLBAR_CONTACT"/>
+								<TextColorResD Value="IDR_COLOR_TOOLBAR_CONTACT"/>
+								<ButtonClickArg Value=""/>
+								<TextAlignment Horizontal="Right"/>
+							</Label>
+							<Label>
+								<Parent Name="IDC_CANVAS_TOOLBAR"/>
+								<name Value="IDC_STA_CONTACT_STATE"/>
+								<Rect Size="131,24" Location="740,41"/>
+								<HAlign Value="Right"/>
+								<IsCombineImages Value="true"/>
+								<TextColorResN Value="IDR_COLOR_TOOLBAR_TEXT"/>
+								<TextColorResD Value="IDR_COLOR_TOOLBAR_TEXT"/>
+								<ButtonClickArg Value=""/>
+								<TextAlignment Horizontal="Right"/>
+							</Label>
+							<Button>
+								<Parent Name="IDC_CANVAS_TOOLBAR"/>
+								<name Value="IDC_BTN_MY_FACE"/>
+								<Rect Size="50,50" Location="891,15"/>
+								<HAlign Value="Right"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Button>
+								<Parent Name="IDC_CANVAS_TOOLBAR"/>
+								<name Value="IDC_BTN_FACE_MENU"/>
+								<Rect Size="30,30" Location="954,25"/>
+								<HAlign Value="Right"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="Btn_FaceMenu.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+						</Controls>
+					</Canvas>
+					<TabControl>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_PNL_TAB_MAIN"/>
+						<Rect Size="698,478" Location="300,80"/>
+						<HAlign Value="Fill"/>
+						<VAlign Value="Fill"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</TabControl>
+					<Canvas>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_CANVAS_NAVIGATE"/>
+						<Rect Size="300,478" Location="0,80"/>
+						<VAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_NAVIGATE"/>
+						<BkColorResD Value="IDR_COLOR_NAVIGATE"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+						<Controls>
+							<RadioButton>
+								<Parent Name="IDC_CANVAS_NAVIGATE"/>
+								<name Value="IDC_RAD_INBOX"/>
+								<Rect Size="300,36" Location="0,20"/>
+								<HAlign Value="Fill"/>
+								<IsDrawBkColor Value="true"/>
+								<BkColorResN Value="IDR_COLOR_NAVIGATE"/>
+								<BkColorResH Value="IDR_COLOR_NAVIGATEH"/>
+								<BkColorResP Value="IDR_COLOR_NAVIGATEH"/>
+								<BkColorResD Value="IDR_COLOR_NAVIGATE"/>
+								<BkColorResCN Value="IDR_COLOR_NAVIGATEH"/>
+								<BkColorResCH Value="IDR_COLOR_NAVIGATEH"/>
+								<BkColorResCP Value="IDR_COLOR_NAVIGATEH"/>
+								<BkColorResCD Value="IDR_COLOR_NAVIGATEH"/>
+								<IsCombineImages Value="true"/>
+								<Content Value="Inbox"/>
+								<TextPadding Left="70" Top="0" Right="0" Bottom="0"/>
+								<ButtonClickArg Value=""/>
+								<IsSpecifyForegroundImages Value="true"/>
+								<ForegroundNormal Value="ic_inbox.png"/>
+								<ForegroundHighlight Value="ic_inbox.png"/>
+								<ForegroundSelected Value="ic_inbox.png"/>
+								<ForegroundDisabled Value="ic_inbox.png"/>
+								<ForegroundCheckedNormal RelativePath="ic_inbox.png"/>
+								<ForegroundCheckedHighlight RelativePath="ic_inbox.png"/>
+								<ForegroundCheckedSelected RelativePath="ic_inbox.png"/>
+								<ForegroundCheckedDisabled RelativePath="ic_inbox.png"/>
+								<ForegroundMargin Left="33" Top="0" Right="0" Bottom="0"/>
+							</RadioButton>
+							<RadioButton>
+								<Parent Name="IDC_CANVAS_NAVIGATE"/>
+								<name Value="IDC_RAD_CONTACTS"/>
+								<Rect Size="300,36" Location="0,56"/>
+								<HAlign Value="Fill"/>
+								<IsDrawBkColor Value="true"/>
+								<BkColorResN Value="IDR_COLOR_NAVIGATE"/>
+								<BkColorResH Value="IDR_COLOR_NAVIGATEH"/>
+								<BkColorResP Value="IDR_COLOR_NAVIGATEH"/>
+								<BkColorResD Value="IDR_COLOR_NAVIGATEH"/>
+								<BkColorResCN Value="IDR_COLOR_NAVIGATEH"/>
+								<BkColorResCH Value="IDR_COLOR_NAVIGATEH"/>
+								<BkColorResCP Value="IDR_COLOR_NAVIGATEH"/>
+								<BkColorResCD Value="IDR_COLOR_NAVIGATEH"/>
+								<IsCombineImages Value="true"/>
+								<Content Value="Contacts"/>
+								<TextPadding Left="70" Top="0" Right="0" Bottom="0"/>
+								<ButtonClickArg Value=""/>
+								<IsSpecifyForegroundImages Value="true"/>
+								<ForegroundNormal Value="ic_contacts.png"/>
+								<ForegroundHighlight Value="ic_contacts.png"/>
+								<ForegroundSelected Value="ic_contacts.png"/>
+								<ForegroundDisabled Value="ic_contacts.png"/>
+								<ForegroundCheckedNormal RelativePath="ic_contacts.png"/>
+								<ForegroundCheckedHighlight RelativePath="ic_contacts.png"/>
+								<ForegroundCheckedSelected RelativePath="ic_contacts.png"/>
+								<ForegroundCheckedDisabled RelativePath="ic_contacts.png"/>
+								<ForegroundMargin Left="33" Top="0" Right="0" Bottom="0"/>
+							</RadioButton>
+							<Label>
+								<Parent Name="IDC_CANVAS_NAVIGATE"/>
+								<name Value="IDC_STA_SPLITTER"/>
+								<Rect Size="250,1" Location="25,112"/>
+								<IsDrawBkColor Value="true"/>
+								<BkColorResN Value="IDR_COLOR_SPLITTER"/>
+								<IsCombineImages Value="true"/>
+								<ButtonClickArg Value=""/>
+							</Label>
+							<Label>
+								<Parent Name="IDC_CANVAS_NAVIGATE"/>
+								<name Value="IDC_STA_RECENT_CONTACTS"/>
+								<Rect Size="230,24" Location="26,130"/>
+								<IsCombineImages Value="true"/>
+								<Content Value="RECENT CONTACTS"/>
+								<ButtonClickArg Value=""/>
+							</Label>
+							<TreeView>
+								<Parent Name="IDC_CANVAS_NAVIGATE"/>
+								<name Value="IDC_TREECTRL_RECENT_CONTACTS"/>
+								<Rect Size="300,307" Location="0,170"/>
+								<VAlign Value="Fill"/>
+								<IsCombineImages Value="true"/>
+								<IsFullRowSel Value="true"/>
+								<IsShowSelAlways Value="true"/>
+								<DefaultItemHeight Value="false"/>
+								<ItemHeight Value="70"/>
+								<ItemLine Enable="false"/>
+								<FocusItemBackground ColorResID="IDR_COLOR_NAVIGATEH"/>
+								<FocusItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+								<SelectedItemBackground ColorResID="IDR_COLOR_NAVIGATEH"/>
+								<SelectedItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+								<HighlightItemBackground Enable="true" Type="Color" ColorResID="IDR_COLOR_TREE_ITEM_BK"/>
+								<HighlightItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+								<ScrollBarWidth Value="10"/>
+								<HorizontalScrollbarStyleID Value=""/>
+								<VerticalScrollbarStyleID Value=""/>
+							</TreeView>
+						</Controls>
+					</Canvas>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

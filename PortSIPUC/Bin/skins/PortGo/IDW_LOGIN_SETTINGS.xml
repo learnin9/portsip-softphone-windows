@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_LOGIN_SETTINGS"/>
+		<Rect Size="1181,717" Location="0,0"/>
+		<IsDrawBkColor Value="true"/>
+		<ActivatedBkColor Value="IDR_COLOR_WHITE"/>
+		<NineGridParam Left="9" Top="9" Right="9" Bottom="9"/>
+		<IsUpdateLayeredWindow Value="true"/>
+		<ShadowWindow ShadowBorderImage="ShadowBorder.png" Left="5" Top="5" Right="5" Bottom="5"/>
+		<Root>
+			<Button>
+				<Parent Name="IDW_LOGIN_SETTINGS"/>
+				<name Value="IDC_BTN_MIN"/>
+				<Rect Size="45,24" Location="1046,0"/>
+				<HAlign Value="Right"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="BtnMin.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+				<ButtonType Value="MinimizeBox"/>
+			</Button>
+			<CheckBox>
+				<Parent Name="IDW_LOGIN_SETTINGS"/>
+				<name Value="IDC_CHK_MAX"/>
+				<Rect Size="45,24" Location="1090,0"/>
+				<HAlign Value="Right"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="BtnMax.png"/>
+				<ButtonClickArg Value=""/>
+				<CheckBoxType Value="MaximizeBox"/>
+			</CheckBox>
+			<Button>
+				<Parent Name="IDW_LOGIN_SETTINGS"/>
+				<name Value="IDC_BTN_CLOSE"/>
+				<Rect Size="45,24" Location="1134,0"/>
+				<HAlign Value="Right"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="BtnClose.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+				<ButtonType Value="CloseBox"/>
+			</Button>
+			<Canvas>
+				<Parent Name="IDW_LOGIN_SETTINGS"/>
+				<name Value="IDC_CANVAS_MAIN"/>
+				<Rect Size="640,665" Location="303,-30"/>
+				<HAlign Value="Center"/>
+				<VAlign Value="Center"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Label>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_STA_SETTINGS"/>
+						<Rect Size="287,42" Location="177,0"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Settings"/>
+						<FontResN Value="IDF_YAHEI_START_CONNECT"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_STA_ACCOUNT"/>
+						<Rect Size="140,33" Location="0,92"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Account"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_STA_DISPLAY_NAME"/>
+						<Rect Size="140,17" Location="0,145"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Display Name"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<RichTextBox>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_RE_DISPLAY_NAME"/>
+						<Rect Size="300,40" Location="0,168"/>
+						<IsTabStop Value="true"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="editbox.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+						<TextPadding Left="20" Top="12" Right="10" Bottom="2"/>
+					</RichTextBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_STA_AUTHROIZATION_NAME"/>
+						<Rect Size="140,17" Location="340,145"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Authroization Name"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<RichTextBox>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_RE_AUTHROIZATION_NAME"/>
+						<Rect Size="300,40" Location="340,168"/>
+						<IsTabStop Value="true"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="editbox.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+						<TextPadding Left="20" Top="12" Right="10" Bottom="2"/>
+					</RichTextBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_STA_OUTBOUND_SERVER"/>
+						<Rect Size="140,17" Location="0,228"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Outbound Server"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<RichTextBox>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_RE_OUTBOUND_SERVER"/>
+						<Rect Size="640,40" Location="0,251"/>
+						<IsTabStop Value="true"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="editbox.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+						<TextPadding Left="20" Top="12" Right="10" Bottom="2"/>
+					</RichTextBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_STA_TRANSPORT"/>
+						<Rect Size="140,33" Location="0,311"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Transport"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_STA_SIGNALING_TRANSPORT"/>
+						<Rect Size="140,17" Location="0,364"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Signaling Transport"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<ComboBox>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_CMB_SIGNALING_TRANSPORT"/>
+						<Rect Size="300,40" Location="0,387"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="editbox.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+						<IsDrawBorderColor Value="false"/>
+						<ButtonClickArg Value=""/>
+						<EditBoxMargin Left="20" Top="10" Right="1" Bottom="1"/>
+						<ButtonWidth Value="54"/>
+						<DropButtonMargin Left="0" Top="1" Right="1" Bottom="1"/>
+						<IsDrawDropButtonBkColor Value="false"/>
+						<ButtonCombineBkImage Value="ComboBoxButton.png"/>
+						<IsDrawDropButtonBorderColor Value="false"/>
+						<HighlightItemBk ColorResID="IDR_COLOR_NAVIGATEH"/>
+					</ComboBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_STA_SRTP"/>
+						<Rect Size="140,17" Location="340,364"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="SRTP"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<ComboBox>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_CMB_SRTP"/>
+						<Rect Size="300,40" Location="340,387"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="editbox.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+						<IsDrawBorderColor Value="false"/>
+						<ButtonClickArg Value=""/>
+						<EditBoxMargin Left="20" Top="10" Right="1" Bottom="1"/>
+						<ButtonWidth Value="54"/>
+						<DropButtonMargin Left="0" Top="1" Right="1" Bottom="1"/>
+						<IsDrawDropButtonBkColor Value="false"/>
+						<ButtonCombineBkImage Value="ComboBoxButton.png"/>
+						<IsDrawDropButtonBorderColor Value="false"/>
+						<HighlightItemBk ColorResID="IDR_COLOR_NAVIGATEH"/>
+					</ComboBox>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_CHK_VERIFY_TLS"/>
+						<Rect Size="300,22" Location="0,447"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Verify TLS Certificate"/>
+						<TextPadding Left="54" Top="0" Right="0" Bottom="0"/>
+						<ButtonClickArg Value=""/>
+						<IsSpecifyForegroundImages Value="true"/>
+						<IsCombineForegroundImages Value="true"/>
+						<ForeGroundCombine Value="Chk_Switch.png"/>
+					</CheckBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_STA_POLL_TIME"/>
+						<Rect Size="140,17" Location="0,505"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Poll Time (Seconds)"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<RichTextBox>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_RE_POLL_TIME"/>
+						<Rect Size="300,40" Location="0,542"/>
+						<IsTabStop Value="true"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="editbox.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+						<TextPadding Left="20" Top="12" Right="10" Bottom="2"/>
+					</RichTextBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_STA_REFRESH_INTERVAL"/>
+						<Rect Size="140,17" Location="345,505"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Refresh Interval"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<RichTextBox>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_RE_REFRESH_INTERVAL"/>
+						<Rect Size="300,40" Location="340,542"/>
+						<IsTabStop Value="true"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="editbox.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+						<TextPadding Left="20" Top="12" Right="10" Bottom="2"/>
+					</RichTextBox>
+					<Button>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_BTN_RETURN"/>
+						<Rect Size="140,29" Location="0,606"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<IsDrawBorderColor Value="false"/>
+						<Content Value="Return"/>
+						<TextPadding Left="24" Top="0" Right="0" Bottom="0"/>
+						<TextColorResN Value="IDR_COLOR_ADVANCE_N"/>
+						<TextColorResH Value="IDR_COLOR_ADVANCE_H"/>
+						<TextColorResP Value="IDR_COLOR_ADVANCE_D"/>
+						<ButtonClickArg Value=""/>
+						<IsSpecifyForegroundImages Value="true"/>
+						<IsCombineForegroundImages Value="true"/>
+						<ForeGroundCombine Value="Btn_Return.png"/>
+						<ForegroundMargin Left="0" Top="1" Right="0" Bottom="0"/>
+					</Button>
+					<Button>
+						<Parent Name="IDC_CANVAS_MAIN"/>
+						<name Value="IDC_BTN_SAVE"/>
+						<Rect Size="140,40" Location="499,601"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Btn_Login.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+						<IsDrawBorderColor Value="false"/>
+						<Content Value="SAVE"/>
+						<TextColorResN Value="IDR_COLOR_WHITE"/>
+						<TextColorResH Value="IDR_COLOR_WHITE"/>
+						<TextColorResP Value="IDR_COLOR_WHITE"/>
+						<TextColorResD Value="IDR_COLOR_WHITE"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

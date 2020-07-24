@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDD_CALLING_TRANSFER_OK"/>
+		<Rect Size="620,320" Location="0,0"/>
+		<IsResizingBorder Value="true"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDD_CALLING_TRANSFER_OK"/>
+				<name Value="IDC_CANVAS_TRANSFER_OK"/>
+				<Rect Size="508,282" Location="50,29"/>
+				<HAlign Value="Center"/>
+				<VAlign Value="Fill"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Label>
+						<Parent Name="IDC_CANVAS_TRANSFER_OK"/>
+						<name Value="IDC_STA_TITLE_OK"/>
+						<Rect Size="508,82" Location="0,20"/>
+						<HAlign Value="Center"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="sdfsdfsdf"/>
+						<FontResN Value="IDF_YAHEI_START_CONNECT"/>
+						<FontResD Value="IDF_YAHEI_START_CONNECT"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</Label>
+					<Button>
+						<Parent Name="IDC_CANVAS_TRANSFER_OK"/>
+						<name Value="IDC_BTN_OK"/>
+						<Rect Size="94,94" Location="207,106"/>
+						<HAlign Value="Center"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="false"/>
+						<BackgroundNormal image="ic_right.png"/>
+						<BackgroundHighlight RelativePath="ic_right.png"/>
+						<BackgroundSelected RelativePath="ic_right.png"/>
+						<BackgroundDisabled RelativePath="ic_right.png"/>
+						<IsDrawBorderColor Value="false"/>
+						<ButtonClickArg Value=""/>
+					</Button>
+					<Button>
+						<Parent Name="IDC_CANVAS_TRANSFER_OK"/>
+						<name Value="IDC_BTN_CANCLE"/>
+						<Rect Size="163,40" Location="71,224"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="bt_bg2.png"/>
+						<NineGridParam Left="3" Top="3" Right="3" Bottom="3"/>
+						<IsDrawBorderColor Value="false"/>
+						<Content Value="CANCLE"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</Button>
+					<Button>
+						<Parent Name="IDC_CANVAS_TRANSFER_OK"/>
+						<name Value="IDC_BTN_TRANSFER"/>
+						<Rect Size="163,40" Location="274,224"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="bt_bg1.png"/>
+						<NineGridParam Left="3" Top="3" Right="3" Bottom="3"/>
+						<IsDrawBorderColor Value="false"/>
+						<Content Value="OK"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

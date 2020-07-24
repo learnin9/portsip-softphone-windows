@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDD_CALLER_ADD"/>
+		<Rect Size="540,320" Location="0,0"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDD_CALLER_ADD"/>
+				<name Value="IDC_CANVAS_ADD_CALLER"/>
+				<Rect Size="508,282" Location="16,19"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Label>
+						<Parent Name="IDC_CANVAS_ADD_CALLER"/>
+						<name Value="IDC_STA_ADD_CALLER_TITLE"/>
+						<Rect Size="508,41" Location="0,0"/>
+						<HAlign Value="Fill"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Calling Jim"/>
+						<FontResN Value="IDF_YAHEI_START_CONNECT"/>
+						<FontResD Value="IDF_YAHEI_START_CONNECT"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_ADD_CALLER"/>
+						<name Value="IDC_STA_ADD_CALLER_FACE"/>
+						<Rect Size="94,94" Location="207,70"/>
+						<HAlign Value="Center"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Button>
+						<Parent Name="IDC_CANVAS_ADD_CALLER"/>
+						<name Value="IDC_BTN_ADD_CALLER_CANCEL"/>
+						<Rect Size="140,40" Location="184,203"/>
+						<HAlign Value="Center"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Btn_Login.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+						<IsDrawBorderColor Value="false"/>
+						<Content Value="CANCEL"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

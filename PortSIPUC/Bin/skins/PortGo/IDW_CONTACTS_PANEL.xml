@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_CONTACS_PANEL"/>
+		<Rect Size="507,304" Location="0,0"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDW_CONTACS_PANEL"/>
+				<name Value="IDC_CANVAS_CONTACTS"/>
+				<Rect Size="500,300" Location="0,0"/>
+				<HAlign Value="Fill"/>
+				<VAlign Value="Fill"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<RadioButton>
+						<Parent Name="IDC_CANVAS_CONTACTS"/>
+						<name Value="IDC_RAD_FAVORITES"/>
+						<Rect Size="148,79" Location="0,0"/>
+						<IsCombineImages Value="false"/>
+						<BackgroundCheckedNormal image="Inbox_TabBk.png"/>
+						<BackgroundCheckedHighlight RelativePath="Inbox_TabBk.png"/>
+						<BackgroundCheckedSelected RelativePath="Inbox_TabBk.png"/>
+						<BackgroundCheckedDisabled RelativePath="Inbox_TabBk.png"/>
+						<NineGridParam Left="0" Top="0" Right="0" Bottom="4"/>
+						<Content Value="Favorites"/>
+						<TextColorResN Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<TextColorResH Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<TextColorResP Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<TextColorResD Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<TextColorResCN Value="IDR_COLOR_BLACK"/>
+						<TextColorResCH Value="IDR_COLOR_BLACK"/>
+						<TextColorResCP Value="IDR_COLOR_BLACK"/>
+						<TextColorResCD Value="IDR_COLOR_BLACK"/>
+						<FontResN Value="IDF_YAHEI_12__BOLD"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</RadioButton>
+					<RadioButton>
+						<Parent Name="IDC_CANVAS_CONTACTS"/>
+						<name Value="IDC_RAD_LOCAL_CONTACTS"/>
+						<Rect Size="148,79" Location="154,0"/>
+						<IsCombineImages Value="false"/>
+						<BackgroundCheckedNormal image="Inbox_TabBk.png"/>
+						<BackgroundCheckedHighlight RelativePath="Inbox_TabBk.png"/>
+						<BackgroundCheckedSelected RelativePath="Inbox_TabBk.png"/>
+						<BackgroundCheckedDisabled RelativePath="Inbox_TabBk.png"/>
+						<NineGridParam Left="0" Top="0" Right="0" Bottom="4"/>
+						<Content Value="Local Contacts"/>
+						<TextColorResN Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<TextColorResH Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<TextColorResP Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<TextColorResD Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<TextColorResCN Value="IDR_COLOR_BLACK"/>
+						<TextColorResCH Value="IDR_COLOR_BLACK"/>
+						<TextColorResCP Value="IDR_COLOR_BLACK"/>
+						<TextColorResCD Value="IDR_COLOR_BLACK"/>
+						<FontResN Value="IDF_YAHEI_12__BOLD"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</RadioButton>
+					<RadioButton>
+						<Parent Name="IDC_CANVAS_CONTACTS"/>
+						<name Value="IDC_RAD_REMOTE_CONTACTS"/>
+						<Rect Size="148,79" Location="308,0"/>
+						<IsCombineImages Value="false"/>
+						<BackgroundCheckedNormal image="Inbox_TabBk.png"/>
+						<BackgroundCheckedHighlight RelativePath="Inbox_TabBk.png"/>
+						<BackgroundCheckedSelected RelativePath="Inbox_TabBk.png"/>
+						<BackgroundCheckedDisabled RelativePath="Inbox_TabBk.png"/>
+						<NineGridParam Left="0" Top="0" Right="0" Bottom="4"/>
+						<Content Value="Remote Contacts"/>
+						<TextColorResN Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<TextColorResH Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<TextColorResP Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<TextColorResD Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<TextColorResCN Value="IDR_COLOR_BLACK"/>
+						<TextColorResCH Value="IDR_COLOR_BLACK"/>
+						<TextColorResCP Value="IDR_COLOR_BLACK"/>
+						<TextColorResCD Value="IDR_COLOR_BLACK"/>
+						<FontResN Value="IDF_YAHEI_12__BOLD"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</RadioButton>
+					<RadioButton>
+						<Parent Name="IDC_CANVAS_CONTACTS"/>
+						<name Value="IDC_RAD_EXTENSIONS"/>
+						<Rect Size="148,79" Location="456,0"/>
+						<IsCombineImages Value="false"/>
+						<BackgroundCheckedNormal image="Inbox_TabBk.png"/>
+						<BackgroundCheckedHighlight RelativePath="Inbox_TabBk.png"/>
+						<BackgroundCheckedSelected RelativePath="Inbox_TabBk.png"/>
+						<BackgroundCheckedDisabled RelativePath="Inbox_TabBk.png"/>
+						<NineGridParam Left="0" Top="0" Right="0" Bottom="4"/>
+						<Content Value="Extensions"/>
+						<TextColorResN Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<TextColorResH Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<TextColorResP Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<TextColorResD Value="IDR_COLOR_TOOLBAR_TEXT"/>
+						<TextColorResCN Value="IDR_COLOR_BLACK"/>
+						<TextColorResCH Value="IDR_COLOR_BLACK"/>
+						<TextColorResCP Value="IDR_COLOR_BLACK"/>
+						<TextColorResCD Value="IDR_COLOR_BLACK"/>
+						<FontResN Value="IDF_YAHEI_12__BOLD"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</RadioButton>
+					<TabControl>
+						<Parent Name="IDC_CANVAS_CONTACTS"/>
+						<name Value="IDC_PNL_TAB_CONTACTS"/>
+						<Rect Size="500,190" Location="0,80"/>
+						<HAlign Value="Fill"/>
+						<VAlign Value="Fill"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</TabControl>
+					<Label>
+						<Parent Name="IDC_CANVAS_CONTACTS"/>
+						<name Value="IDC_STA_SPLITTER"/>
+						<Rect Size="500,1" Location="0,79"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_SPLITTER"/>
+						<BkColorResD Value="IDR_COLOR_SPLITTER"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Button>
+						<Parent Name="IDC_CANVAS_CONTACTS"/>
+						<name Value="IDC_BTN_FIRST_PAGE"/>
+						<Rect Size="50,30" Location="300,270"/>
+						<HAlign Value="Right"/>
+						<VAlign Value="Bottom"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="bt_3.png"/>
+						<IsDrawBorderColor Value="false"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</Button>
+					<Button>
+						<Parent Name="IDC_CANVAS_CONTACTS"/>
+						<name Value="IDC_BTN_PRE_PAGE"/>
+						<Rect Size="50,30" Location="350,270"/>
+						<HAlign Value="Right"/>
+						<VAlign Value="Bottom"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="bt_4.png"/>
+						<IsDrawBorderColor Value="false"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</Button>
+					<Button>
+						<Parent Name="IDC_CANVAS_CONTACTS"/>
+						<name Value="IDC_BTN_NEXT_PAGE"/>
+						<Rect Size="50,30" Location="400,270"/>
+						<HAlign Value="Right"/>
+						<VAlign Value="Bottom"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="bt_2.png"/>
+						<IsDrawBorderColor Value="false"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</Button>
+					<Button>
+						<Parent Name="IDC_CANVAS_CONTACTS"/>
+						<name Value="IDC_BTN_LAST_PAGE"/>
+						<Rect Size="50,30" Location="450,270"/>
+						<HAlign Value="Right"/>
+						<VAlign Value="Bottom"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="bt_1.png"/>
+						<IsDrawBorderColor Value="false"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

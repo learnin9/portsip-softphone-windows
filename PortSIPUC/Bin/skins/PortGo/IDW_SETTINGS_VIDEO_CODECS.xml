@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_SETTINGS_VIDEO_CODECS"/>
+		<Rect Size="510,400" Location="0,0"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDW_SETTINGS_VIDEO_CODECS"/>
+				<name Value="IDC_CANVAS_VIDEO_CODECS"/>
+				<Rect Size="200,210" Location="6,12"/>
+				<HAlign Value="Fill"/>
+				<VAlign Value="Fill"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<TreeView>
+						<Parent Name="IDC_CANVAS_VIDEO_CODECS"/>
+						<name Value="IDC_TREECTRL_VIDEO_CODEC"/>
+						<Rect Size="199,210" Location="1,0"/>
+						<HAlign Value="Fill"/>
+						<VAlign Value="Fill"/>
+						<IsCombineImages Value="true"/>
+						<IsFullRowSel Value="true"/>
+						<IsShowSelAlways Value="true"/>
+						<DefaultItemHeight Value="false"/>
+						<ItemHeight Value="40"/>
+						<ItemLine Enable="false"/>
+						<FocusItemBackground ColorResID="IDR_COLOR_WINDOW"/>
+						<FocusItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+						<SelectedItemBackground ColorResID="IDR_COLOR_WINDOW"/>
+						<SelectedItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+						<HighlightItemBackground Enable="false" Type="Color"/>
+						<HighlightItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+						<ScrollBarWidth Value="10"/>
+						<HorizontalScrollbarStyleID Value=""/>
+						<VerticalScrollbarStyleID Value=""/>
+					</TreeView>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

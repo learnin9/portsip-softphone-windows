@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IUI_vs2015", "IUI_vs2015.vcxproj", "{77B35C1A-D923-43AF-8F25-602DA87440D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug MDd|x64 = Debug MDd|x64
+		Debug MDd|x86 = Debug MDd|x86
+		Debug Unicode MDd|x64 = Debug Unicode MDd|x64
+		Debug Unicode MDd|x86 = Debug Unicode MDd|x86
+		Debug Unicode MTd|x64 = Debug Unicode MTd|x64
+		Debug Unicode MTd|x86 = Debug Unicode MTd|x86
+		Release Unicode MT|x64 = Release Unicode MT|x64
+		Release Unicode MT|x86 = Release Unicode MT|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77B35C1A-D923-43AF-8F25-602DA87440D3}.Debug MDd|x64.ActiveCfg = Debug MDd|x64
+		{77B35C1A-D923-43AF-8F25-602DA87440D3}.Debug MDd|x64.Build.0 = Debug MDd|x64
+		{77B35C1A-D923-43AF-8F25-602DA87440D3}.Debug MDd|x86.ActiveCfg = Debug MDd|Win32
+		{77B35C1A-D923-43AF-8F25-602DA87440D3}.Debug MDd|x86.Build.0 = Debug MDd|Win32
+		{77B35C1A-D923-43AF-8F25-602DA87440D3}.Debug Unicode MDd|x64.ActiveCfg = Debug Unicode MDd|x64
+		{77B35C1A-D923-43AF-8F25-602DA87440D3}.Debug Unicode MDd|x64.Build.0 = Debug Unicode MDd|x64
+		{77B35C1A-D923-43AF-8F25-602DA87440D3}.Debug Unicode MDd|x86.ActiveCfg = Debug Unicode MDd|Win32
+		{77B35C1A-D923-43AF-8F25-602DA87440D3}.Debug Unicode MDd|x86.Build.0 = Debug Unicode MDd|Win32
+		{77B35C1A-D923-43AF-8F25-602DA87440D3}.Debug Unicode MTd|x64.ActiveCfg = Debug Unicode MTd|x64
+		{77B35C1A-D923-43AF-8F25-602DA87440D3}.Debug Unicode MTd|x64.Build.0 = Debug Unicode MTd|x64
+		{77B35C1A-D923-43AF-8F25-602DA87440D3}.Debug Unicode MTd|x86.ActiveCfg = Debug Unicode MTd|Win32
+		{77B35C1A-D923-43AF-8F25-602DA87440D3}.Debug Unicode MTd|x86.Build.0 = Debug Unicode MTd|Win32
+		{77B35C1A-D923-43AF-8F25-602DA87440D3}.Release Unicode MT|x64.ActiveCfg = Release Unicode MT|x64
+		{77B35C1A-D923-43AF-8F25-602DA87440D3}.Release Unicode MT|x64.Build.0 = Release Unicode MT|x64
+		{77B35C1A-D923-43AF-8F25-602DA87440D3}.Release Unicode MT|x86.ActiveCfg = Release Unicode MT|Win32
+		{77B35C1A-D923-43AF-8F25-602DA87440D3}.Release Unicode MT|x86.Build.0 = Release Unicode MT|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+EndGlobal

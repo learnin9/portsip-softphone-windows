@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug Unicode MTd|Win32">
+      <Configuration>Debug Unicode MTd</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Unicode|Win32">
+      <Configuration>Debug Unicode</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Unicode MT|Win32">
+      <Configuration>Release Unicode MT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Unicode|Win32">
+      <Configuration>Release Unicode</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F1BCB865-B68E-474D-869F-47FC4C5F6934}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>IUI_vs2013</RootNamespace>
+    <ProjectName>IUI_vs2013</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode MTd|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode MT|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug Unicode MTd|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release Unicode MT|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode MTd|Win32'">
+    <OutDir>Lib\</OutDir>
+    <IntDir>Debug_vs2013u_MTd\</IntDir>
+    <TargetName>$(ProjectName)udMTd</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">
+    <OutDir>Lib\</OutDir>
+    <IntDir>Debug_vs2013u\</IntDir>
+    <TargetName>$(ProjectName)ud</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode MT|Win32'">
+    <OutDir>Lib\</OutDir>
+    <TargetName>$(ProjectName)uMT</TargetName>
+    <IntDir>Release_vs2013u_MT\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'">
+    <OutDir>Lib\</OutDir>
+    <TargetName>$(ProjectName)u</TargetName>
+    <IntDir>Release_vs2013u\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>$(ProjectName)ud</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>Release_vs2013u\</IntDir>
+    <TargetName>$(ProjectName)u</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode MTd|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>
+      </SDLCheck>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode MT|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Control\ControlCore\ControlMember.h" />
+    <ClInclude Include="Control\ControlCore\Menu\Menu.h" />
+    <ClInclude Include="Control\ControlCore\Win32Global.h" />
+    <ClInclude Include="Core\DropTargetEx.h" />
+    <ClInclude Include="Core\Global.h" />
+    <ClInclude Include="Core\ResourceMgr.h" />
+    <ClInclude Include="Core\WLWndMgr.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="IUI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Control\Button.cpp" />
+    <ClCompile Include="Control\ColumnHeader.cpp" />
+    <ClCompile Include="Control\ComboBox.cpp" />
+    <ClCompile Include="Control\ControlCore\Button\ButtonCore.cpp" />
+    <ClCompile Include="Control\ControlCore\ColumnHeader\ColumnHeaderCore.cpp" />
+    <ClCompile Include="Control\ControlCore\ComboBox\ComboBoxCore.cpp" />
+    <ClCompile Include="Control\ControlCore\DateTimePicker\DateTimePickerCore.cpp" />
+    <ClCompile Include="Control\ControlCore\HtmlView\HtmlViewCore.cpp" />
+    <ClCompile Include="Control\ControlCore\Label\LabelCore.cpp" />
+    <ClCompile Include="Control\ControlCore\ListView\ListViewCore.cpp" />
+    <ClCompile Include="Control\ControlCore\Menu\menu.cpp" />
+    <ClCompile Include="Control\ControlCore\Menu\menuc.cpp" />
+    <ClCompile Include="Control\ControlCore\Menu\mnchange.cpp" />
+    <ClCompile Include="Control\ControlCore\Menu\mncreate.cpp" />
+    <ClCompile Include="Control\ControlCore\Menu\mndraw.cpp" />
+    <ClCompile Include="Control\ControlCore\Menu\mndstry.cpp" />
+    <ClCompile Include="Control\ControlCore\Menu\mnkey.cpp" />
+    <ClCompile Include="Control\ControlCore\Menu\mnloop.cpp" />
+    <ClCompile Include="Control\ControlCore\Menu\mnpopup.cpp" />
+    <ClCompile Include="Control\ControlCore\Menu\mnstate.cpp" />
+    <ClCompile Include="Control\ControlCore\ProgressBar\ProgressBarCore.cpp" />
+    <ClCompile Include="Control\ControlCore\RichTextBox\ImageOleCtrl.cpp" />
+    <ClCompile Include="Control\ControlCore\RichTextBox\IMRichTextBoxCore.cpp" />
+    <ClCompile Include="Control\ControlCore\RichTextBox\OleControlCore.cpp" />
+    <ClCompile Include="Control\ControlCore\RichTextBox\ProtectedDragSource.cpp" />
+    <ClCompile Include="Control\ControlCore\RichTextBox\RichTextBoxCore.cpp" />
+    <ClCompile Include="Control\ControlCore\ScrollBar\ScrollBarCore.cpp" />
+    <ClCompile Include="Control\ControlCore\Slider\trackbar.cpp" />
+    <ClCompile Include="Control\ControlCore\SpinButton\SpinButtonCore.cpp" />
+    <ClCompile Include="Control\ControlCore\SplitterBar\SplitterBarCore.cpp" />
+    <ClCompile Include="Control\ControlCore\Tooltips\TooltipsCore.cpp" />
+    <ClCompile Include="Control\ControlCore\TreeView\TreeViewCore.cpp" />
+    <ClCompile Include="Control\ControlCore\Win32Global.cpp" />
+    <ClCompile Include="Control\ControlCore\Windowless\WindowlessCore.cpp" />
+    <ClCompile Include="Control\ControlCore\Window\WindowHelper.cpp" />
+    <ClCompile Include="Control\DateTimePicker.cpp" />
+    <ClCompile Include="Control\HostWnd.cpp" />
+    <ClCompile Include="Control\HtmlView.cpp" />
+    <ClCompile Include="Control\IMRichTextBox.cpp" />
+    <ClCompile Include="Control\Label.cpp" />
+    <ClCompile Include="Control\Layout\Canvas.cpp" />
+    <ClCompile Include="Control\Layout\DockPanel.cpp" />
+    <ClCompile Include="Control\Layout\StackPanel.cpp" />
+    <ClCompile Include="Control\Layout\TabControl.cpp" />
+    <ClCompile Include="Control\ListView.cpp" />
+    <ClCompile Include="Control\ProgressBar.cpp" />
+    <ClCompile Include="Control\RepeatButton.cpp" />
+    <ClCompile Include="Control\RichTextBox.cpp" />
+    <ClCompile Include="Control\ScrollBar.cpp" />
+    <ClCompile Include="Control\Slider.cpp" />
+    <ClCompile Include="Control\SpinButton.cpp" />
+    <ClCompile Include="Control\SplitterBar.cpp" />
+    <ClCompile Include="Control\TreeView.cpp" />
+    <ClCompile Include="Control\Window.cpp" />
+    <ClCompile Include="Control\Window\Tooltips.cpp" />
+    <ClCompile Include="Control\Window\UIColorDialog.cpp" />
+    <ClCompile Include="Control\Window\UIFileDialog.cpp" />
+    <ClCompile Include="Control\Window\UIFontDialog.cpp" />
+    <ClCompile Include="Control\WLWnd.cpp" />
+    <ClCompile Include="Core\Animation.cpp" />
+    <ClCompile Include="Core\ControlProp.cpp" />
+    <ClCompile Include="Core\CreateControls.cpp" />
+    <ClCompile Include="Core\crit.cpp" />
+    <ClCompile Include="Core\DropTargetEx.cpp" />
+    <ClCompile Include="Core\Global.cpp" />
+    <ClCompile Include="Core\IUIStringA.cpp" />
+    <ClCompile Include="Core\IUIStringW.cpp" />
+    <ClCompile Include="Core\JScript.cpp" />
+    <ClCompile Include="Core\MemStdioFile.cpp" />
+    <ClCompile Include="Core\ParseLanguageFile.cpp" />
+    <ClCompile Include="Core\ParseResourceFile.cpp" />
+    <ClCompile Include="Core\Render.cpp" />
+    <ClCompile Include="Core\ResourceMgr.cpp" />
+    <ClCompile Include="Core\State.cpp" />
+    <ClCompile Include="Core\tls.cpp" />
+    <ClCompile Include="Core\UIParse.cpp" />
+    <ClCompile Include="Core\UIVariant.cpp" />
+    <ClCompile Include="Core\Utils.cpp" />
+    <ClCompile Include="Core\WLWndMgr.cpp" />
+    <ClCompile Include="Core\IUIFont.cpp" />
+    <ClCompile Include="Core\IUIImage.cpp" />
+    <ClCompile Include="Core\IUIProject.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Unicode MTd|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release Unicode MT|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

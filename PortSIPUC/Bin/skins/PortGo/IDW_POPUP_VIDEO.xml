@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_POPUP_VIDEO"/>
+		<Rect Size="500,300" Location="0,0"/>
+		<IsDrawBkColor Value="true"/>
+		<ActivatedBkColor Value="IDR_COLOR_WINDOW"/>
+		<IsDrawBorderColor Value="true"/>
+		<ActivatedBorderColor Value="IDR_COLOR_TREE_ITEM_BK"/>
+		<IsResizingBorder Value="true"/>
+		<Root>
+			<Button>
+				<Parent Name="IDW_POPUP_VIDEO"/>
+				<name Value="IDC_BTN_MIN"/>
+				<Rect Size="45,24" Location="349,0"/>
+				<HAlign Value="Right"/>
+				<VAlign Value="Top"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="BtnMin.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+				<ButtonType Value="MinimizeBox"/>
+			</Button>
+			<CheckBox>
+				<Parent Name="IDW_POPUP_VIDEO"/>
+				<name Value="IDC_CHK_MAX"/>
+				<Rect Size="45,24" Location="394,0"/>
+				<HAlign Value="Right"/>
+				<VAlign Value="Top"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="BtnMax.png"/>
+				<ButtonClickArg Value=""/>
+				<CheckBoxType Value="MaximizeBox"/>
+			</CheckBox>
+			<Button>
+				<Parent Name="IDW_POPUP_VIDEO"/>
+				<name Value="IDC_BTN_CLOSE"/>
+				<Rect Size="60,24" Location="439,0"/>
+				<HAlign Value="Right"/>
+				<VAlign Value="Top"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="BtnClose.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+				<ButtonType Value="CloseBox"/>
+			</Button>
+			<Canvas>
+				<Parent Name="IDW_POPUP_VIDEO"/>
+				<name Value="IDC_CANVAS_VIDEO"/>
+				<Rect Size="491,231" Location="4,26"/>
+				<HAlign Value="Fill"/>
+				<VAlign Value="Fill"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+			</Canvas>
+			<CheckBox>
+				<Parent Name="IDW_POPUP_VIDEO"/>
+				<name Value="IDC_CHK_PLAY_PAUSE"/>
+				<Rect Size="30,30" Location="15,265"/>
+				<VAlign Value="Bottom"/>
+				<Margin Left="15" Top="0" Right="0" Bottom="0"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="ic_play.png"/>
+				<ButtonClickArg Value=""/>
+			</CheckBox>
+			<Label>
+				<Parent Name="IDW_POPUP_VIDEO"/>
+				<name Value="IDC_STA_DURATION"/>
+				<Rect Size="87,30" Location="45,265"/>
+				<VAlign Value="Bottom"/>
+				<IsCombineImages Value="true"/>
+				<Content Value="0:00 / 1:30"/>
+				<ButtonClickArg Value=""/>
+			</Label>
+			<Slider>
+				<Parent Name="IDW_POPUP_VIDEO"/>
+				<name Value="IDC_SLD_DURATION"/>
+				<Rect Size="144,10" Location="132,275"/>
+				<VAlign Value="Bottom"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="Ole_SliderBk.png"/>
+				<NineGridParam Left="3" Top="1" Right="3" Bottom="1"/>
+				<ThumbCombine RelativePath="Ole_SliderThumb.png"/>
+				<ThumbWidth Value="10"/>
+				<ThumbHeight Value="10"/>
+				<EnableTipWindow X="0" Y="0"/>
+			</Slider>
+			<CheckBox>
+				<Parent Name="IDW_POPUP_VIDEO"/>
+				<name Value="IDC_CHK_MUTE"/>
+				<Rect Size="30,30" Location="310,265"/>
+				<VAlign Value="Bottom"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="ic_voice.png"/>
+				<ButtonClickArg Value=""/>
+			</CheckBox>
+			<Slider>
+				<Parent Name="IDW_POPUP_VIDEO"/>
+				<name Value="IDC_SLD_VOLUME"/>
+				<Rect Size="80,10" Location="352,275"/>
+				<VAlign Value="Bottom"/>
+				<Margin Left="10" Top="0" Right="0" Bottom="0"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="Ole_SliderBk.png"/>
+				<NineGridParam Left="3" Top="1" Right="3" Bottom="1"/>
+				<ThumbCombine RelativePath="Ole_SliderThumb.png"/>
+				<ThumbWidth Value="10"/>
+				<ThumbHeight Value="10"/>
+				<EnableTipWindow X="0" Y="0"/>
+			</Slider>
+			<Button>
+				<Parent Name="IDW_POPUP_VIDEO"/>
+				<name Value="IDC_BTN_FULL_SCREEN"/>
+				<Rect Size="30,30" Location="461,265"/>
+				<VAlign Value="Bottom"/>
+				<Margin Left="20" Top="0" Right="0" Bottom="0"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="ic_screen.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+		</Root>
+	</Window>
+</IUI>

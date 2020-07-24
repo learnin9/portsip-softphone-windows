@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_SETTINGS_APPLICATION"/>
+		<Rect Size="490,310" Location="0,0"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDW_SETTINGS_APPLICATION"/>
+				<name Value="IDC_CANVAS_APPLICATION"/>
+				<Rect Size="470,285" Location="0,0"/>
+				<HAlign Value="Fill"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Label>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_STA_SET_DEFAULT"/>
+						<Rect Size="380,39" Location="20,0"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Show your own video during a video call"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_CHK_READ_RECEIPTS"/>
+						<Rect Size="36,16" Location="417,13"/>
+						<HAlign Value="Right"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_STA_FILE_LOCATION"/>
+						<Rect Size="100,24" Location="20,218"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="File Location"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Button>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_BTN_BROWSER"/>
+						<Rect Size="80,24" Location="274,218"/>
+						<HAlign Value="Right"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="false"/>
+						<IsDrawBorderColor Value="false"/>
+						<Content Value="Browser"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Right"/>
+					</Button>
+					<Button>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_BTN_OPEN_FOLDER"/>
+						<Rect Size="90,24" Location="364,218"/>
+						<HAlign Value="Right"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<IsDrawBorderColor Value="false"/>
+						<Content Value="Open Folder"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Right"/>
+					</Button>
+					<RichTextBox>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_RE_FILE"/>
+						<Rect Size="431,24" Location="20,254"/>
+						<IsTabStop Value="true"/>
+						<IsCombineImages Value="true"/>
+					</RichTextBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_STA_PROMPT_UPGRADE"/>
+						<Rect Size="380,39" Location="20,40"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="No local video in conference room"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_CHK_PROMPT_UPGRADE"/>
+						<Rect Size="36,16" Location="417,52"/>
+						<HAlign Value="Right"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_STA_DISPLAY_IDLE"/>
+						<Rect Size="380,39" Location="20,80"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Display idle status if i don't use my computer for 10 minutes"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_CHK_DISPLAY_IDLE"/>
+						<Rect Size="36,16" Location="417,92"/>
+						<HAlign Value="Right"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_STA_START_WITH_SYSTEM"/>
+						<Rect Size="380,39" Location="20,120"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Launch when Windows starts"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_CHK_START_WITH_SYSTEM"/>
+						<Rect Size="36,16" Location="417,130"/>
+						<HAlign Value="Right"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_STA_SHOW_TIMESTAMP"/>
+						<Rect Size="380,39" Location="20,160"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Show timestamp on message"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_CHK_SHOW_TIMESTAMP"/>
+						<Rect Size="36,16" Location="417,171"/>
+						<HAlign Value="Right"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_STA_SPLITTER1"/>
+						<Rect Size="470,1" Location="0,39"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_STA_SPLITTER2"/>
+						<Rect Size="470,1" Location="0,79"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_STA_SPLITTER3"/>
+						<Rect Size="470,1" Location="0,119"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_STA_SPLITTER4"/>
+						<Rect Size="470,1" Location="0,159"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_STA_SPLITTER5"/>
+						<Rect Size="470,1" Location="0,199"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_APPLICATION"/>
+						<name Value="IDC_STA_SPITTER6"/>
+						<Rect Size="470,1" Location="0,278"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

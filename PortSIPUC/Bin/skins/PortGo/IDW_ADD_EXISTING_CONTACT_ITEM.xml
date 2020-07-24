@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_ADD_EXISTING_CONTACT_ITEM"/>
+		<Rect Size="650,159" Location="0,0"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDW_ADD_EXISTING_CONTACT_ITEM"/>
+				<name Value="IDC_CANVAS_ADD_EXISTING_CONTACT_ITEM"/>
+				<Rect Size="520,70" Location="50,29"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Label>
+						<Parent Name="IDC_CANVAS_ADD_EXISTING_CONTACT_ITEM"/>
+						<name Value="IDC_STA_FACE"/>
+						<Rect Size="40,40" Location="40,15"/>
+						<MouseTransparent Value="true"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_ADD_EXISTING_CONTACT_ITEM"/>
+						<name Value="IDC_STA_NAME"/>
+						<Rect Size="130,24" Location="120,23"/>
+						<MouseTransparent Value="true"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_ADD_EXISTING_CONTACT_ITEM"/>
+						<name Value="IDC_STA_NUM"/>
+						<Rect Size="150,24" Location="260,23"/>
+						<MouseTransparent Value="true"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_ADD_EXISTING_CONTACT_ITEM"/>
+						<name Value="IDC_STA_FLAG"/>
+						<Rect Size="12,12" Location="430,29"/>
+						<MouseTransparent Value="true"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

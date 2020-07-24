@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_CALLER_BAR"/>
+		<Rect Size="602,200" Location="0,0"/>
+		<ActivatedBkImage image="bg_calling.png"/>
+		<NineGridParam Left="10" Top="10" Right="10" Bottom="10"/>
+		<IsLayeredWindow Value="true"/>
+		<IsUpdateLayeredWindow Value="true"/>
+		<Root>
+			<Label>
+				<Parent Name="IDW_CALLER_BAR"/>
+				<name Value="IDC_STA_FACE"/>
+				<Rect Size="70,70" Location="30,65"/>
+				<VAlign Value="Center"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+			</Label>
+			<Label>
+				<Parent Name="IDW_CALLER_BAR"/>
+				<name Value="IDC_STA_CALLER"/>
+				<Rect Size="230,24" Location="120,63"/>
+				<IsCombineImages Value="true"/>
+				<Content Value="Jim Green"/>
+				<FontResN Value="IDF_YAHEI_12__BOLD"/>
+				<FontResD Value="IDF_YAHEI_12__BOLD"/>
+				<ButtonClickArg Value=""/>
+			</Label>
+			<Button>
+				<Parent Name="IDW_CALLER_BAR"/>
+				<name Value="IDC_BTN_AUDIO"/>
+				<Rect Size="40,40" Location="530,30"/>
+				<HAlign Value="Right"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="bt_contacts_call.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+			<Button>
+				<Parent Name="IDW_CALLER_BAR"/>
+				<name Value="IDC_BTN_VIDEO"/>
+				<Rect Size="40,40" Location="530,75"/>
+				<HAlign Value="Right"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="bt_contacts_video.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+			<Button>
+				<Parent Name="IDW_CALLER_BAR"/>
+				<name Value="IDC_BTN_HANGUP"/>
+				<Rect Size="40,40" Location="530,120"/>
+				<HAlign Value="Right"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<CombineBkImage Value="ic_calling_10.png"/>
+				<IsDrawBorderColor Value="false"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+			<Label>
+				<Parent Name="IDW_CALLER_BAR"/>
+				<name Value="IDC_STA_PHONE_NUMBER"/>
+				<Rect Size="230,24" Location="120,98"/>
+				<IsCombineImages Value="true"/>
+				<Content Value="(720) 877-1072"/>
+				<FontResN Value="IDF_YAHEI_12__BOLD"/>
+				<FontResD Value="IDF_YAHEI_12__BOLD"/>
+				<ButtonClickArg Value=""/>
+			</Label>
+			<Label>
+				<Parent Name="IDW_CALLER_BAR"/>
+				<name Value="IDC_STA_SIGN"/>
+				<Rect Size="230,21" Location="120,130"/>
+				<IsCombineImages Value="true"/>
+				<Content Value="Juan Ferguson"/>
+				<ButtonClickArg Value=""/>
+			</Label>
+			<Label>
+				<Parent Name="IDW_CALLER_BAR"/>
+				<name Value="IDC_STA_CALL"/>
+				<Rect Size="230,24" Location="120,25"/>
+				<IsCombineImages Value="true"/>
+				<Content Value="Call"/>
+				<TextColorResN Value="IDR_COLOR_GRAY"/>
+				<ButtonClickArg Value=""/>
+				<IsEndEllipsis Value="true"/>
+			</Label>
+			<Label>
+				<Parent Name="IDW_CALLER_BAR"/>
+				<name Value="IDC_STA_SPLITTER"/>
+				<Rect Size="1,140" Location="367,30"/>
+				<IsDrawBkColor Value="true"/>
+				<BkColorResN Value="IDR_COLOR_4775F6"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+			</Label>
+			<Label>
+				<Parent Name="IDW_CALLER_BAR"/>
+				<name Value="IDC_STA_CALL2"/>
+				<Rect Size="134,24" Location="395,25"/>
+				<IsCombineImages Value="true"/>
+				<Content Value="Call"/>
+				<TextColorResN Value="IDR_COLOR_GRAY"/>
+				<ButtonClickArg Value=""/>
+				<IsEndEllipsis Value="true"/>
+			</Label>
+			<Label>
+				<Parent Name="IDW_CALLER_BAR"/>
+				<name Value="IDC_STA_CALLER2"/>
+				<Rect Size="120,24" Location="395,63"/>
+				<IsCombineImages Value="true"/>
+				<Content Value="Jim Green"/>
+				<ButtonClickArg Value=""/>
+			</Label>
+			<Label>
+				<Parent Name="IDW_CALLER_BAR"/>
+				<name Value="IDC_STA_PHONE_NUMBER2"/>
+				<Rect Size="120,24" Location="395,98"/>
+				<IsCombineImages Value="true"/>
+				<Content Value="(720) 877-1072"/>
+				<ButtonClickArg Value=""/>
+			</Label>
+			<Label>
+				<Parent Name="IDW_CALLER_BAR"/>
+				<name Value="IDC_STA_SIGN2"/>
+				<Rect Size="120,24" Location="395,130"/>
+				<IsCombineImages Value="true"/>
+				<Content Value="Juan Ferguson"/>
+				<ButtonClickArg Value=""/>
+			</Label>
+		</Root>
+	</Window>
+</IUI>

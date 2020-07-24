@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="PortGo.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Login\LoginDlg.cpp">
+      <Filter>Login</Filter>
+    </ClCompile>
+    <ClCompile Include="Login\LoginSettingsWnd.cpp">
+      <Filter>Login</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainWnd.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainCanvasHandler.cpp">
+      <Filter>Main\MainFrameTabControl\MainPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\InboxPanel\InboxCanvasHandler.cpp">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\InboxPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ContactsPanel\ContactsCanvasHandler.cpp">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ContactsPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainFrameTabControl\SearchPanel\SearchCanvasHandler.cpp">
+      <Filter>Main\MainFrameTabControl\SearchPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\ChatTabControlHandler.cpp">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="Global.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer\CallingTransferDlg.cpp">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\VideoCanvasHandler.cpp">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\PopupChatDlg.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainFrameTabControl\CallPanel\CallCanvasHandler.cpp">
+      <Filter>Main\MainFrameTabControl\CallPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\MiniKeyboardWnd.cpp">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\TextChatPageCanvasHandler.cpp">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\AudioPageCanvasHandler.cpp">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\TextChatCanvasHandler.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\ProfileCanvasHandler.cpp">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\SpeakerDlg.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\EmoticonWnd.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\EmoticonPageCanvasHandler.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MeetingWnd.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="db\portsql.cpp">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility\utility.cxx">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="System\SystemEx.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="System\VoipCallBackEvent.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="db\User.cpp">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="db\Options.cpp">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="db\Contact.cpp">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="db\CallHistory.cpp">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="db\VARecord.cpp">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="log\Logger.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="System\Aes.cxx">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="System\HttpClient.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="System\RestAPI.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="System\Session.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="Settings\SettingsApplicationPageHandler.cpp">
+      <Filter>Main\MainFrameTabControl\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="Settings\SettingsAudioCodecsPageHandler.cpp">
+      <Filter>Main\MainFrameTabControl\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="Settings\SettingsFrameDlg.cpp">
+      <Filter>Main\MainFrameTabControl\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="Settings\SettingsLanguagesCanvasHandler.cpp">
+      <Filter>Main\MainFrameTabControl\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="Settings\SettingsMediaQualityHandler.cpp">
+      <Filter>Main\MainFrameTabControl\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="Settings\SettingsMiscCanvasHandler.cpp">
+      <Filter>Main\MainFrameTabControl\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="System\BaseThread.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\MediaToolbarWnd.cpp">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="AVPlay\AVPlayer.cpp">
+      <Filter>AVPlay</Filter>
+    </ClCompile>
+    <ClCompile Include="OleVideoCanvasHandler.cpp" />
+    <ClCompile Include="PopupVideoWnd.cpp" />
+    <ClCompile Include="Main\CallerBarWnd.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\InfoWnd.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\InfoWndMgr.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\CallerBarWndMgr.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="TrayMsgWnd.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MsgHistoryWnd.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="AddContactWnd.cpp" />
+    <ClCompile Include="System\OnLineStatusMgr.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="db\VoiceMail.cpp">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="Settings\SettingsVideoCodecsPageHandler.cpp">
+      <Filter>Main\MainFrameTabControl\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="OleFileCanvasHandler.cpp" />
+    <ClCompile Include="OleAudioCanvasHandler.cpp" />
+    <ClCompile Include="OleImageCanvasHandler.cpp" />
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer\AddCallerDlg.cpp">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer</Filter>
+    </ClCompile>
+    <ClCompile Include="db\ChatRecord.cpp">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="System\MimeType.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="db\TalkGroup.cpp">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="db\TalkGroupNumber.cpp">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer\AddCallerCanvasHandler.cpp">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility\BitmapHelper.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="System\ConferenceStatusSubMgr.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility\DynamicText.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\VideoHostWnd.cpp">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="Login\LoginLoadingDlg.cpp">
+      <Filter>Login</Filter>
+    </ClCompile>
+    <ClCompile Include="db\AVCodec.cpp">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="Settings\TreeItemDrag.cpp">
+      <Filter>Main\MainFrameTabControl\Setting</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="PortGo.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Login\LoginDlg.h">
+      <Filter>Login</Filter>
+    </ClInclude>
+    <ClInclude Include="Login\LoginSettingsWnd.h">
+      <Filter>Login</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainWnd.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainCanvasHandler.h">
+      <Filter>Main\MainFrameTabControl\MainPanel</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\InboxPanel\InboxCanvasHandler.h">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\InboxPanel</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ContactsPanel\ContactsCanvasHandler.h">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ContactsPanel</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainFrameTabControl\SearchPanel\SearchCanvasHandler.h">
+      <Filter>Main\MainFrameTabControl\SearchPanel</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\ChatTabControlHandler.h">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer\CallingTransferDlg.h">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\VideoCanvasHandler.h">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\PopupChatDlg.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainFrameTabControl\CallPanel\CallCanvasHandler.h">
+      <Filter>Main\MainFrameTabControl\CallPanel</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\MiniKeyboardWnd.h">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\TextChatPageCanvasHandler.h">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\AudioPageCanvasHandler.h">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\TextChatCanvasHandler.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\ProfileCanvasHandler.h">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\SpeakerDlg.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\EmoticonWnd.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\EmoticonPageCanvasHandler.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MeetingWnd.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="db\portsql.hxx">
+      <Filter>db</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\utility.hxx">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="System\SystemEx.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonDef.h" />
+    <ClInclude Include="System\VoipCallBackEvent.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="db\User.h">
+      <Filter>db</Filter>
+    </ClInclude>
+    <ClInclude Include="db\Options.h">
+      <Filter>db</Filter>
+    </ClInclude>
+    <ClInclude Include="db\DBParam.h">
+      <Filter>db</Filter>
+    </ClInclude>
+    <ClInclude Include="db\Contact.h">
+      <Filter>db</Filter>
+    </ClInclude>
+    <ClInclude Include="db\CallHistory.h">
+      <Filter>db</Filter>
+    </ClInclude>
+    <ClInclude Include="db\VARecord.h">
+      <Filter>db</Filter>
+    </ClInclude>
+    <ClInclude Include="log\Logger.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="System\Aes.hxx">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="System\HttpClient.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="System\RestAPI.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings\SettingsApplicationPageHandler.h">
+      <Filter>Main\MainFrameTabControl\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings\SettingsAudioCodecsPageHandler.h">
+      <Filter>Main\MainFrameTabControl\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings\SettingsFrameDlg.h">
+      <Filter>Main\MainFrameTabControl\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings\SettingsLanguagesCanvasHandler.h">
+      <Filter>Main\MainFrameTabControl\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings\SettingsMediaQualityHandler.h">
+      <Filter>Main\MainFrameTabControl\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings\SettingsMiscCanvasHandler.h">
+      <Filter>Main\MainFrameTabControl\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="System\BaseThread.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\MediaToolbarWnd.h">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClInclude>
+    <ClInclude Include="AVPlay\AVPlayer.h">
+      <Filter>AVPlay</Filter>
+    </ClInclude>
+    <ClInclude Include="OleVideoCanvasHandler.h" />
+    <ClInclude Include="PopupVideoWnd.h" />
+    <ClInclude Include="Main\CallerBarWnd.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\InfoWnd.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\InfoWndMgr.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\CallerBarWndMgr.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\ScreenPrint.h">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClInclude>
+    <ClInclude Include="TrayMsgWnd.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MsgHistoryWnd.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="AddContactWnd.h" />
+    <ClInclude Include="System\OnLineStatusMgr.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="db\VoiceMail.h">
+      <Filter>db</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings\SettingsVideoCodecsPageHandler.h">
+      <Filter>Main\MainFrameTabControl\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="OleFileCanvasHandler.h" />
+    <ClInclude Include="OleAudioCanvasHandler.h" />
+    <ClInclude Include="OleImageCanvasHandler.h" />
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer\AddCallerDlg.h">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer</Filter>
+    </ClInclude>
+    <ClInclude Include="db\ChatRecord.h">
+      <Filter>db</Filter>
+    </ClInclude>
+    <ClInclude Include="System\MimeType.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="db\TalkGroup.h">
+      <Filter>db</Filter>
+    </ClInclude>
+    <ClInclude Include="db\TalkGroupNumber.h">
+      <Filter>db</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer\AddCallerCanvasHandler.h">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\BitmapHelper.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="System\emojires.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="System\ConferenceStatusSubMgr.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\DynamicText.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\VideoHostWnd.h">
+      <Filter>Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel</Filter>
+    </ClInclude>
+    <ClInclude Include="Login\LoginLoadingDlg.h">
+      <Filter>Login</Filter>
+    </ClInclude>
+    <ClInclude Include="db\AVCodec.h">
+      <Filter>db</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings\TreeItemDrag.h">
+      <Filter>Main\MainFrameTabControl\Setting</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PortGo.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Login">
+      <UniqueIdentifier>{d00948ea-9e6f-4213-9cca-c648d6da3764}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{94e1daf9-061f-44e6-8567-f4a3234e9974}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\MainFrameTabControl">
+      <UniqueIdentifier>{d881f9e4-60a6-46b7-8a90-96ff6693bfb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\MainFrameTabControl\MainPanel">
+      <UniqueIdentifier>{b3a6526a-6b76-4c69-9074-68252bf2850a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\MainFrameTabControl\SearchPanel">
+      <UniqueIdentifier>{61b86aff-8cc0-48cf-bfa1-077df5eacaf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\MainFrameTabControl\MainPanel\MainTabControl">
+      <UniqueIdentifier>{57e357c6-a699-4cb1-9ef7-b2d955ee964e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel">
+      <UniqueIdentifier>{5f14e722-5dd2-4098-b85a-7457aec73ac9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\MainFrameTabControl\MainPanel\MainTabControl\InboxPanel">
+      <UniqueIdentifier>{6387803b-9aed-417e-9925-2ca10ff8d486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ContactsPanel">
+      <UniqueIdentifier>{809237ee-d7f4-4196-8862-0ac9eaaff61c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog">
+      <UniqueIdentifier>{e872b9aa-fd12-43c1-bafe-180bd02d8c32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\MainFrameTabControl\MainPanel\MainTabControl\ChatPanel\CallingPageDialog\CallingPageTransfer">
+      <UniqueIdentifier>{1c414996-0744-4a22-960e-db0a4348c18b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\MainFrameTabControl\CallPanel">
+      <UniqueIdentifier>{2b183695-2b03-41ee-8a14-b18171af9775}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="db">
+      <UniqueIdentifier>{cb0fa499-53fe-40c8-bb56-07463ecf8082}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{9ed42239-e082-4375-991e-be35fc813f70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{90f08fb3-f013-45d5-a641-25b7e3de9eee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Log">
+      <UniqueIdentifier>{6c8f8087-94ef-4317-98c7-d1e4ecb7eff0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\MainFrameTabControl\Setting">
+      <UniqueIdentifier>{83356b21-7129-4782-abe0-0e3d6285e24a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AVPlay">
+      <UniqueIdentifier>{4c24b9b6-e7f6-4784-b636-6c24a9849db1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="PortGo.ico" />
+    <Image Include="HideTrayIcon.ico" />
+    <Image Include="icon1.ico" />
+  </ItemGroup>
+</Project>

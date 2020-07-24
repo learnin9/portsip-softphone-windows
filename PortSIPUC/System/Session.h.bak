@@ -1,0 +1,213 @@
+/*
+    PortSIP 4.0
+    Copyright (C) 2007 PortSIP Solutions, Inc.
+   
+    support@portsip.com
+
+    Visit us at http://www.portsip.com
+*/
+
+
+#ifndef PORTSIP_SESSION_hxx
+#define PORTSIP_SESSION_hxx
+
+
+class SessionInfo
+{
+public:
+	SessionInfo();
+	virtual ~SessionInfo();
+
+	typedef enum { call_in = 1, call_out, call_in_miss, call_out_miss } CALL_TYPE;
+
+public:
+
+	void startCall();
+	void endCall();
+
+	CString getCallStartTime();
+	CString getCallEndTime();
+	CString convertCallTime(bool Start);
+
+
+
+	void startMediaStream();
+	void endMediaStream();
+	CString getMediaSessionTime();
+
+	CString converMediaSessionTime();
+
+	CALL_TYPE getCallType() { return mCallType; }
+	void setCallType(CALL_TYPE type) { mCallType = type; }
+
+
+	CString  getCallee() { return mCallee; }
+	void setCallee(CString callee) { mCallee = callee; }
+
+
+	CString getCaller() { return mCaller; }
+	void setCaller(CString caller) { mCaller = caller; }
+
+	bool getState() { return mState; }
+	void setState(bool State) { mState = State; }
+
+
+	void reset();
+
+protected:
+
+private:
+
+	DWORD mMediaStartTime;
+	DWORD mMediaEndTime;
+
+	CTime mCallStartTime;
+	CTime mCallEndTime;
+
+	CString mCaller;
+	CString mCallee;
+	CString mRemoteUserName;
+
+	CALL_TYPE mCallType;
+	bool mState;
+
+};
+
+class Session
+{
+public:
+	Session()
+		:m_lSessionId(0)
+		,m_bHoldSate(false)
+		,m_bSessionState(false)
+		,m_bConferenceState(false)
+		,m_bRecvCallState(false)
+		,m_lOriginCallSessionId(0)
+		,m_bIsReferCall(false)
+		,m_bExistEarlyMedia(false)
+	{
+		m_bSendVideoState = false;
+		m_bCallState = false;
+
+	}
+	virtual ~Session(){}
+
+public:
+
+	void setExistEarlyMedia(bool state)
+	{
+		m_bExistEarlyMedia = state;
+	}
+
+	bool getExistEarlyMedia()
+	{
+		return m_bExistEarlyMedia;
+	}
+
+	void setSessionId(long sessionId)
+	{
+		m_lSessionId = sessionId;
+	}
+
+
+	long getSessionId()
+	{
+		return m_lSessionId;
+	}
+
+	void setHoldState(bool state)
+	{
+		m_bHoldSate = state;
+	}
+
+
+	bool getHoldState()
+	{
+		return m_bHoldSate;
+	}
+
+	void setSessionState(bool state)
+	{
+		m_bSessionState = state;
+	}
+
+
+
+	bool getSessionState()
+	{
+		return m_bSessionState;
+	}
+
+
+	void setRecvCallState(bool state)
+	{
+		m_bRecvCallState = state;
+	}
+
+	bool getRecvCallState()
+	{
+		return m_bRecvCallState;
+	}
+
+	void reset()
+	{
+		m_lSessionId = 0;
+		m_bHoldSate = false;
+		m_bSessionState = false;
+		m_bConferenceState = false;
+		m_bRecvCallState = false;
+		m_bIsReferCall = false;
+		m_lOriginCallSessionId = 0;
+		m_bExistEarlyMedia = false;
+	}
+
+	bool isReferCall() { return m_bIsReferCall; }
+	long getOriginCallSessionId() { return m_lOriginCallSessionId; }
+	void setReferCall(bool referCall, long originCallSessionId)
+	{
+		m_bIsReferCall = referCall;
+		m_lOriginCallSessionId = originCallSessionId;
+	}
+
+	void setSendVideoState(bool state) 
+	{
+		m_bSendVideoState = state;
+	}
+	bool getSendVideoState()
+	{
+		
+		return m_bSendVideoState;
+		
+	}
+
+	bool getCallState()
+	{
+		return m_bCallState;
+	}
+	void Session::setCallState(bool state)
+	{
+		m_bCallState = state;
+	}
+
+protected:
+
+
+private:
+
+	long m_lSessionId;
+	bool m_bHoldSate;
+	bool m_bSessionState;
+	bool m_bConferenceState;
+	bool m_bRecvCallState;
+	bool m_bIsReferCall;
+	long m_lOriginCallSessionId;
+	bool m_bExistEarlyMedia;
+	bool m_bSendVideoState;
+	bool m_bCallState;
+};
+
+
+
+
+#endif
+

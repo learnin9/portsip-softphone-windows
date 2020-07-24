@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_SETTINGS_MISC"/>
+		<Rect Size="490,410" Location="0,0"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDW_SETTINGS_MISC"/>
+				<name Value="IDC_CANVAS_MISC"/>
+				<Rect Size="470,399" Location="0,1"/>
+				<HAlign Value="Fill"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Label>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_STA_RTP_PORTS"/>
+						<Rect Size="90,24" Location="20,10"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="RTP Ports"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_STA_VIDEO_RANGE"/>
+						<Rect Size="250,24" Location="20,32"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Range of port for video RTP channel"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<RichTextBox>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_RE_VIDEO_FROM"/>
+						<Rect Size="50,24" Location="279,31"/>
+						<IsTabStop Value="true"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="editbox.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+					</RichTextBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_STA_TO"/>
+						<Rect Size="10,24" Location="333,32"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="-"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</Label>
+					<RichTextBox>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_RE_VIDEO_TO"/>
+						<Rect Size="50,24" Location="347,31"/>
+						<IsTabStop Value="true"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="editbox.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+					</RichTextBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_STA_AUDIO_RANGE"/>
+						<Rect Size="250,24" Location="20,59"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Range of port for audio RTP channel"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<RichTextBox>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_RE_AUDIO_FROM"/>
+						<Rect Size="50,24" Location="279,56"/>
+						<IsTabStop Value="true"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="editbox.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+					</RichTextBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_STA_AUDIO_TO"/>
+						<Rect Size="10,24" Location="333,54"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="-"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</Label>
+					<RichTextBox>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_RE_AUDIO_TO"/>
+						<Rect Size="50,24" Location="347,56"/>
+						<IsTabStop Value="true"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="editbox.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+					</RichTextBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_STA_ENABLE_RTP"/>
+						<Rect Size="380,39" Location="20,80"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Enable RTP Keep-alive"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_CHK_ENABLE_RTP"/>
+						<Rect Size="36,16" Location="417,92"/>
+						<HAlign Value="Right"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_STA_SPLITTER3"/>
+						<Rect Size="470,1" Location="0,119"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_STA_ENABLE_MWI"/>
+						<Rect Size="380,39" Location="20,120"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Enable check MWI(message waiting Indication)"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_CHK_ENABLE_MWI"/>
+						<Rect Size="36,16" Location="417,130"/>
+						<HAlign Value="Right"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_STA_SPLITTER4"/>
+						<Rect Size="470,1" Location="0,159"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_STA_ENABLE_SESSION_TIMER"/>
+						<Rect Size="380,39" Location="20,160"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Enable Session timer"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_CHK_ENABLE_SESSION_TIMER"/>
+						<Rect Size="36,16" Location="417,171"/>
+						<HAlign Value="Right"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+					<RichTextBox>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_RE_SESSION_TIMER"/>
+						<Rect Size="210,24" Location="20,207"/>
+						<IsTabStop Value="true"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="editbox.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+					</RichTextBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_STA_SESSION_TIMER"/>
+						<Rect Size="60,24" Location="233,208"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="seconds"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_STA_SPLITTER5"/>
+						<Rect Size="470,1" Location="0,240"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_STA_ALWAYS_FORWARD_TO"/>
+						<Rect Size="380,29" Location="20,258"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Always forward to:"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<RichTextBox>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_RE_ALWAYS_FORWARD_TO"/>
+						<Rect Size="433,24" Location="20,287"/>
+						<IsTabStop Value="true"/>
+						<HAlign Value="Fill"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="editbox.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+					</RichTextBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_STA_SPLITTER6"/>
+						<Rect Size="470,1" Location="0,320"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_STA_ON_PHONE"/>
+						<Rect Size="380,29" Location="20,338"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="When on the phone, forward to:"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<RichTextBox>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_RE_ON_PHONE"/>
+						<Rect Size="433,24" Location="20,367"/>
+						<IsTabStop Value="true"/>
+						<HAlign Value="Fill"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="editbox.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+					</RichTextBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_STA_SPLITTER7"/>
+						<Rect Size="470,0" Location="0,400"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_CHK_ALWAYS_FORWARD_TO"/>
+						<Rect Size="36,16" Location="417,263"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_MISC"/>
+						<name Value="IDC_CHK_ON_PHONE"/>
+						<Rect Size="36,16" Location="417,344"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

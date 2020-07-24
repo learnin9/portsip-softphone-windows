@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_SETTINGS_MEDIA_QUALITY"/>
+		<Rect Size="520,540" Location="0,0"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDW_SETTINGS_MEDIA_QUALITY"/>
+				<name Value="IDC_CANVAS_MEDIA_QUALITY"/>
+				<Rect Size="470,445" Location="0,0"/>
+				<HAlign Value="Fill"/>
+				<VAlign Value="Fill"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_AES"/>
+						<Rect Size="380,39" Location="20,0"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Reduce echos from speakers(AES)"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_CHK_AES"/>
+						<Rect Size="36,16" Location="417,13"/>
+						<HAlign Value="Right"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_SPLITTER1"/>
+						<Rect Size="470,1" Location="0,39"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_REDUCE_NOISE"/>
+						<Rect Size="380,39" Location="20,40"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Reduce Background noise"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_CHK_REDUCE_NOISE"/>
+						<Rect Size="36,16" Location="417,52"/>
+						<HAlign Value="Right"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_SPLITTER2"/>
+						<Rect Size="470,1" Location="0,79"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_AUTOMATIC_CONTROL"/>
+						<Rect Size="380,39" Location="20,80"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Automatic gain control"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_CHK_AUTOMATIC_CONTROL"/>
+						<Rect Size="36,16" Location="417,92"/>
+						<HAlign Value="Right"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_SPLITTER3"/>
+						<Rect Size="470,1" Location="0,119"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_VOICE_DETECTION"/>
+						<Rect Size="380,39" Location="20,120"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Voice Activity Detection"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_CHK_VOICE_DETECTION"/>
+						<Rect Size="36,16" Location="417,130"/>
+						<HAlign Value="Right"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_SPLITTER4"/>
+						<Rect Size="470,1" Location="0,159"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_COMFORT_NOISE_GENERATOR"/>
+						<Rect Size="380,39" Location="20,160"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Comfort Noise Generator"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_CHK_COMFORT_NOISE_GENERATOR"/>
+						<Rect Size="36,16" Location="417,171"/>
+						<HAlign Value="Right"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_SPLITTER5"/>
+						<Rect Size="470,1" Location="0,199"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_ENABLE_AUDIO_QOS"/>
+						<Rect Size="380,39" Location="20,200"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Enable Audio Qos"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_CHK_ENABLE_AUDIO_QOS"/>
+						<Rect Size="36,16" Location="417,211"/>
+						<HAlign Value="Right"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_SPLITTER6"/>
+						<Rect Size="470,1" Location="0,239"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_ENABLE_VIDEO_QOS"/>
+						<Rect Size="380,39" Location="20,240"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Enable Video Qos"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<CheckBox>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_CHK_ENABLE_VIDEO_QOS"/>
+						<Rect Size="36,16" Location="417,251"/>
+						<HAlign Value="Right"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="Chk_Switch.png"/>
+						<ButtonClickArg Value=""/>
+					</CheckBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_SPLITTER7"/>
+						<Rect Size="470,1" Location="0,279"/>
+						<HAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_VIDEO_QUALITY"/>
+						<Rect Size="130,24" Location="20,286"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Video Quality"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_DES"/>
+						<Rect Size="400,54" Location="38,310"/>
+						<HAlign Value="Fill"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="High resolution provides improve quality images necessary for larger and clear displays but requires more network bandwidth"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Vertical="Top"/>
+						<IsMultiline Value="true"/>
+					</Label>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_RESOLUTION"/>
+						<Rect Size="90,24" Location="38,370"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Resolution:"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<ComboBox>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_CMB_RESOLUTION"/>
+						<Rect Size="140,30" Location="166,366"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="editbox.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+						<IsDrawBorderColor Value="false"/>
+						<ButtonClickArg Value=""/>
+						<EditBoxMargin Left="10" Top="7" Right="1" Bottom="1"/>
+						<ButtonWidth Value="54"/>
+						<DropButtonMargin Left="0" Top="1" Right="1" Bottom="1"/>
+						<IsDrawDropButtonBkColor Value="false"/>
+						<ButtonCombineBkImage Value="ComboBoxButtonMini.png"/>
+						<IsDrawDropButtonBorderColor Value="false"/>
+						<HighlightItemBk ColorResID="IDR_COLOR_NAVIGATEH"/>
+					</ComboBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_BITRATE"/>
+						<Rect Size="90,24" Location="38,400"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Bitrate:"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<ComboBox>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_CMB_BITRATE"/>
+						<Rect Size="140,30" Location="166,398"/>
+						<IsDrawBkColor Value="false"/>
+						<IsCombineImages Value="true"/>
+						<CombineBkImage Value="editbox.png"/>
+						<NineGridParam Left="4" Top="4" Right="4" Bottom="4"/>
+						<IsDrawBorderColor Value="false"/>
+						<ButtonClickArg Value=""/>
+						<EditBoxMargin Left="10" Top="7" Right="1" Bottom="1"/>
+						<ButtonWidth Value="54"/>
+						<DropButtonMargin Left="0" Top="1" Right="1" Bottom="1"/>
+						<IsDrawDropButtonBkColor Value="false"/>
+						<ButtonCombineBkImage Value="ComboBoxButtonMini.png"/>
+						<IsDrawDropButtonBorderColor Value="false"/>
+						<HighlightItemBk ColorResID="IDR_COLOR_NAVIGATEH"/>
+					</ComboBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_MEDIA_QUALITY"/>
+						<name Value="IDC_STA_KBPS"/>
+						<Rect Size="50,25" Location="313,401"/>
+						<IsCombineImages Value="true"/>
+						<Content Value="Kbps"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

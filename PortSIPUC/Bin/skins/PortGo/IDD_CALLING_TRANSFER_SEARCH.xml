@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDD_CALLING_TRANSFER_SEARCH"/>
+		<Rect Size="600,280" Location="0,0"/>
+		<NineGridParam Left="15" Top="15" Right="15" Bottom="15"/>
+		<IsUpdateLayeredWindow Value="true"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDD_CALLING_TRANSFER_SEARCH"/>
+				<name Value="IDC_CANVAS_TRANSFER_SEARCH"/>
+				<Rect Size="520,250" Location="40,15"/>
+				<HAlign Value="Fill"/>
+				<VAlign Value="Fill"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<RichTextBox>
+						<Parent Name="IDC_CANVAS_TRANSFER_SEARCH"/>
+						<name Value="IDC_RE_SEARCH"/>
+						<Rect Size="440,34" Location="0,10"/>
+						<IsTabStop Value="true"/>
+						<HAlign Value="Fill"/>
+						<IsCombineImages Value="true"/>
+					</RichTextBox>
+					<Label>
+						<Parent Name="IDC_CANVAS_TRANSFER_SEARCH"/>
+						<name Value="IDC_STA_SPLITTER2"/>
+						<Rect Size="520,1" Location="0,44"/>
+						<HAlign Value="Center"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_SPLITTER"/>
+						<IsCombineImages Value="true"/>
+						<ButtonClickArg Value=""/>
+					</Label>
+					<TreeView>
+						<Parent Name="IDC_CANVAS_TRANSFER_SEARCH"/>
+						<name Value="IDC_TREECTRL_RESULT"/>
+						<Rect Size="520,200" Location="0,49"/>
+						<IsCombineImages Value="true"/>
+						<BkImgTransparent Value="256"/>
+						<IsFullRowSel Value="true"/>
+						<DefaultItemHeight Value="false"/>
+						<ItemHeight Value="70"/>
+						<ItemLine Enable="false"/>
+						<FocusItemBackground ColorResID="IDR_COLOR_GRAY"/>
+						<FocusItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+						<SelectedItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+						<HighlightItemBackground Enable="false" Type="Color"/>
+						<HighlightItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+						<ScrollBarWidth Value="10"/>
+						<HorizontalScrollbarStyleID Value=""/>
+						<VerticalScrollbarStyleID Value=""/>
+					</TreeView>
+					<Button>
+						<Parent Name="IDC_CANVAS_TRANSFER_SEARCH"/>
+						<name Value="IDC_BTN_GO"/>
+						<Rect Size="60,34" Location="458,10"/>
+						<BkColorResN Value="IDR_COLOR_NAVIGATEH"/>
+						<IsCombineImages Value="true"/>
+						<BorderColorResN Value="IDR_COLOR_NAVIGATEH"/>
+						<Content Value="GO"/>
+						<ButtonClickArg Value=""/>
+						<TextAlignment Horizontal="Center"/>
+					</Button>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>

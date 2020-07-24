@@ -1,0 +1,33 @@
+# 版本限定
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)                      
+
+# 项目名称
+PROJECT(jsoncpp)
+
+# 设置编译器选项：O3优化，显示所有警告
+SET(CMAKE_C_FLAGS "$ENV{CFLAGS} -O3 -Wall") 
+
+# 定义头文件的路径变量
+SET(INCLUDE_PATH ${PROJECT_SOURCE_DIR}/) 
+MESSAGE(STATUS "Include Path, ${INCLUDE_PATH}") 
+
+# 定义源文件路径变量
+SET(SOURCE_PATH ${PROJECT_SOURCE_DIR}/) 
+MESSAGE(STATUS "Source Path , ${SOURCE_PATH}") 
+
+# 包含头文件路径
+INCLUDE_DIRECTORIES(${INCLUDE_PATH}) 
+
+SET(CMAKE_CXX_FLAGS_DEBUG "/D_DEBUG /MTd /Zi /Ob0 /Od /RTC1")# 直接抄gui的默认，然后 改成mtd
+SET(CMAKE_CXX_FLAGS_RELEASE "/MT /O2 /Ob2 /D NDEBUG")
+
+# 添加源文件路径下所有源文件存放到变量中(*.c && *.cpp)，当然也可以手动一个个文件添加进来
+AUX_SOURCE_DIRECTORY(${SOURCE_PATH} SRC_LIST) 
+
+# 设置动态库输出路径
+SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib) 
+MESSAGE(STATUS "Library Output Path, " ${PROJECT_BINARY_DIR/lib}) 
+
+
+# 生成静态库（sqlite3.a，target名字只能有一个，所以不能与动态库的名字一样）
+ADD_LIBRARY(sqlite3 STATIC ${SRC_LIST})

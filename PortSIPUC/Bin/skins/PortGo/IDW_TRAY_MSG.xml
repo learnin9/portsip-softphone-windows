@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_TRAY_MSG"/>
+		<Rect Size="400,199" Location="0,0"/>
+		<IsDrawBkColor Value="true"/>
+		<ActivatedBkColor Value="IDR_COLOR_EBF2F9"/>
+		<NineGridParam Left="10" Top="10" Right="10" Bottom="10"/>
+		<IsUpdateLayeredWindow Value="true"/>
+		<ShadowWindow ShadowBorderImage="ShadowBorder.png" Left="5" Top="5" Right="5" Bottom="5"/>
+		<Root>
+			<Label>
+				<Parent Name="IDW_TRAY_MSG"/>
+				<name Value="IDC_STA_NAME"/>
+				<Rect Size="60,24" Location="35,27"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+			</Label>
+			<Button>
+				<Parent Name="IDW_TRAY_MSG"/>
+				<name Value="IDC_BTN_IGNORE"/>
+				<Rect Size="90,24" Location="28,160"/>
+				<IsDrawBkColor Value="false"/>
+				<IsCombineImages Value="true"/>
+				<IsDrawBorderColor Value="false"/>
+				<Content Value="忽略全部"/>
+				<ButtonClickArg Value=""/>
+			</Button>
+			<TreeView>
+				<Parent Name="IDW_TRAY_MSG"/>
+				<name Value="IDC_TREECTRL_MSG"/>
+				<Rect Size="347,98" Location="27,52"/>
+				<IsCombineImages Value="true"/>
+				<IsFullRowSel Value="true"/>
+				<DefaultItemHeight Value="false"/>
+				<ItemHeight Value="41"/>
+				<ItemLine Enable="false"/>
+				<FocusItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+				<SelectedItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+				<HighlightItemBackground Enable="false" Type="Color"/>
+				<HighlightItemBkImageNineGridArg Left="0" Top="0" Right="0" Bottom="0"/>
+				<HorizontalScrollbarStyleID Value=""/>
+				<VerticalScrollbarStyleID Value=""/>
+			</TreeView>
+		</Root>
+	</Window>
+</IUI>

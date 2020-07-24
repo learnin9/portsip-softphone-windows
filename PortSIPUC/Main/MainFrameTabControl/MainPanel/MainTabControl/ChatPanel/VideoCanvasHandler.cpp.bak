@@ -1,0 +1,1955 @@
+#include "stdafx.h"
+#include "VideoCanvasHandler.h"
+#include "CallingPageDialog/CallingPageTransfer/CallingTransferDlg.h"
+#include "System/SystemEx.h"
+#include "MiniKeyboardWnd.h"
+#include "../../MainCanvasHandler.h"
+
+//////////////////////////////////////////////////////////////////////////
+// 全屏视频窗口
+#define GETPROP_VIDEO_HOST			_T("GETPROP_VIDEO_HOST")
+#define FULL_SCREEN_VIDEO_WND_CLASS _T("FullScreenVideoWndClass")
+#define GETPROP_MEDIA_TOOLBAR	    _T("GETPROP_MEDIA_TOOLBAR")
+
+#define VIDEO_WND_CLASS _T("PortGoVideoWndClass")
+
+std::map<int, CVideoCanvasHandler*> CVideoCanvasHandler::m_mapHwnd2VideoPage;
+
+LRESULT CALLBACK FullScreenVideoWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+	switch (uMsg)
+	{
+	case WM_CHAR:
+		if (VK_ESCAPE == wParam)
+		{
+			HWLWND hwlVideoHost = (HWLWND)::GetProp(hWnd, GETPROP_VIDEO_HOST);
+			SendMessage(hwlVideoHost, WM_TOGGLE_VIDEO, 0, 0);
+		}
+		break;
+
+	case WM_LBUTTONDBLCLK:
+		// 双击在全屏和窗口之间切换
+		if (::IsWindow(hWnd))
+		{
+			HWLWND hwlVideoHost = (HWLWND)::GetProp(hWnd, GETPROP_VIDEO_HOST);
+			SendMessage(hwlVideoHost, WM_TOGGLE_VIDEO, 0, 0);
+		}
+		else
+		{
+			_ASSERT(FALSE);
+		}
+		break;
+
+	case WM_DESTROY:
+		// 通知主界面，已退出全屏视频
+		::SendMessage(g_pMainFrame->GetSafeHwnd(), WM_EXIT_FULL_SCREEN_VIDEO, 0, 0);
+		break;
+	case WM_WINDOWPOSCHANGED:
+	{
+		// 当视频窗口位置变化时，调整播放控制栏的坐标。
+		HWND hMediaToolbar = (HWND)GetProp(hWnd, GETPROP_MEDIA_TOOLBAR);
+		if (::IsWindow(hMediaToolbar))
+		{
+			CIUIRect rcVideo;
+			::GetWindowRect(hWnd, rcVideo);
+
+			CIUIRect rcToolBar;
+			::GetWindowRect(hMediaToolbar, rcToolBar);
+
+			CRect rcNew;
+			CanvasLayout(rcToolBar, CLH_CENTER, CLV_BOTTOM, NULL, NULL,
+				rcVideo.Width(), rcVideo.Height(), rcNew);
+
+			IUIClientToScreen(hWnd, rcNew);
+
+			::MoveWindow(hMediaToolbar, rcNew.left, rcNew.top,
+				rcNew.Width(), rcNew.Height(), TRUE);
+
+			ShowWindow(hMediaToolbar, IsWindowVisible(hWnd) ? SW_SHOW : SW_HIDE);
+		}
+	}
+	break;
+	default:
+		break;
+	}
+	return ::DefWindowProc(hWnd, uMsg, wParam, lParam);
+}
+
+BOOL RegisterVideoWindowClass()
+{
+	WNDCLASS wc = { 0 };
+	wc.style = CS_HREDRAW | CS_VREDRAW | CS_DBLCLKS;
+	wc.lpfnWndProc = FullScreenVideoWndProc;
+	wc.cbClsExtra = 0;
+	wc.cbWndExtra = 0;
+	wc.hInstance = IUIGetInstanceHandle();
+	wc.hIcon = NULL;
+	wc.hCursor = ::LoadCursor(NULL, IDC_ARROW);
+	wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+	wc.lpszMenuName = NULL;
+	wc.lpszClassName = FULL_SCREEN_VIDEO_WND_CLASS;
+	ATOM ret = ::RegisterClass(&wc);
+	_ASSERT(ret != NULL || ::GetLastError() == ERROR_CLASS_ALREADY_EXISTS);
+	return ret != NULL || ::GetLastError() == ERROR_CLASS_ALREADY_EXISTS;
+}
+
+HWND CreateVideoWnd(HWND hParent)
+{
+	BOOL bRet = RegisterVideoWindowClass();
+	if (!bRet)
+	{
+		return NULL;
+	}
+
+	HWND hWnd = ::CreateWindowEx(0, FULL_SCREEN_VIDEO_WND_CLASS,
+		NULL, WS_POPUP | WS_VISIBLE, 0, 0, 0, 0,
+		hParent, 0, IUIGetInstanceHandle(), 0);
+
+	return hWnd;
+}
+
+
+//////////////////////////////////////////////////////////////////////////
+
+CVideoCanvasHandler::CVideoCanvasHandler(TAG_RECENT* pContactInfo)
+	:
+	/*
+	m_pCanvasMediaToolbar(NULL)
+	, m_pBtnRec(NULL)
+	, m_pBtnMute(NULL)
+	, m_pBtnPause(NULL)
+	, m_pBtnTransfer(NULL)
+	, m_pBtnAdd(NULL)
+	, m_pBtnKeyboard(NULL)
+	, m_pBtnShare(NULL)
+	, m_pBtnMsg(NULL)
+	, m_pBtnNoVideo(NULL)
+	, m_pBtnHangup(NULL)
+
+	,*/
+	m_pContactInfo(NULL)
+	, m_hVideoWnd(NULL)
+	, m_bOldVideoVisibleState(TRUE)
+{
+	m_pWndVideoToolbar = new CMediaToolbarWnd(CT_VIDEO, pContactInfo->m_enumRecentContact);
+	m_pCallingTransferDlg = NULL;
+	m_pAddCallerDlg = NULL;
+	m_pSrcContact = NULL;
+	m_pAddContact = NULL;
+	m_hDecodeTimer = 0;
+}
+
+CVideoCanvasHandler::~CVideoCanvasHandler()
+{
+}
+void CVideoCanvasHandler::BeginTimer()
+{
+	//检查定时器是否异常-按道理这里不应该进来
+	if (m_hDecodeTimer != 0)
+	{
+		::KillTimer(NULL, m_hDecodeTimer);
+		ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+		if (localRecentContactType == ENUM_SINGLE_CONTACT)
+		{
+			CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+			if (pContactDB->ReturnActiveLine() > 0)
+			{
+				CSystemEx::GetInstance()->ReSetCallTime(pContactDB->ReturnActiveLine());
+			}
+		}
+
+	}
+	m_hDecodeTimer = ::SetTimer(NULL, IDT_SESSION_TIMER, 5000, TimerProcSession);
+	m_mapHwnd2VideoPage.insert(make_pair(m_hDecodeTimer, this));
+}
+void CVideoCanvasHandler::CleanChkStatus()
+{
+	//REC
+	bool bChechEnable = m_pWndVideoToolbar->GetRecEnable();
+	if (m_pWndVideoToolbar->GetRecCheck() == BST_CHECKED )
+	{
+		m_pWndVideoToolbar->SetRecCheck(BST_UNCHECKED);
+		ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+		if (localRecentContactType == ENUM_SINGLE_CONTACT)
+		{
+			CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+			//假如正在录音关闭录音
+			CSystemEx::GetInstance()->EndRecord(pContactDB->m_nActiveLine, pContactDB->m_strSIPNum, ENUM_VA_RECORD_VIDEO);
+		}
+	}
+	//MUTE
+	if (m_pWndVideoToolbar->GetMuteCheck() == BST_CHECKED)
+	{
+		m_pWndVideoToolbar->SetMuteCheck(BST_UNCHECKED);
+		MuteMicroPhineSession();
+	}
+	//Hold
+	if (m_pWndVideoToolbar->GetVideoCheck() == BST_CHECKED)
+	{
+		m_pWndVideoToolbar->SetVideoCheck(BST_UNCHECKED);
+	}
+	//NOVIDEO
+	if (m_pWndVideoToolbar->GetHoldCheck() == BST_CHECKED)
+	{
+		m_pWndVideoToolbar->SetHoldCheck(BST_UNCHECKED);
+	}
+}
+void  CVideoCanvasHandler::TimerProcSession(HWND hlWnd, UINT uMsg, UINT_PTR idEvent, DWORD dwTime)
+{
+	CVideoCanvasHandler* pAudioPageCanvasHandler = NULL;
+	auto iterFind = m_mapHwnd2VideoPage.find(idEvent);
+	if (iterFind != m_mapHwnd2VideoPage.end())
+	{
+		pAudioPageCanvasHandler = iterFind->second;
+	}
+	if (pAudioPageCanvasHandler != NULL)
+	{
+		if (pAudioPageCanvasHandler->m_hDecodeTimer == idEvent)
+		{//如果是定时器Player自己的
+			OutputDebugString(L"");
+			pAudioPageCanvasHandler->ProcessTimer();
+		}
+		else
+		{
+
+		}
+
+		return;
+	}
+}
+void CVideoCanvasHandler::ProcessTimer()
+{
+	int  sendBytes, sendPackets, sendPacketsLost, sendFractionLost, sendRttMS, sendCodecType, sendFrameWidth, sendFrameHeight, sendBitrateBPS, sendFramerate;
+	//Receiver
+	int  recvBytes, recvPackets,recvPacketsLost,recvFractionLost,recvCodecType,recvFrameWidth, recvFrameHeight, recvBitrateBPS,recvFramerate;
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	switch (localRecentContactType)
+	{
+	case ENUM_SINGLE_CONTACT:
+	{
+		int  nSessionID = CSystemEx::GetInstance()->GetSessionID(m_pContactInfo->m_unionContactInfo.m_pContact->ReturnActiveLine());
+		int nErrorCode =PortSIP_getVideoStatistics(CSystemEx::GetInstance()->GetSipLib(), nSessionID,\
+			&sendBytes,
+			&sendPackets,
+			&sendPacketsLost,
+			&sendFractionLost,
+			&sendRttMS,
+			&sendCodecType,
+			&sendFrameWidth,
+			&sendFrameHeight,
+			&sendBitrateBPS,
+			&sendFramerate,
+			&recvBytes,
+			&recvPackets,
+			&recvPacketsLost,
+			&recvFractionLost,
+			&recvCodecType,
+			&recvFrameWidth,
+			&recvFrameHeight,
+			&recvBitrateBPS,
+			&recvFramerate);
+		std::string strInfo;
+		CIUIString strIUIInfo;
+		if (nErrorCode==0)
+		{
+			strIUIInfo.Format(_T("[SendBytes:%d] [sendPackets:%d][sendPacketsLost:%d] [sendFractionLost:%d] [sendRttMS:%d] [sendCodecType:%d]  [sendFrameWidth:%d] sendFrameHeight\
+			 [sendBitrateBPS:%d] [sendFramerate:%d] [recvBytes:%d] [recvPackets:%d] [recvPacketsLost:%d] [recvFractionLost:%d] [recvCodecType:%d] [recvFrameWidth:%d] [recvFrameHeight:%d]\
+			[recvBitrateBPS:%d] [recvFramerate:%d]"),sendBytes,sendPackets,sendPacketsLost,sendFractionLost,sendRttMS,sendCodecType,sendFrameWidth,sendFrameHeight,sendBitrateBPS,sendFramerate,\
+			recvBytes, recvPackets, recvPacketsLost, recvFractionLost, recvCodecType, recvFrameWidth, recvFrameHeight, recvBitrateBPS, recvFramerate);
+
+			strInfo = PortUtility::Unicode2Utf8_ND(strIUIInfo.GetBuffer(strIUIInfo.GetLength()));
+			LOG4_DEBUG(strInfo.c_str());
+		}
+		
+	}
+	break;
+	default:
+		break;
+	}
+	
+}
+int CVideoCanvasHandler::InitControls()
+{
+	/*
+	m_pCanvasMediaToolbar = (Canvas *)CWLWnd::FromHandle(FindControl(GetBindWLWnd(), _T("IDC_CANVAS_MEDIA_TOOLBAR")));
+	_ASSERT(m_pCanvasMediaToolbar != NULL);
+	
+
+	m_pBtnRec = (Button *)CWLWnd::FromHandle(FindControl(GetBindWLWnd(), _T("IDC_BTN_REC")));
+	_ASSERT(m_pBtnRec != NULL);
+	m_pBtnMute = (Button *)CWLWnd::FromHandle(FindControl(GetBindWLWnd(), _T("IDC_BTN_MUTE")));
+	_ASSERT(m_pBtnMute != NULL);
+	m_pBtnPause = (Button *)CWLWnd::FromHandle(FindControl(GetBindWLWnd(), _T("IDC_BTN_PAUSE")));
+	_ASSERT(m_pBtnPause != NULL);
+	m_pBtnTransfer = (Button *)CWLWnd::FromHandle(FindControl(GetBindWLWnd(), _T("IDC_BTN_TRANSFER")));
+	_ASSERT(m_pBtnTransfer != NULL);
+	m_pBtnAdd = (Button *)CWLWnd::FromHandle(FindControl(GetBindWLWnd(), _T("IDC_BTN_ADD")));
+	_ASSERT(m_pBtnAdd != NULL);
+	m_pBtnKeyboard = (Button *)CWLWnd::FromHandle(FindControl(GetBindWLWnd(), _T("IDC_BTN_KEYBOARD")));
+	_ASSERT(m_pBtnKeyboard != NULL);
+	m_pBtnShare = (Button *)CWLWnd::FromHandle(FindControl(GetBindWLWnd(), _T("IDC_BTN_SHARE")));
+	_ASSERT(m_pBtnShare != NULL);
+	m_pBtnMsg = (Button *)CWLWnd::FromHandle(FindControl(GetBindWLWnd(), _T("IDC_BTN_MSG")));
+	_ASSERT(m_pBtnMsg != NULL);
+	m_pBtnNoVideo = (Button *)CWLWnd::FromHandle(FindControl(GetBindWLWnd(), _T("IDC_BTN_NO_VIDEO")));
+	_ASSERT(m_pBtnNoVideo != NULL);
+	m_pBtnHangup = (Button *)CWLWnd::FromHandle(FindControl(GetBindWLWnd(), _T("IDC_BTN_HANGUP")));
+	_ASSERT(m_pBtnHangup != NULL);
+	*/
+	return 0;
+}
+
+int CVideoCanvasHandler::OnInitPanel(RoutedEventArgs *pe)
+{
+	InitControls();
+
+	// 通过创建一个新的全屏窗口来实现。全屏后，把全屏窗口的句柄传给视频SDK。
+	if (!::IsWindow(m_hVideoWnd))
+	{
+		m_hVideoWnd = CreateVideoWnd(/*GetHostWnd(GetBindWLWnd())*/CSystemEx::GetInstance()->GetMainDlg()->GetSafeHwnd());
+		::SetProp(m_hVideoWnd, GETPROP_VIDEO_HOST, GetBindWLWnd());
+
+		m_pWndVideoToolbar->SetProject(GetProject(GetBindWLWnd()));
+		m_pWndVideoToolbar->CreatePopupWindow(_T("IDW_MEDIA_TOOLBAR.xml"), m_hVideoWnd);
+		m_pWndVideoToolbar->SetBindVideoPanel(GetBindWLWnd());
+
+		::SetProp(m_hVideoWnd, GETPROP_MEDIA_TOOLBAR, m_pWndVideoToolbar->GetSafeHwnd());
+
+		m_pWndVideoToolbar->Invalidate();
+	}
+	_ASSERT(m_pContactInfo != NULL);
+
+	//::PostMessage(CSystemEx::GetInstance()->GetMainDlg()->GetSafeHwnd(),WM_CALL_ACTION, (WPARAM)this, NULL);
+	return 0;
+}
+void CVideoCanvasHandler::OnProcessConfenceAction(ENUM_RECENT_CONTACT_TYPE  SrcContactType)
+{
+	switch (  SrcContactType)
+	{
+	case ENUM_SINGLE_CONTACT:
+	{
+		if (m_pSrcContact == NULL || m_pAddContact == NULL)
+		{
+			return;
+		}
+		CVideoCanvasHandler *pSrcVideoPageCanvasHandler = CSystemEx::GetInstance()->GetVideoCanvasHandlerByContact(m_pSrcContact);
+		CVideoCanvasHandler * pAddVideoPageCanvasHandler = CSystemEx::GetInstance()->GetVideoCanvasHandlerByContact(m_pAddContact);
+
+		CSystemEx::GetInstance()->CreateConfence(ENUM_CONFENCE_VIDEO, GetPlayHwnd());
+
+		int nHistroyIDSrc, nHistroyIDAdd, nActiveLineSrc, nActiveLineAdd;
+		//1.2把关联的页面数据，拷贝到新的组界面
+		//CVideoCanvasHandler *pVideoCanvasHandler = GetVideoCanvasHandler();
+		CTalkGroup* pGroupTalk = m_pContactInfo->m_unionContactInfo.m_pChartGroup;
+		if (pGroupTalk)
+		{
+			nHistroyIDSrc = m_pSrcContact->m_unionContactInfo.m_pContact->GetHistoryID();
+			nActiveLineSrc = m_pSrcContact->m_unionContactInfo.m_pContact->ReturnActiveLine();
+			pGroupTalk->CopySrcData2GroupNumber(nActiveLineSrc, nHistroyIDSrc, (void*)m_pSrcContact);
+			//1.3关闭原来的联系人通话界面
+			if (pSrcVideoPageCanvasHandler != NULL)
+			{
+				pSrcVideoPageCanvasHandler->CloseWnd();
+			}
+			//保存新的线路数据
+			CSystemEx::GetInstance()->SaveSession2VideoCanvasHandler(nActiveLineSrc, this);
+		
+
+			//将session添加到会议
+			CSystemEx::GetInstance()->joinConference(nActiveLineSrc);
+
+			nHistroyIDAdd = m_pAddContact->m_unionContactInfo.m_pContact->GetHistoryID();
+			nActiveLineAdd = m_pAddContact->m_unionContactInfo.m_pContact->ReturnActiveLine();
+			pGroupTalk->CopySrcData2GroupNumber(nActiveLineAdd, nHistroyIDAdd, (void*)m_pAddContact);
+			//1.3关闭原来的联系人通话界面
+			if (pAddVideoPageCanvasHandler != NULL)
+			{
+				pAddVideoPageCanvasHandler->CloseWnd();
+			}
+			CSystemEx::GetInstance()->SaveSession2VideoCanvasHandler(nActiveLineAdd, this);
+			//将session添加到会议
+			CSystemEx::GetInstance()->joinConference(nActiveLineAdd);
+
+		}
+		
+		CVideoCanvasHandler *pAudioPageCanvasHandler = CSystemEx::GetInstance()->GetVideoCanvasHandlerByContact(m_pContactInfo);
+	
+		//1.4切换到新建的组
+		SwitchToContact(m_pContactInfo, CT_VIDEO);
+		//设置已连接
+		SetConnected(true, nActiveLineSrc);
+		SetConnected(true, nActiveLineAdd);
+	}
+	break;
+	case ENUM_MULTI_CONTACT:
+	{
+		CTalkGroup *pGroup = m_pContactInfo->m_unionContactInfo.m_pChartGroup;
+		if (pGroup->GetCallType() == ENUM_CALL_OUT)
+		{
+			CallTheContact();
+		}
+	}
+	break;
+	default:
+		break;
+	}
+}
+int CVideoCanvasHandler::OnWindowPosChanged(RoutedEventArgs *pe)
+{
+	if (::IsWindow(m_hVideoWnd))
+	{
+		if (!::IsZoomed(m_hVideoWnd))
+		{
+			LayoutVideoWnd(pe->wParam, pe->lParam);
+		}
+	}
+
+	return 0;
+}
+bool CVideoCanvasHandler::CallTheContact()
+{
+	if (!::IsWindow(m_hVideoWnd))
+	{
+		m_hVideoWnd = CreateVideoWnd(/*GetHostWnd(GetBindWLWnd())*/CSystemEx::GetInstance()->GetMainDlg()->GetSafeHwnd());
+	}
+
+	if (::IsWindow(m_hVideoWnd))
+	{
+		int nCXScreen = GetSystemMetrics(SM_CXSCREEN);
+		int nCYScreen = GetSystemMetrics(SM_CYSCREEN);
+
+		//MoveWindow(m_hVideoWnd, 0, 0, nCXScreen, nCYScreen, FALSE);
+		//ShowWindow(m_hVideoWnd, SW_SHOW);
+	}
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+		std::string strSipNumber = pContactDB->m_strSIPNum;
+		std::string strErrorInfo = "";
+		bool bRet = CSystemEx::GetInstance()->CallOneNumberVideo(strSipNumber, true, pContactDB->m_nActiveLine, pContactDB->m_nCallHistoryID, strErrorInfo, m_hVideoWnd);
+
+		if (bRet == false)
+		{
+			std::wstring strTip = PortUtility::string2WString(strErrorInfo);
+			std::wstring strTemplate = _T("call error:") + strTip;
+			CSystemEx::GetInstance()->GetMainDlg()->CreatInfoWnd(_T("Info"), strTemplate.c_str(), GetHostWnd(GetBindWLWnd()));
+			//切换画面
+			SwitchToContact(m_pContactInfo, CT_TEXT_CHAT);
+			return false;
+		}
+		//设置联系人绑定页面为audio
+		pContactDB->SetUserData(CT_VIDEO);
+		CVideoCanvasHandler *pAudioPageCanvasHandler = CSystemEx::GetInstance()->GetVideoCanvasHandlerByContact(m_pContactInfo);
+		CSystemEx::GetInstance()->SaveSession2VideoCanvasHandler(pContactDB->m_nActiveLine, pAudioPageCanvasHandler);
+		pContactDB->m_bIsConnected = false;
+	}
+	else
+	{
+		CallTheGroup();
+	}
+	return true;
+}
+bool CVideoCanvasHandler::CallTheGroup()
+{
+	if (!::IsWindow(m_hVideoWnd))
+	{
+		m_hVideoWnd = CreateVideoWnd(/*GetHostWnd(GetBindWLWnd())*/CSystemEx::GetInstance()->GetMainDlg()->GetSafeHwnd());
+	}
+	
+	//创建会议
+	CSystemEx::GetInstance()->CreateConfence(ENUM_CONFENCE_VIDEO, m_hVideoWnd);
+	
+	//建立通话
+	CTalkGroup *pTalkGroup = m_pContactInfo->m_unionContactInfo.m_pChartGroup;
+	auto vecTalkGroup = pTalkGroup->GetContact();
+	auto iterTalkMember = vecTalkGroup.begin();
+	bool bTotalFailed = false;
+	//int  nLastLine = -1;
+	for (; iterTalkMember != vecTalkGroup.end(); iterTalkMember++)
+	{
+		CTalkGroupNumber *pGroupGroupNumber = *iterTalkMember;
+		string strSipNumber = pGroupGroupNumber->m_strSIPNumber;
+		string strErrorInfo = "";
+		bool bRet = CSystemEx::GetInstance()->CallOneNumberVideo(strSipNumber, true, pGroupGroupNumber->m_nActiveLine, pGroupGroupNumber->m_nCallHistoryID, strErrorInfo, m_hVideoWnd, NULL, true);
+
+		if (bRet == false)
+		{
+			std::wstring strTip = PortUtility::string2WString(strErrorInfo);
+			std::wstring strTemplate = _T("call error:") + strTip;
+			CSystemEx::GetInstance()->GetMainDlg()->CreatInfoWnd(_T("Info"), strTemplate.c_str(), GetHostWnd(GetBindWLWnd()));
+		}
+		else
+		{
+			bTotalFailed = true;
+			//TODO:先这么写着，到时候再调整一下，整个这个流程块都需要更改一下
+			//在这吧线路绑定信息覆盖成新的，原来的closewnd 也会清除，现在先去掉，统一放到closewnd清除会比较合理一点
+			CSystemEx::GetInstance()->EraseSession2CanvasHandler(pGroupGroupNumber->m_nActiveLine);
+			CSystemEx::GetInstance()->SaveSession2VideoCanvasHandler(pGroupGroupNumber->m_nActiveLine, this);
+		}
+	}
+	if (bTotalFailed == false)
+	{
+		//切换画面
+		SwitchToContact(m_pContactInfo, CT_TEXT_CHAT);
+	}
+	else
+	{
+		pTalkGroup->SetUserData(CT_VIDEO);
+
+	}
+	return bTotalFailed;
+}
+
+LRESULT CVideoCanvasHandler::EventHandler(HWLWND hWndThis, RoutedEventArgs *pe)
+{
+	_ASSERT(this->GetBindWLWnd() == hWndThis);
+	if (RS_BUBBLE == pe->eRoutingStrategy)
+	{
+		if (UE_BUTTON_CLICK == pe->RoutedEvent)
+		{
+			// 处理来自视频播放控制栏的按钮点击事件
+			if (GetName(pe->hOriginalSender) == _T("IDC_CHK_REC"))
+			{
+				OnChkRec(pe);
+			}
+			if (GetName(pe->hOriginalSender) == _T("IDC_CHK_MUTE"))
+			{
+				OnChkMute(pe);
+			}
+			if (GetName(pe->hOriginalSender) == _T("IDC_CHK_PAUSE"))
+			{
+				OnChkPause(pe);
+			}
+			if (GetName(pe->hOriginalSender) == _T("IDC_BTN_TRANSFER"))
+			{
+				OnBtnTransfer(pe);
+			}
+			if (GetName(pe->hOriginalSender) == _T("IDC_BTN_ADD"))
+			{
+				OnBtnAdd(pe);
+			}
+			if (GetName(pe->hOriginalSender) == _T("IDC_BTN_KEYBOARD"))
+			{
+				OnBtnKeyboard(pe);
+			}
+			if (GetName(pe->hOriginalSender) == _T("IDC_BTN_SHARE"))
+			{
+				OnBtnShare(pe);
+			}
+			if (GetName(pe->hOriginalSender) == _T("IDC_BTN_MSG"))
+			{
+				OnBtnMsg(pe);
+			}
+			if (GetName(pe->hOriginalSender) == _T("IDC_CHK_NO_VIDEO"))
+			{
+				OnBtnNoVideo(pe);
+			}
+			if (GetName(pe->hOriginalSender) == _T("IDC_BTN_HANGUP"))
+			{
+				OnBtnHangup(pe);
+			}
+		}
+	}
+
+	if (hWndThis == pe->hOriginalSender)
+	{
+		if (RS_BUBBLE == pe->eRoutingStrategy)
+		{
+			// IDC_CANVAS_VIDEO自已的初始化
+			if (WM_INITDIALOG == pe->RoutedEvent)
+			{
+				return OnInitPanel(pe);
+			}
+			else if (WM_WINDOWPOSCHANGED == pe->RoutedEvent)
+			{
+				return OnWindowPosChanged(pe);
+			}
+		}
+		else if (RS_DIRECT == pe->eRoutingStrategy)
+		{
+			if (WM_TOGGLE_VIDEO == pe->RoutedEvent)
+			{
+				return ToggleVideoWnd();
+			}
+			else if (UE_PROPERTYSHEET_SHOW == pe->RoutedEvent)
+			{
+				SetProp(CSystemEx::GetInstance()->GetMainDlg()->GetSafeHwnd(), GETPROP_VEDIO_HWND, GetBindWLWnd());
+				ShowWindow(m_hVideoWnd, SW_SHOW);
+			}
+			else if (UE_PROPERTYSHEET_HIDE == pe->RoutedEvent)
+			{
+				::ShowWindow(m_hVideoWnd, SW_HIDE);
+				m_bOldVideoVisibleState = FALSE;
+			}
+			else if (WM_HOST_WINDOWPOSCHANGED == pe->RoutedEvent)
+			{
+				// Host位置变化了后，需要同步视频窗口的位置
+				LayoutVideoWnd(pe->wParam, pe->lParam);
+			}
+		}
+		
+	}
+
+	if (RS_BUBBLE == pe->eRoutingStrategy)
+	{
+		if (UE_BUTTON_CLICK == pe->RoutedEvent)
+		{
+			return OnButtonClicked(pe);
+		}
+	}
+
+	return 0;
+}
+
+LRESULT CVideoCanvasHandler::OnButtonClicked(RoutedEventArgs *pe)
+{/*
+	if (m_pBtnRec->GetSafeHwnd() == pe->hOriginalSender)
+	{
+		OnBtnRec(pe);
+	}
+	else if (m_pBtnMute->GetSafeHwnd() == pe->hOriginalSender)
+	{
+		OnBtnMute(pe);
+	}
+	else if (m_pBtnPause->GetSafeHwnd() == pe->hOriginalSender)
+	{
+		OnBtnPause(pe);
+	}
+	else if (m_pBtnTransfer->GetSafeHwnd() == pe->hOriginalSender)
+	{
+		OnBtnTransfer(pe);
+	}
+	else if (m_pBtnAdd->GetSafeHwnd() == pe->hOriginalSender)
+	{
+		OnBtnAdd(pe);
+	}
+	else if (m_pBtnKeyboard->GetSafeHwnd() == pe->hOriginalSender)
+	{
+		OnBtnKeyboard(pe);
+	}
+	else if (m_pBtnShare->GetSafeHwnd() == pe->hOriginalSender)
+	{
+		OnBtnShare(pe);
+	}
+	else if (m_pBtnMsg->GetSafeHwnd() == pe->hOriginalSender)
+	{
+		OnBtnMsg(pe);
+	}
+	else if (m_pBtnNoVideo->GetSafeHwnd() == pe->hOriginalSender)
+	{
+		OnBtnNoVideo(pe);
+	}
+	else if (m_pBtnHangup->GetSafeHwnd() == pe->hOriginalSender)
+	{
+		OnBtnHangup(pe);
+	}
+	*/
+	return 0;
+}
+
+LRESULT CVideoCanvasHandler::OnChkRec(RoutedEventArgs *pe)
+{
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+		std::string strFilePath = CSystemEx::GetInstance()->GetGlobalOptions()->m_strRecordFolder;
+		if (strFilePath.empty())
+		{
+			m_pWndVideoToolbar->SetRecCheck(BST_UNCHECKED);
+			CSystemEx::GetInstance()->GetMainDlg()->CreatInfoWnd(_T("ERROR"), L"未设置录音或者录像保存路径，请设置   My>>App Settings>>Application>>File Location>>Browser", GetHostWnd(GetBindWLWnd()), 3000);
+			return 0;
+		}
+		SYSTEMTIME st;
+		CIUIString strDate, strTime;
+		GetLocalTime(&st);
+		strDate.Format(L"%04d%02d%02d%02d%02d%02d", st.wYear, st.wMonth, st.wDay, st.wHour, st.wMinute, st.wSecond);
+		std::string strFileName = PortUtility::wstring2String(strDate.GetBuffer(strDate.GetLength()));
+		if (m_pWndVideoToolbar->GetRecCheck() == BST_CHECKED)
+		{
+			BST_CHECKED;
+			bool bRet = CSystemEx::GetInstance()->StartRecord(pContactDB->m_nActiveLine, strFilePath, strFileName);
+			if (bRet == false)
+			{
+				m_pWndVideoToolbar->SetRecCheck(BST_CHECKED);
+			}
+		}
+		else
+		{
+			m_pWndVideoToolbar->SetRecCheck(BST_UNCHECKED);
+			CSystemEx::GetInstance()->EndRecord(pContactDB->m_nActiveLine, pContactDB->m_strSIPNum, ENUM_VA_RECORD_VIDEO);
+		}
+	}
+	return 0;
+}
+void CVideoCanvasHandler::MuteMicroPhineSession()
+{
+	bool bCheck = m_pWndVideoToolbar->GetMuteCheck() == BST_UNCHECKED ? true : false;
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+		long nSessionID = CSystemEx::GetInstance()->GetSessionID(pContactDB->ReturnActiveLine());
+		if (bCheck)
+		{
+			CSystemEx::GetInstance()->MuteMicrophineSession(false, nSessionID);
+		}
+		else
+		{
+			CSystemEx::GetInstance()->MuteMicrophineSession(true, nSessionID);
+
+		}
+	}
+	else
+	{
+		CTalkGroup *pTalkGroup = m_pContactInfo->m_unionContactInfo.m_pChartGroup;
+		vector<CTalkGroupNumber*> vecTalkNumber = pTalkGroup->GetContact();
+		auto iterTalkGroupNumber = vecTalkNumber.begin();
+		for (iterTalkGroupNumber; iterTalkGroupNumber != vecTalkNumber.end(); iterTalkGroupNumber++)
+		{
+			CTalkGroupNumber* pTalkGroupNumber = *iterTalkGroupNumber;
+			if (pTalkGroupNumber != NULL)
+			{
+				int nActiveLine = pTalkGroupNumber->ReturnActiveLine();
+				int nSessionID = CSystemEx::GetInstance()->GetSessionID(nActiveLine);
+				if (bCheck)
+				{
+					CSystemEx::GetInstance()->MuteMicrophineSession(false, nSessionID);
+				}
+				else
+				{
+					CSystemEx::GetInstance()->MuteMicrophineSession(true, nSessionID);
+				}
+			}
+		}
+	}
+	return;
+}
+LRESULT CVideoCanvasHandler::OnChkMute(RoutedEventArgs *pe)
+{
+	MuteMicroPhineSession();
+	return 0;
+}
+
+LRESULT CVideoCanvasHandler::OnChkPause(RoutedEventArgs *pe)
+{
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	bool bCheck = m_pWndVideoToolbar->GetHoldCheck() == BST_UNCHECKED ? true : false;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+		if (bCheck)
+		{
+			if (pContactDB)
+			{
+				CSystemEx::GetInstance()->UnHold(pContactDB->m_nActiveLine);
+				m_pWndVideoToolbar->SetHoldBySelf(false);
+			}
+
+		}
+		else
+		{
+			if (pContactDB)
+			{
+				CSystemEx::GetInstance()->Hold(pContactDB->m_nActiveLine);
+				m_pWndVideoToolbar->SetHoldBySelf(true);
+			}
+
+		}
+	}
+	else
+	{
+		CTalkGroup *pTalkGroup = m_pContactInfo->m_unionContactInfo.m_pChartGroup;
+		vector<CTalkGroupNumber*> vecTalkNumber = pTalkGroup->GetContact();
+		auto iterTalkGroupNumber = vecTalkNumber.begin();
+		for (iterTalkGroupNumber; iterTalkGroupNumber != vecTalkNumber.end(); iterTalkGroupNumber++)
+		{
+			CTalkGroupNumber* pTalkGroupNumber = *iterTalkGroupNumber;
+			if (pTalkGroupNumber != NULL)
+			{
+				int nActiveLine = pTalkGroupNumber->ReturnActiveLine();
+				if (bCheck)
+				{
+					CSystemEx::GetInstance()->UnHold(nActiveLine);
+					m_pWndVideoToolbar->SetHoldBySelf(false);
+				}
+				else
+				{
+					//挂起
+					CSystemEx::GetInstance()->Hold(nActiveLine);
+					m_pWndVideoToolbar->SetHoldBySelf(true);
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+LRESULT CVideoCanvasHandler::OnBtnTransfer(RoutedEventArgs *pe)
+{
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+		if (m_pCallingTransferDlg != NULL)
+		{
+			CloseTransferDlg();
+		}
+		if (m_pAddCallerDlg != NULL)
+		{
+			CloseAddCallerDlg();
+		}
+
+		m_pCallingTransferDlg = new CCallingTransferDlg(this,CT_VIDEO);
+
+		//CCallingTransferDlg dlg;
+		m_pCallingTransferDlg->SetProject(GetProject(pe->hOriginalSender));
+		m_pCallingTransferDlg->SetTransferedContact(m_pContactInfo);
+		m_pCallingTransferDlg->SetXml(_T("IDD_CALLING_TRANSFER.xml"));
+		m_pCallingTransferDlg->DoModal();
+		TransferClosed();
+	}
+	return 0;
+}
+
+LRESULT CVideoCanvasHandler::OnBtnAdd(RoutedEventArgs *pe)
+{
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+		if (m_pCallingTransferDlg != NULL)
+		{
+			CloseTransferDlg();
+		}
+		if (m_pAddCallerDlg != NULL)
+		{
+			CloseAddCallerDlg();
+		}
+		m_pAddCallerDlg = new CAddCallerDlg(this,ENUM_CONFENCE_VIDEO);
+		m_pAddCallerDlg->SetCurrentContact(m_pContactInfo);
+		m_pAddCallerDlg->SetProject(GetProject(pe->hOriginalSender));
+		m_pAddCallerDlg->SetXml(_T("IDD_CALLING_TRANSFER.xml"));
+		m_pAddCallerDlg->DoModal();
+	}
+
+	return 0;
+
+}
+
+LRESULT CVideoCanvasHandler::OnBtnKeyboard(RoutedEventArgs *pe)
+{
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+
+		if (m_pDTMFKeyboardWnd != NULL)
+		{
+			if (::IsWindow(m_pDTMFKeyboardWnd->GetSafeHwnd()) == true)
+			{
+				EndDialog(m_pDTMFKeyboardWnd->GetSafeHwnd(), IDOK);
+			}
+		};
+		m_pDTMFKeyboardWnd = new CMiniKeyboardWnd();
+		m_pDTMFKeyboardWnd->SetProject(GetProject(GetBindWLWnd()));
+		m_pDTMFKeyboardWnd->CreatePopupWindow(_T("IDW_MINI_KEYBOARD.xml"), GetHostWnd(GetBindWLWnd()));
+		m_pDTMFKeyboardWnd->SetActiveLine(pContactDB->ReturnActiveLine());
+		CIUIRect rcButton;
+		IUI::GetWindowRect(m_pWndVideoToolbar->m_pBtnKeyboard->GetSafeHwnd(), rcButton);
+
+		CIUIRect rcDlg;
+		::GetWindowRect(m_pDTMFKeyboardWnd->m_hWnd, rcDlg);
+
+		rcDlg.OffsetRect(rcButton.left - rcDlg.left - (rcDlg.Width() - rcButton.Width()) / 2,
+			rcButton.top - rcDlg.top - rcDlg.Height());
+		::MoveWindow(m_pDTMFKeyboardWnd->m_hWnd, rcDlg.left, rcDlg.top, rcDlg.Width(), rcDlg.Height(), FALSE);
+
+		m_pDTMFKeyboardWnd->Invalidate();
+	}
+	return 0;
+}
+
+LRESULT CVideoCanvasHandler::OnBtnShare(RoutedEventArgs *pe)
+{
+	CSystemEx::GetInstance()->TipsFunNoRun();
+	return 0;
+	
+}
+
+LRESULT CVideoCanvasHandler::OnBtnMsg(RoutedEventArgs *pe)
+{
+	return 0;
+}
+
+LRESULT CVideoCanvasHandler::OnBtnNoVideo(RoutedEventArgs *pe)
+{
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	bool bCheck = m_pWndVideoToolbar->GetVideoCheck() == BST_UNCHECKED ? true : false;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+		if (!bCheck)
+		{
+			CSystemEx::GetInstance()->StopVideo(pContactDB->m_nActiveLine);
+		
+		}
+		else
+		{
+			CSystemEx::GetInstance()->SendVideo(pContactDB->m_nActiveLine);
+		}
+	}
+	return 0;
+}
+void CVideoCanvasHandler::ProcessTransferFailed()
+{
+	CloseTransferDlg();
+}
+
+void CVideoCanvasHandler::ProcessAddContactFailed()
+{
+	CloseAddCallerDlg();
+}
+LRESULT CVideoCanvasHandler::OnBtnHangup(RoutedEventArgs *pe)
+{
+	//把会议窗体修改成现在的窗体句柄
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		DoSingleContactHangup(true);
+	}
+	else
+	{
+		DoTalkGroupHangup();
+	}
+	return 0;
+}
+
+void CVideoCanvasHandler::CloseWnd()
+{
+	CleanChkStatus();
+	//重置按钮状态
+	if (m_pWndVideoToolbar->GetSafeHwnd() != NULL)
+	{
+		m_pWndVideoToolbar->ResetBtnStatus();
+	}
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+		//删除Csystemex 中的映射关系
+		CVideoCanvasHandler *pAudioPageCanvasHandler = CSystemEx::GetInstance()->GetVideoCanvasHandlerByContact(m_pContactInfo);
+		//重置挂断状态
+		pContactDB->m_bIsConnected = false;
+		/*不能写
+		ENUM_CALL_STATUS enumCallStatus;
+		if (GetIsConnected(pContactDB->m_nActiveLine) == true)
+		{
+			enumCallStatus = ENUM_CALL_STATUS_SUCC;
+		}
+		else
+		{
+			enumCallStatus = ENUM_CALL_STATUS_FAILD;
+		}
+		//回写数据库通话时间
+		if (pContactDB->m_nCallHistoryID != -1)
+		{
+			CSystemEx::GetInstance()->GetDBOprate()->UpdateCallMsgEndTimeByID(pContactDB->m_nCallHistoryID);
+			CSystemEx::GetInstance()->GetDBOprate()->UpdateCallMsgStatus(pContactDB->m_nCallHistoryID, enumCallStatus);
+		}
+		
+		//刷新Inbox
+		CInboxCanvasHandler *pInboxCanvasHandler = CSystemEx::GetInstance()->GetInboCanvasHandler();
+		if (pInboxCanvasHandler != NULL)
+		{
+			CCallHistory oLocalCallHistory;
+			bool bRet = CSystemEx::GetInstance()->GetDBOprate()->GetCallMsgByID(pContactDB->m_nCallHistoryID, oLocalCallHistory);
+			if (bRet)
+			{
+				if (enumCallStatus == ENUM_CALL_STATUS_FAILD)
+				{
+					pInboxCanvasHandler->Insert2Miss(oLocalCallHistory);
+				}
+				else
+				{
+					pInboxCanvasHandler->Insert2Call(oLocalCallHistory);
+				}
+			}
+		}*/
+		pContactDB->m_nCallHistoryID = -1;
+
+		//重置最近聊天时间
+		time_t timep;
+		time(&timep);
+		pContactDB->m_tRecentChat = timep;
+		CSystemEx::GetInstance()->GetMainCanvasHandler()->ReListItem();
+		//重置线路
+		CSystemEx::GetInstance()->EraseSession2CanvasHandler(pContactDB->m_nActiveLine);
+		pContactDB->SetActiveLine(-1);
+		
+		//切换画面
+		SwitchToContact(m_pContactInfo, CT_TEXT_CHAT);
+
+		ShowVideoWindow(FALSE);
+	}
+
+}
+//设置新的内存数据---只有在单个联系人转换成聊天组或聊天组添加新的联系人时产生
+void CVideoCanvasHandler::AddContact2Group(TAG_RECENT * pConctactInfo)
+{
+	if (m_pContactInfo->m_enumRecentContact != ENUM_MULTI_CONTACT)
+	{
+		return;
+	}
+	if (pConctactInfo->m_enumRecentContact != ENUM_SINGLE_CONTACT)
+	{
+		return;
+	}
+	CContactDB *pContact = pConctactInfo->m_unionContactInfo.m_pContact;
+	//TODO 然后将数据进行拷贝
+}
+
+void    CVideoCanvasHandler::UnHoldByRemote()
+{
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+		if (pContactDB->ReturnActiveLine() < 0)
+		{
+			LOG4_INFO("the active line is error where unhold by remote");
+			return;
+		}
+	}
+	
+}
+
+void CVideoCanvasHandler::ProcessSwtichLine(bool bHold)
+{
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	vector<int > vecActiveLine;
+	if (m_pWndVideoToolbar == NULL)
+	{
+		return;
+	}
+	if (m_pWndVideoToolbar->m_pChkPause==NULL)
+	{
+		return;
+	}
+	bool bCheck = m_pWndVideoToolbar->GetHoldCheck() == BST_UNCHECKED ? false : true;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		int nActiveLine = m_pContactInfo->m_unionContactInfo.m_pContact->ReturnActiveLine();
+		if (nActiveLine > 0)
+		{
+			vecActiveLine.push_back(nActiveLine);
+			if (bHold)
+			{
+				if (bCheck == false && m_pWndVideoToolbar->GetHoldBySelf() == false)
+				{
+					m_pWndVideoToolbar->SetHoldCheck(BST_CHECKED);
+					CSystemEx::GetInstance()->SwtichLineUpdateHold(vecActiveLine);
+				}
+			}
+			else
+			{
+				if (bCheck&&m_pWndVideoToolbar->GetHoldBySelf() == false)
+				{
+					CSystemEx::GetInstance()->SwtichLineUpdateUnHold(vecActiveLine);
+					m_pWndVideoToolbar->SetHoldCheck(BST_UNCHECKED);
+				}
+			}
+		}
+	}
+	else
+	{
+		CTalkGroup *pTalkGroup = m_pContactInfo->m_unionContactInfo.m_pChartGroup;
+		vector<CTalkGroupNumber*> vecTalkNumber = pTalkGroup->GetContact();
+		auto iterTalkGroupNumber = vecTalkNumber.begin();
+
+		bool bAllFail = false;
+		int nFailCount = 0;
+		for (iterTalkGroupNumber; iterTalkGroupNumber != vecTalkNumber.end(); iterTalkGroupNumber++)
+		{
+			CTalkGroupNumber* pTalkGroupNumber = *iterTalkGroupNumber;
+			if (pTalkGroupNumber != NULL)
+			{
+				int nHistoryID = pTalkGroupNumber->GetCallHistoryID();
+				int nActiveLine = pTalkGroupNumber->ReturnActiveLine();
+				vecActiveLine.push_back(nActiveLine);
+			}
+		}
+
+		if (bHold&&vecActiveLine.size() > 0)
+		{
+			if (bCheck == false && m_pWndVideoToolbar->GetHoldBySelf() == false)
+			{
+				m_pWndVideoToolbar->SetHoldCheck(BST_CHECKED);
+				CSystemEx::GetInstance()->SwtichLineUpdateHold(vecActiveLine);
+			}
+		}
+		else if (vecActiveLine.size() > 0 && bHold == false)
+		{
+			if (bCheck&& m_pWndVideoToolbar->GetHoldBySelf() == false)
+			{
+				CSystemEx::GetInstance()->SwtichLineUpdateUnHold(vecActiveLine);
+				m_pWndVideoToolbar->SetHoldCheck(BST_UNCHECKED);
+			}
+		}
+	}
+}
+//设置连接被建立
+void   CVideoCanvasHandler::SetConnected(bool bConnected, int nActiveLine)
+{
+	bool bIsTalkGroup = m_pContactInfo->m_enumRecentContact == ENUM_MULTI_CONTACT ? true : false;
+	if (m_pWndVideoToolbar->GetSafeHwnd()!=NULL)
+	{
+		m_pWndVideoToolbar->SetFunBtnStat(TRUE, bIsTalkGroup);
+		m_pWndVideoToolbar->Invalidate();
+		LOG4_INFO("Set Video Tool Bar btn Enable");
+		//test
+		//BeginTimer();
+	}
+	if (bIsTalkGroup)
+	{
+		auto vecGroupNumber = m_pContactInfo->m_unionContactInfo.m_pChartGroup->GetContact();
+		auto iterVecGroupNumber = vecGroupNumber.begin();
+		for (iterVecGroupNumber; iterVecGroupNumber != vecGroupNumber.end(); iterVecGroupNumber++)
+		{
+			CTalkGroupNumber* pTalkGroupNumber = *iterVecGroupNumber;
+			if (pTalkGroupNumber->ReturnActiveLine() == nActiveLine)
+			{
+				pTalkGroupNumber->m_bIsConnected = bConnected;
+			}
+		}
+	}
+	else
+	{
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+		pContactDB->m_bIsConnected = bConnected;
+	}
+}
+
+
+bool CVideoCanvasHandler::GetIsConnected(int nActiveLine) {
+	bool bRet = false;
+	if (m_pContactInfo->m_enumRecentContact == ENUM_MULTI_CONTACT)
+	{
+		auto vecGroupNumber = m_pContactInfo->m_unionContactInfo.m_pChartGroup->GetContact();
+		auto iterVecGroupNumber = vecGroupNumber.begin();
+		for (iterVecGroupNumber; iterVecGroupNumber != vecGroupNumber.end(); iterVecGroupNumber++)
+		{
+			CTalkGroupNumber* pTalkGroupNumber = *iterVecGroupNumber;
+			if (pTalkGroupNumber->ReturnActiveLine() == nActiveLine)
+			{
+				bRet = pTalkGroupNumber->m_bIsConnected;
+			}
+		}
+	}
+	else
+	{
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+		bRet = pContactDB->m_bIsConnected;
+	}
+	return bRet;
+};
+bool CVideoCanvasHandler::GetIsConnectedNoLine( )
+{
+	bool bRet = false;
+	CHAT_TAB eChatTab = CT_TEXT_CHAT;
+	if (m_pContactInfo->m_enumRecentContact == ENUM_MULTI_CONTACT)
+	{
+		eChatTab = (CHAT_TAB)m_pContactInfo->m_unionContactInfo.m_pChartGroup->GetUserData();
+		auto vecGroupNumber = m_pContactInfo->m_unionContactInfo.m_pChartGroup->GetContact();
+		auto iterVecGroupNumber = vecGroupNumber.begin();
+		for (iterVecGroupNumber; iterVecGroupNumber != vecGroupNumber.end(); iterVecGroupNumber++)
+		{
+			CTalkGroupNumber* pTalkGroupNumber = *iterVecGroupNumber;
+			if (eChatTab==CT_VIDEO)
+			{
+				bRet = pTalkGroupNumber->m_bIsConnected;
+			}
+			if (bRet==true)
+			{
+				break;
+			}
+		}
+	}
+	else
+	{
+		eChatTab = (CHAT_TAB)m_pContactInfo->m_unionContactInfo.m_pContact->GetUserData();
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+		if (eChatTab == CT_VIDEO)
+		{
+			bRet = pContactDB->m_bIsConnected;
+		}
+	}
+	return bRet;
+}
+bool CVideoCanvasHandler::GetCallStatus()
+{
+	bool bRet = false;
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+
+		if (pContactDB->ReturnActiveLine() < 0)
+		{
+			bRet =  false;
+			
+		}
+		else
+		{
+			bRet = true;
+		}
+		
+	}
+	else
+	{
+		CTalkGroup *pTalkGroup = m_pContactInfo->m_unionContactInfo.m_pChartGroup;
+
+		bool bTotalRet = false;
+		auto vecGroupNumber = pTalkGroup->GetContact();
+		auto iterGroupNumber = vecGroupNumber.begin();
+		int  nNoCall = 0;
+		for (iterGroupNumber; iterGroupNumber != vecGroupNumber.end(); iterGroupNumber++)
+		{
+			CTalkGroupNumber* pTalkGroupNumber = *iterGroupNumber;
+			if (pTalkGroupNumber->ReturnActiveLine() < 0)
+			{
+				nNoCall++;
+			}
+			else
+			{//假如有一个在通话那么就不在做呼叫
+				bRet = true;
+				break;
+			}
+		}
+		if (nNoCall == vecGroupNumber.size())
+		{//假如都没有进行通话，就产生呼叫动作
+			bRet = false;
+		}
+	}
+	return bRet;
+}
+void    CVideoCanvasHandler::HoldByRemote()
+{
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+		if (pContactDB->ReturnActiveLine() < 0)
+		{
+			LOG4_INFO("the active line is error where hold by remote");
+			return;
+		}
+	}
+}
+void   CVideoCanvasHandler::AnswerByRemote( int nActiveLine)
+{
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+
+		CIUIString strSrcHeadImage, strSrcUserName, strSrcSipNumber;
+		FormatItemContact(strSrcUserName, strSrcHeadImage, strSrcSipNumber, pContactDB);
+
+	
+		if (pContactDB->m_nCallHistoryID != -1)
+		{
+			CSystemEx::GetInstance()->GetDBOprate()->UpdateCallMsgStatus(pContactDB->m_nCallHistoryID, ENUM_CALL_STATUS_SUCC);
+		}
+		pContactDB->m_bIsConnected = true;
+		if (pContactDB->GetIsTransfer())
+		{
+			//先转交结果给transferdlg处理
+			CCallingTransferDlg* pTransferDlg = (CCallingTransferDlg*)pContactDB->GetTransferDlg();
+			if (pTransferDlg != NULL)
+			{
+				if (IsWindow(pTransferDlg->m_hWnd))
+				{
+					pTransferDlg->SetDesPagePointer(this);
+					pTransferDlg->ProcessTranseferSuccess(true);
+				}
+				else
+				{
+					SwitchToContact(m_pContactInfo, CT_VIDEO);
+				}
+			}
+
+			//DoHangup();
+		}
+		else if (pContactDB->GetIsAdded())
+		{
+			CAddCallerDlg* pAddContactDlg = (CAddCallerDlg*)pContactDB->GetAddConfenceDlg();
+			if (pAddContactDlg != NULL)
+			{
+				if (IsWindow(pAddContactDlg->m_hWnd))
+				{
+					pAddContactDlg->SetDesPagePointer(this);
+					pAddContactDlg->DoAddedContact();
+				}
+				else
+				{
+					SwitchToContact(m_pContactInfo, CT_VIDEO);
+				}
+			}
+		}
+		//设置线路已经连接
+		SetConnected(true, nActiveLine);
+		
+	
+		//if (m_pWndVideoToolbar->GetSafeHwnd() != NULL)
+		//{
+		//	m_pWndVideoToolbar->SetFunBtnStat(TRUE);
+			//test
+		//	BeginTimer();
+		//}
+	}
+	else
+	{
+		CTalkGroup *pTalkGroup = m_pContactInfo->m_unionContactInfo.m_pChartGroup;
+		if (pTalkGroup)
+		{
+			//将session添加到会议
+			CSystemEx::GetInstance()->joinConference(nActiveLine);
+			//设置线路已经连接
+			SetConnected(true, nActiveLine);
+		}
+	}
+
+}
+void CVideoCanvasHandler::DoSingleContactHangup(bool bBtnSelf, bool bJumpPage)
+{
+	CleanChkStatus();
+	//重置按钮状态
+	if (m_pWndVideoToolbar->GetSafeHwnd() != NULL)
+	{
+		m_pWndVideoToolbar->ResetBtnStatus();
+	}
+	
+	CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+	if (pContactDB->ReturnActiveLine() < 0)
+	{
+		LOG4_INFO("the active line is error where hangup by remote");
+		//切换回聊天界面
+		SwitchToContact(m_pContactInfo, CT_TEXT_CHAT);
+		pContactDB->SetActiveLine(-1);
+		return;
+	}
+	ENUM_CALL_STATUS enumCallStatus;
+	if (GetIsConnected(pContactDB->ReturnActiveLine()) == true)
+	{
+		enumCallStatus = ENUM_CALL_STATUS_SUCC;
+	}
+	else
+	{
+		enumCallStatus = ENUM_CALL_STATUS_FAILD;
+	}
+	CIUIString strSrcHeadImage, strSrcUserName, strSrcSipNumber;
+	FormatItemContact(strSrcUserName, strSrcHeadImage, strSrcSipNumber, pContactDB);
+
+	bool bTransferShouldChangeContactPage = false, bAddShouldChangeContactPage = false;
+	bool bIsStartTransferContact = true, bIsAddContact = true;
+	TAG_RECENT *pTransferContact = NULL;
+	TAG_RECENT *pAddContact = NULL;
+	//清除Tran
+	if (m_pContactInfo->m_enumRecentContact == ENUM_SINGLE_CONTACT)
+	{
+		if (m_pContactInfo->m_unionContactInfo.m_pContact->GetIsTransfer())
+		{
+			//先
+			CCallingTransferDlg* pCalingTransferDlg = (CCallingTransferDlg*)m_pContactInfo->m_unionContactInfo.m_pContact->GetTransferDlg();
+			if (pCalingTransferDlg != NULL)
+			{
+				if (::IsWindow(pCalingTransferDlg->m_hWnd))
+				{
+					pCalingTransferDlg->EndDialog(IDOK);
+				}
+
+			}
+			pTransferContact = (TAG_RECENT*)m_pContactInfo->m_unionContactInfo.m_pContact->GetTransferContact();
+			bIsStartTransferContact = m_pContactInfo->m_unionContactInfo.m_pContact->GetIsStartedContact();
+			if (pTransferContact != NULL)
+			{
+				CHAT_TAB enumCallType = pCalingTransferDlg->GetTransferType();
+				CVideoCanvasHandler* pVideoPage = (CVideoCanvasHandler*)pCalingTransferDlg->GetSrcCalingPage();
+				if (pVideoPage&&enumCallType == CT_VIDEO)
+				{
+					pVideoPage->ProcessTransferFailed();
+				}
+				if (bBtnSelf == false)
+				{
+
+					CIUIString strErrorTip;
+					strErrorTip.Format(L"call closed by %s  ", strSrcUserName.GetBuffer(strSrcUserName.GetLength()));
+				
+					CSystemEx::GetInstance()->GetMainDlg()->CreatInfoWnd(L"Error", strErrorTip, NULL);
+				}
+				bTransferShouldChangeContactPage = true;
+				m_pContactInfo->m_unionContactInfo.m_pContact->SetIsTransfer(NULL, NULL, FALSE, FALSE);
+			}
+		}
+		else if (pContactDB->GetIsAdded() == true)
+		{
+
+			CAddCallerDlg* pAddConfenceDlg = (CAddCallerDlg*)m_pContactInfo->m_unionContactInfo.m_pContact->GetAddConfenceDlg();
+			if (pAddConfenceDlg != NULL)
+			{
+				if (::IsWindow(pAddConfenceDlg->m_hWnd))
+				{
+					pAddConfenceDlg->EndDialog(IDOK);
+				}
+
+			}
+			pAddContact = (TAG_RECENT*)m_pContactInfo->m_unionContactInfo.m_pContact->GetAddContact();
+			bIsAddContact = m_pContactInfo->m_unionContactInfo.m_pContact->GetIsStartedContact();
+			if (pAddContact != NULL)
+			{
+				CHAT_TAB enumCallType = pAddConfenceDlg->GetAddType();
+				CVideoCanvasHandler* pVideoPage = (CVideoCanvasHandler*)pAddConfenceDlg->GetSrcCalingPage();
+				if (pVideoPage&&enumCallType == CT_VIDEO)
+				{
+					pVideoPage->ProcessTransferFailed();
+				}
+				if (bBtnSelf == false)
+				{
+
+					CIUIString strErrorTip;
+					strErrorTip.Format(L"call closed by %s  ", strSrcUserName.GetBuffer(strSrcUserName.GetLength()));
+				
+					CSystemEx::GetInstance()->GetMainDlg()->CreatInfoWnd(L"Error", strErrorTip, NULL);
+				}
+				bAddShouldChangeContactPage = true;
+				m_pContactInfo->m_unionContactInfo.m_pContact->SetIsAddedConfence(NULL, NULL, FALSE, FALSE);
+			}
+		}
+
+	}
+	
+	
+	//挂断
+	CSystemEx::GetInstance()->Hangup(pContactDB->ReturnActiveLine());
+	//删除Csystemex 中的映射关系
+	CVideoCanvasHandler *pAudioPageCanvasHandler = CSystemEx::GetInstance()->GetVideoCanvasHandlerByContact(m_pContactInfo);
+	
+	//重置联系人绑定的界面类型
+	pContactDB->SetUserData(CT_TEXT_CHAT);
+	pContactDB->SetCallType(ENUM_CALL_IN);
+	//切换回聊天界面
+	SwitchToContact(m_pContactInfo, CT_TEXT_CHAT);
+	if (bTransferShouldChangeContactPage == true && pTransferContact != m_pContactInfo && bIsStartTransferContact != true && bJumpPage == false)
+	{
+		bool bIsConnected = pTransferContact->m_unionContactInfo.m_pContact->m_bIsConnected;
+		if (bIsConnected)
+		{
+			SwitchToContact(pTransferContact, CT_VIDEO);
+		}
+	}
+	if (bAddShouldChangeContactPage == true && pAddContact != m_pContactInfo && bIsAddContact != true && bJumpPage == false)
+	{
+		bool bIsConnected = pAddContact->m_unionContactInfo.m_pContact->m_bIsConnected;
+		if (bIsConnected)
+		{
+			SwitchToContact(pAddContact, CT_VIDEO);
+		}
+
+	}
+
+	//回写数据库通话时间/状态
+	if (pContactDB->m_nCallHistoryID != -1)
+	{
+		CSystemEx::GetInstance()->GetDBOprate()->UpdateCallMsgEndTimeByID(pContactDB->m_nCallHistoryID);
+		CSystemEx::GetInstance()->GetDBOprate()->UpdateCallMsgStatus(pContactDB->m_nCallHistoryID, enumCallStatus);
+	}
+	//刷新Inbox
+	CInboxCanvasHandler *pInboxCanvasHandler = CSystemEx::GetInstance()->GetInboCanvasHandler();
+	if (pInboxCanvasHandler != NULL)
+	{
+		CCallHistory oLocalCallHistory;
+		bool bRet = CSystemEx::GetInstance()->GetDBOprate()->GetCallMsgByID(pContactDB->m_nCallHistoryID, oLocalCallHistory);
+		if (bRet)
+		{
+			if (enumCallStatus == ENUM_CALL_STATUS_FAILD)
+			{
+				pInboxCanvasHandler->Insert2Miss(oLocalCallHistory);
+			}
+			pInboxCanvasHandler->Insert2Call(oLocalCallHistory);
+		}
+	}
+	pContactDB->m_nCallHistoryID = -1;
+
+
+	//重置最近聊天时间
+	time_t timep;
+	time(&timep);
+	pContactDB->m_tRecentChat = timep;
+	CSystemEx::GetInstance()->GetMainCanvasHandler()->ReListItem();
+	//重置线路
+	CSystemEx::GetInstance()->EraseSession2CanvasHandler(pContactDB->m_nActiveLine);
+	//重置挂断状态
+	pContactDB->m_bIsConnected = false;
+	pContactDB->SetActiveLine(-1);
+	//关闭定时器
+	if (m_hDecodeTimer != 0)
+	{
+		::KillTimer(NULL, m_hDecodeTimer);
+		m_hDecodeTimer = 0;
+	}
+	//
+	CloseAddCallerDlg();
+	CloseTransferDlg();
+	ShowVideoWindow(FALSE);
+}
+void CVideoCanvasHandler::DoTalkGroupHangup()
+{
+	CTalkGroup *pTalkGroup = m_pContactInfo->m_unionContactInfo.m_pChartGroup;
+	vector<CTalkGroupNumber*> vecTalkNumber = pTalkGroup->GetContact();
+	auto iterTalkGroupNumber = vecTalkNumber.begin();
+	for (iterTalkGroupNumber; iterTalkGroupNumber != vecTalkNumber.end(); iterTalkGroupNumber++)
+	{
+		CTalkGroupNumber* pTalkGroupNumber = *iterTalkGroupNumber;
+		if (pTalkGroupNumber != NULL)
+		{
+			int nHistoryID = pTalkGroupNumber->GetCallHistoryID();
+			int nActiveLine = pTalkGroupNumber->ReturnActiveLine();
+
+			ENUM_CALL_STATUS enumCallStatus;
+			if (GetIsConnected(nActiveLine) == true)
+			{
+				enumCallStatus = ENUM_CALL_STATUS_SUCC;
+			}
+			else
+			{
+				enumCallStatus = ENUM_CALL_STATUS_FAILD;
+			}
+			
+			//挂断
+			CSystemEx::GetInstance()->Hangup(nActiveLine);
+			//回写数据库通话时间
+			if (nHistoryID != -1)
+			{
+				CSystemEx::GetInstance()->GetDBOprate()->UpdateCallMsgEndTimeByID(nHistoryID);
+				CSystemEx::GetInstance()->GetDBOprate()->UpdateCallMsgStatus(nHistoryID, enumCallStatus);
+			}
+
+			//刷新Inbox
+			CInboxCanvasHandler *pInboxCanvasHandler = CSystemEx::GetInstance()->GetInboCanvasHandler();
+			if (pInboxCanvasHandler != NULL)
+			{
+				CCallHistory oLocalCallHistory;
+				bool bRet = CSystemEx::GetInstance()->GetDBOprate()->GetCallMsgByID(pTalkGroupNumber->m_nCallHistoryID, oLocalCallHistory);
+				if (bRet)
+				{
+					if (enumCallStatus == ENUM_CALL_STATUS_FAILD)
+					{
+						pInboxCanvasHandler->Insert2Miss(oLocalCallHistory);
+					}
+					pInboxCanvasHandler->Insert2Call(oLocalCallHistory);
+				}
+			}
+			CSystemEx::GetInstance()->EraseSession2CanvasHandler(pTalkGroupNumber->m_nActiveLine);
+
+			pTalkGroupNumber->ResetCallHistortID();
+			pTalkGroupNumber->ResetActiveLine();
+			pTalkGroupNumber->ClearAddConfenceInfo();
+			
+		}
+	}
+	//重置group页面数据
+	pTalkGroup->SetUserData(CT_TEXT_CHAT);
+	//重置按钮状态,按讨论组的方式重置
+	if (m_pWndVideoToolbar->GetSafeHwnd() != NULL)
+	{
+		m_pWndVideoToolbar->SetFunBtnStat(FALSE,TRUE);
+		m_pWndVideoToolbar->Invalidate();
+	}
+	CleanChkStatus();
+
+	//重置最近聊天时间
+	time_t timep;
+	time(&timep);
+	pTalkGroup->m_tRecentChat = timep;
+	CSystemEx::GetInstance()->GetMainCanvasHandler()->ReListItem();
+
+	//
+	CloseAddCallerDlg();
+	CloseTransferDlg();
+
+	//退出会议模式
+	CSystemEx::GetInstance()->DestoryConfence();
+	//切换画面
+	SwitchToContact(m_pContactInfo, CT_TEXT_CHAT);
+	ShowVideoWindow(FALSE);
+}
+void CVideoCanvasHandler::HangupByRemote(bool bConnected, int nActiveSession, bool bJumpPage)
+{
+	
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		CContactDB* pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+		if (pContactDB->GetIsTransfer())
+		{
+			//先转交结果给transferdlg处理
+			CCallingTransferDlg* pTransferDlg = (CCallingTransferDlg*)pContactDB->GetTransferDlg();
+			if (pTransferDlg != NULL)
+			{
+				pTransferDlg->ProcessTranseferSuccess(false);
+			}
+		}
+		else if (pContactDB->GetIsAdded())
+		{
+			//CAddCallerDlg* pAddContactDlg = (CAddCallerDlg*)pContactDB->GetAddConfenceDlg();
+			//if (pAddContactDlg != NULL)
+			//{
+				//make here 
+				//pAddContactDlg->DoAddedContact();
+			//}
+		}
+	}
+
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		DoSingleContactHangup(false,false);
+	}
+	else
+	{
+		ExistOneLine(nActiveSession,bConnected);
+	}
+}
+
+//关闭邀请窗体
+void CVideoCanvasHandler::CloseTransferDlg()
+{
+	if (m_pCallingTransferDlg != NULL)
+	{
+		if (::IsWindow(m_pCallingTransferDlg->m_hWnd))
+		{
+			m_pCallingTransferDlg->EndDialog(IDOK);
+			//delete m_pCallingTransferDlg;
+			m_pCallingTransferDlg = NULL;
+		}
+	}
+}
+//关闭转移窗体
+void CVideoCanvasHandler::CloseAddCallerDlg()
+{
+	if (m_pAddCallerDlg != NULL)
+	{
+		if (::IsWindow(m_pAddCallerDlg->m_hWnd))
+		{
+			m_pAddCallerDlg->EndDialog(IDOK);
+			//delete m_pAddCallerDlg;
+			m_pAddCallerDlg = NULL;
+		}
+	}
+}
+
+HWND CVideoCanvasHandler::GetPlayHwnd()
+{
+	
+	return m_hVideoWnd;
+	
+}
+int CVideoCanvasHandler::SetContactInfo(TAG_RECENT *pContactInfo)
+{
+	m_pContactInfo = pContactInfo;
+	return 0;
+}
+
+TAG_RECENT *CVideoCanvasHandler::GetContactInfo()
+{
+	return m_pContactInfo;
+}
+void CVideoCanvasHandler::ChangeDeviceSwtich(bool bEnableAudioOut, bool bEnableAudioIn, bool bEnableCamera)
+{
+	if (m_pWndVideoToolbar==NULL)
+	{
+		return;
+	}
+	bool bMuteAudioIn = m_pWndVideoToolbar->GetMuteCheck() == BST_UNCHECKED ? true : false;
+	bool bSetAudioIn = bMuteAudioIn && (bEnableAudioIn);
+
+	bool bCamera = m_pWndVideoToolbar->GetVideoCheck() == BST_UNCHECKED ? true : false;
+	bool bSetCamera = bCamera && (bEnableCamera);
+
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+
+		CContactDB *pContactDB = m_pContactInfo->m_unionContactInfo.m_pContact;
+		long nSessionID = CSystemEx::GetInstance()->GetSessionID(pContactDB->ReturnActiveLine());
+
+	
+		CSystemEx::GetInstance()->MuteSession(!bEnableAudioOut, !bSetAudioIn, !bSetCamera, nSessionID);
+
+	}
+	else
+	{
+		CTalkGroup *pTalkGroup = m_pContactInfo->m_unionContactInfo.m_pChartGroup;
+		vector<CTalkGroupNumber*> vecTalkNumber = pTalkGroup->GetContact();
+		auto iterTalkGroupNumber = vecTalkNumber.begin();
+		for (iterTalkGroupNumber; iterTalkGroupNumber != vecTalkNumber.end(); iterTalkGroupNumber++)
+		{
+			CTalkGroupNumber* pTalkGroupNumber = *iterTalkGroupNumber;
+			if (pTalkGroupNumber != NULL)
+			{
+				int nActiveLine = pTalkGroupNumber->ReturnActiveLine();
+				int nSessionID = CSystemEx::GetInstance()->GetSessionID(nActiveLine);
+				CSystemEx::GetInstance()->MuteSession(!bEnableAudioOut, !bEnableAudioIn, !bSetCamera, nSessionID);
+			}
+		}
+	}
+}
+
+int CVideoCanvasHandler::ToggleVideoWnd()
+{
+	if (::IsWindow(m_hVideoWnd))
+	{
+		if (::IsZoomed(m_hVideoWnd))
+		{
+			ShowWindow(m_hVideoWnd, SW_RESTORE);
+
+			// 移动位置
+			LayoutVideoWnd(0, 0);
+
+			// 通知主界面，已退出全屏视频
+			::SendMessage(g_pMainFrame->GetSafeHwnd(), WM_EXIT_FULL_SCREEN_VIDEO, 0, 0);
+		}
+		else
+		{
+			ShowWindow(m_hVideoWnd, SW_MAXIMIZE);
+		}
+	}
+
+	return 0;
+}
+
+int CVideoCanvasHandler::LayoutVideoWnd(WPARAM wParam, LPARAM lParam)
+{
+	WINDOWPOS *pPos = (WINDOWPOS *)lParam;
+	if (NULL != pPos)
+	{
+		// 主窗口隐藏，视频窗口也隐藏
+		if (pPos->flags & SWP_HIDEWINDOW)
+		{
+			::ShowWindow(m_hVideoWnd, SW_HIDE);
+			m_bOldVideoVisibleState = FALSE;
+		}
+		else if (pPos->flags & SWP_SHOWWINDOW)
+		{
+			
+			if (GetIsConnectedNoLine() == true)
+			{
+				::ShowWindow(m_hVideoWnd, SW_SHOW);
+			}
+			// 如果当前联系人正在视频，则显示视频窗口。否则不显示。
+			HWLWND hParent = IUI::GetParent(GetBindWLWnd());
+			if (NULL != hParent && IUI::GetClassName(hParent) == IUI_TABCONTROL)
+			{
+				TabControl *pTbChat = (TabControl *)CWLWnd::FromHandle(hParent);
+				_ASSERT(pTbChat != NULL);
+				if (pTbChat->GetCurPropertySheet() == CT_VIDEO)
+				{
+					ShowVideoWindow(TRUE);
+				}
+
+			}
+		}
+	}
+
+	if (::IsWindow(m_hVideoWnd))
+	{
+		if (!::IsMinimized(g_pMainFrame->GetSafeHwnd())
+			&& !::IsZoomed(m_hVideoWnd))
+		{
+			// 移动位置
+			CIUIRect rcVideoCanvas;
+			GetWindowRect(GetBindWLWnd(), rcVideoCanvas);
+
+			::MoveWindow(m_hVideoWnd, rcVideoCanvas.left, rcVideoCanvas.top,
+				rcVideoCanvas.Width(), rcVideoCanvas.Height(), TRUE);
+		}
+	}
+
+	return 0;
+}
+
+void CVideoCanvasHandler::ProcessTranseferSuccess(bool bSuccess, int nErrorCode)
+{
+	//假如当前会话被转移
+	if (m_pCallingTransferDlg != NULL)
+	{
+		m_pCallingTransferDlg->ProcessTranseferSuccess(bSuccess,  nErrorCode);
+	}
+	if (bSuccess == false)
+	{
+		if (m_pContactInfo->m_enumRecentContact == ENUM_SINGLE_CONTACT)
+		{
+			if (m_pContactInfo->m_unionContactInfo.m_pContact->GetIsTransfer())
+			{
+				//先
+				CCallingTransferDlg* pCalingTransferDlg = (CCallingTransferDlg*)m_pContactInfo->m_unionContactInfo.m_pContact->GetTransferDlg();
+				if (pCalingTransferDlg != NULL)
+				{
+					if (::IsWindow(pCalingTransferDlg->m_hWnd))
+					{
+						pCalingTransferDlg->EndDialog(IDOK);
+					}
+
+				}
+				TAG_RECENT *pTransferContact = (TAG_RECENT*)m_pContactInfo->m_unionContactInfo.m_pContact->GetTransferContact();
+				if (pTransferContact != NULL)
+				{
+
+				}
+				CHAT_TAB enumCallType = pCalingTransferDlg->GetTransferType();
+				CAudioPageCanvasHandler* pAudioPage = (CAudioPageCanvasHandler*)pCalingTransferDlg->GetSrcCalingPage();
+
+				if (pAudioPage&&enumCallType == CT_VIDEO)
+				{
+					pAudioPage->ProcessTransferFailed();
+				}
+				SwitchToContact(pTransferContact, CT_VIDEO);
+				m_pContactInfo->m_unionContactInfo.m_pContact->SetIsTransfer(NULL, NULL, FALSE, FALSE);
+			}
+		}
+	}
+}
+
+void CVideoCanvasHandler::ExistOneLine(int nExitActiveLine,bool bConnected)
+{
+	CTalkGroup *pTalkGroup = m_pContactInfo->m_unionContactInfo.m_pChartGroup;
+	vector<CTalkGroupNumber*> vecTalkNumber = pTalkGroup->GetContact();
+	auto iterTalkGroupNumber = vecTalkNumber.begin();
+
+	bool bAllFail = false;
+	int nFailCount = 0;
+	for (iterTalkGroupNumber; iterTalkGroupNumber != vecTalkNumber.end(); iterTalkGroupNumber++)
+	{
+		CTalkGroupNumber* pTalkGroupNumber = *iterTalkGroupNumber;
+		if (pTalkGroupNumber != NULL)
+		{
+			int nHistoryID = pTalkGroupNumber->GetCallHistoryID();
+			int nActiveLine = pTalkGroupNumber->ReturnActiveLine();
+
+			
+
+			if (nExitActiveLine == nActiveLine)
+			{
+				ENUM_CALL_STATUS enumCallStatus;
+				if (GetIsConnected(nActiveLine) == true)
+				{
+					enumCallStatus = ENUM_CALL_STATUS_SUCC;
+				}
+				else
+				{
+					enumCallStatus = ENUM_CALL_STATUS_FAILD;
+				}
+				//挂断
+				CSystemEx::GetInstance()->Hangup(nActiveLine);
+				//回写数据库通话时间
+				if (nHistoryID != -1)
+				{
+					CSystemEx::GetInstance()->GetDBOprate()->UpdateCallMsgEndTimeByID(nHistoryID);
+					CSystemEx::GetInstance()->GetDBOprate()->UpdateCallMsgStatus(nHistoryID, enumCallStatus);
+				}
+
+				//刷新Inbox
+				CInboxCanvasHandler *pInboxCanvasHandler = CSystemEx::GetInstance()->GetInboCanvasHandler();
+				if (pInboxCanvasHandler != NULL)
+				{
+					CCallHistory oLocalCallHistory;
+					bool bRet = CSystemEx::GetInstance()->GetDBOprate()->GetCallMsgByID(pTalkGroupNumber->GetCallHistoryID(), oLocalCallHistory);
+					if (bRet)
+					{
+						if (enumCallStatus == ENUM_CALL_STATUS_FAILD)
+						{
+							pInboxCanvasHandler->Insert2Miss(oLocalCallHistory);
+						}
+						pInboxCanvasHandler->Insert2Call(oLocalCallHistory);
+					}
+				}
+
+				CSystemEx::GetInstance()->EraseSession2CanvasHandler(pTalkGroupNumber->m_nActiveLine);
+
+				pTalkGroupNumber->ResetCallHistortID();
+				pTalkGroupNumber->ResetActiveLine();
+				pTalkGroupNumber->ClearAddConfenceInfo();
+				pTalkGroupNumber->m_bIsConnected = false;
+
+				
+			}
+
+			if (pTalkGroupNumber->GetIsConnected() == false)
+			{
+				nFailCount++;
+			}
+
+		
+		}
+	}
+	//todo 这里还有点问题 音频同样
+	//全部通话都失败了
+	if (nFailCount == vecTalkNumber.size())
+	{
+		//重置group页面数据
+		pTalkGroup->SetUserData(CT_TEXT_CHAT);
+		//重置按钮状态,按讨论组的方式重置
+	    //重置按钮状态
+		if (m_pWndVideoToolbar->GetSafeHwnd() != NULL)
+		{
+			this;
+			CIUIString strInfo;
+			strInfo.Format(L"%x this\n", this);
+			OutputDebugString(strInfo);
+
+			strInfo.Format(L"%x m_pWndVideoToolbar\n", m_pWndVideoToolbar);
+			OutputDebugString(strInfo);
+			CleanChkStatus();
+			m_pWndVideoToolbar->ResetBtnStatus();
+		}
+		//重置最近聊天时间
+		time_t timep;
+		time(&timep);
+		pTalkGroup->m_tRecentChat = timep;
+		CSystemEx::GetInstance()->GetMainCanvasHandler()->ReListItem();
+
+		m_pWndVideoToolbar->Invalidate();
+		//退出会议模式
+		CSystemEx::GetInstance()->DestoryConfence();
+		//切换画面
+		SwitchToContact(m_pContactInfo, CT_TEXT_CHAT);
+	}
+}
+void CVideoCanvasHandler::ClearnCallData()
+{
+	TAG_RECENT *pContactInfo = m_pContactInfo;
+	ENUM_RECENT_CONTACT_TYPE  localRecentContactType = m_pContactInfo->m_enumRecentContact;
+	if (localRecentContactType == ENUM_SINGLE_CONTACT)
+	{
+		m_pContactInfo->m_unionContactInfo.m_pContact->ClearnCallData();
+		m_pContactInfo->m_unionContactInfo.m_pContact->m_bIsConnected = false;
+	}
+}
+
+
+void CVideoCanvasHandler::TransferClosed()
+{
+	if (m_pCallingTransferDlg != NULL)
+	{
+		m_pCallingTransferDlg = NULL;
+	}
+}
+
+int CVideoCanvasHandler::ShowVideoWindow(BOOL bShow)
+{
+	::ShowWindow(m_hVideoWnd, bShow ==TRUE? SW_SHOW : SW_HIDE);
+	m_bOldVideoVisibleState = bShow;
+	return 0;
+}

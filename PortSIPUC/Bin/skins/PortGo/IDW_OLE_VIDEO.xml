@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS IUI UI FILE!-->
+<IUI>
+	<Configuration OpenProgram="IUIEditor.exe"/>
+	<Version Version="0100" Build="1" ChangeList="-1"/>
+	<Window>
+		<name Value="IDW_OLE_VIDEO"/>
+		<Rect Size="567,383" Location="0,0"/>
+		<TitleBarHeight Value="0"/>
+		<IsResizingBorder Value="true"/>
+		<Root>
+			<Canvas>
+				<Parent Name="IDW_OLE_VIDEO"/>
+				<name Value="IDC_CANVAS_OLE_VIDEO"/>
+				<Rect Size="250,140" Location="35,40"/>
+				<HAlign Value="Fill"/>
+				<VAlign Value="Fill"/>
+				<IsCombineImages Value="true"/>
+				<ButtonClickArg Value=""/>
+				<Controls>
+					<Label>
+						<Parent Name="IDC_CANVAS_OLE_VIDEO"/>
+						<name Value="IDC_STA_VIDEO"/>
+						<Rect Size="250,140" Location="0,0"/>
+						<HAlign Value="Fill"/>
+						<VAlign Value="Fill"/>
+						<IsDrawBkColor Value="true"/>
+						<BkColorResN Value="IDR_COLOR_GRAY"/>
+						<IsCombineImages Value="false"/>
+						<BkImageResizeMode Value="Stretch"/>
+						<ButtonClickArg Value=""/>
+						<Controls>
+							<ProgressBar>
+								<Parent Name="IDC_STA_VIDEO"/>
+								<name Value="IDC_PRG_UPLOAD"/>
+								<Rect Size="170,4" Location="40,68"/>
+								<HAlign Value="Center"/>
+								<VAlign Value="Center"/>
+								<IsDrawBkColor Value="true"/>
+								<BkColorResN Value="IDR_COLOR_BORDER"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="Ole_SliderBk.png"/>
+								<ButtonClickArg Value=""/>
+								<IsDrawThumbColor Value="true"/>
+								<ThumbBkColorRes Value="IDR_COLOR_RED"/>
+							</ProgressBar>
+							<Button>
+								<Parent Name="IDC_STA_VIDEO"/>
+								<name Value="IDC_BTN_PLAY"/>
+								<Rect Size="69,69" Location="91,36"/>
+								<Visibility Value="false"/>
+								<HAlign Value="Center"/>
+								<VAlign Value="Center"/>
+								<Margin Left="15" Top="0" Right="0" Bottom="0"/>
+								<IsDrawBkColor Value="false"/>
+								<IsCombineImages Value="true"/>
+								<CombineBkImage Value="Btn_PlayOleVideo.png"/>
+								<IsDrawBorderColor Value="false"/>
+								<ButtonClickArg Value=""/>
+							</Button>
+							<Label>
+								<Parent Name="IDC_STA_VIDEO"/>
+								<name Value="IDC_STA_UPLOAD_FAILED"/>
+								<Rect Size="40,40" Location="105,50"/>
+								<Visibility Value="false"/>
+								<HAlign Value="Center"/>
+								<VAlign Value="Center"/>
+								<IsCombineImages Value="false"/>
+								<BackgroundNormal image="2.png"/>
+								<ButtonClickArg Value=""/>
+							</Label>
+						</Controls>
+					</Label>
+				</Controls>
+			</Canvas>
+		</Root>
+	</Window>
+</IUI>
