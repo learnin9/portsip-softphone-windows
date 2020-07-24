@@ -6,12 +6,19 @@
 #include <log4cplus/configurator.h>  
 #include <log4cplus/helpers/loglog.h>  
 #include <log4cplus/helpers/stringhelper.h>
+#include <log4cplus/fileappender.h>
+#include <log4cplus/layout.h>
+#include <memory>
 using namespace std;
 log4cplus::Logger LoggerLocal::logger_obj;
-bool LoggerLocal::init(std::string  config) {
-	log4cplus::tstring file = LOG4CPLUS_C_STR_TO_TSTRING(config);
+bool LoggerLocal::init( std::string despath, const wchar_t* format) {
 	log4cplus::initialize();
-    log4cplus::PropertyConfigurator::doConfigure(file);
+	std::string desfilepath = despath + "\\clientlog\\client.log";
+	SharedAppenderPtr _append(new RollingFileAppender(LOG4CPLUS_C_STR_TO_TSTRING(desfilepath)));
+	_append->setName(L"file appender");
+	_append->setLayout(std::auto_ptr<PatternLayout>(new PatternLayout(format)));
+	Logger::getRoot().addAppender(_append);
+
 	Logger logger = Logger::getRoot();
 	logger_obj = logger;
 	return true;

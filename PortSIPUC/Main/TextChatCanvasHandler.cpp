@@ -392,12 +392,19 @@ LRESULT CTextChatCanvasHandler::OnChkScreenshot(RoutedEventArgs *pe)
 	theScreenDlg.Init();
 	char szFileName[256] = { 0 };
 	std::string strFilePath;
-	std::string strWorkPath = "";
-	PortUtility::getCurrentlyPath(strWorkPath);
-	strFilePath = strWorkPath + "\\cacheFiles\\screenprint\\";
+	std::string strFullPath = "";
+	PortUtility::getCurrentlyPath(strFullPath);
+	CIUIString strTempDataFolder = CSystemEx::GetInstance()->GetDataFolder();
+	if (strTempDataFolder.IsEmpty())
+	{
+		LOG4_ERROR("save file path is error");
+		strTempDataFolder = PortUtility::Utf82Unicode_ND(strFullPath).c_str();
+	}
+	strFilePath = PortUtility::wstring2String(strTempDataFolder.GetBuffer(strTempDataFolder.GetLength())) + "\\cacheFiles\\screenprint";
+	CIUIString wstrFilePath = strTempDataFolder + L"\\cacheFiles\\screenprint";
 	PortUtility::CheckFilePath(strFilePath);
 
-	int nResponse = theScreenDlg.ShowDlg(stoll(CSystemEx::GetInstance()->GetGlobalUser()->m_strSipNumber),L"//cachefiles//screenprint", szFileName,256);
+	int nResponse = theScreenDlg.ShowDlg(stoll(CSystemEx::GetInstance()->GetGlobalUser()->m_strSipNumber), wstrFilePath.GetBuffer(wstrFilePath.GetLength()), szFileName,256);
 	if (nResponse== IDCANCEL)
 	{
 		return 0;

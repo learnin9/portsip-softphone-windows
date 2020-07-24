@@ -145,32 +145,34 @@ void CSystemEx::InitService()
 {
 	std::string strFullPath ="";
 	PortUtility::getCurrentlyPath(strFullPath);
-	std::string strLogProperties = strFullPath + "\\log.properties";
-	if (!LoggerLocal::init(strLogProperties)) {
-		TerminateProcess(GetCurrentProcess(), 0);
-	}
-	LoggerLocal::setloglevel("TRACE");
-	LOG4_INFO("Begin To Start Service");
-	if (strFullPath.empty()==true)
-	{
-		return;
-	}
 	bool bReadRegKey = CSystemEx::GetInstance()->QueryFolderDataRegKey(_T("DataPath"), m_strDataFolder);
 	if (bReadRegKey==false)
 	{
 		LOG4_INFO("Read FolderDataKeyFailed\n");
-		m_strDataFolder = _T("C:\\ProgramData\\softphone\\");
+		m_strDataFolder = _T("C:\\ProgramData\\PortSIP\\softphone\\");
 	}
 	else
 	{
 #if  _DEBUG
 		m_strDataFolder = PortUtility::Utf82Unicode_ND(strFullPath).c_str();
-#else
-		m_strDataFolder += _T("softphone");
+		m_strDataFolder  = m_strDataFolder+L"\\";
 #endif
 		
 	}
-	std::string strDBPath = PortUtility::Unicode2Utf8_ND(m_strDataFolder.GetBuffer(m_strDataFolder.GetLength())) + "\\"+ DB_DATA;
+	strFullPath = PortUtility::wstring2String(m_strDataFolder.GetBuffer(m_strDataFolder.GetLength()));
+	std::string strLogFullPath  = strFullPath + "\\clientlog";
+	PortUtility::CheckFilePath(strLogFullPath);
+	if (!LoggerLocal::init(strFullPath,L"[%D{%Y-%m-%d %H:%M:%S,%Q}] [%t] %-5p - %m%n")) {
+		TerminateProcess(GetCurrentProcess(), 0);
+	}
+	LoggerLocal::setloglevel("TRACE");
+	LOG4_INFO("Begin To Start Service");
+	if (strFullPath.empty() == true)
+	{
+		return;
+	}
+
+	std::string strDBPath = PortUtility::Unicode2Utf8_ND(m_strDataFolder.GetBuffer(m_strDataFolder.GetLength())) + DB_DATA;
 	m_pDB = new PortSQL();
 	m_pDB->openDB(strDBPath);
 	m_pVipCallBackEvent = new CVoipCallBackEvent();
@@ -344,9 +346,15 @@ void CSystemEx::TranslateParam2VoiceMailDownLoadParam(VoiceMailParam &stuVoiceMa
 std::string CSystemEx::GetVoiceMailDownLoadPath()
 {
 	std::string strFilePath;
-	std::string strWorkPath = "";
-	PortUtility::getCurrentlyPath(strWorkPath);
-	strFilePath = strWorkPath + "\\cacheFiles\\voicemail\\";
+	std::string strFullPath = "";
+	PortUtility::getCurrentlyPath(strFullPath);
+	if (m_strDataFolder.IsEmpty())
+	{
+		LOG4_ERROR("save file path is error");
+		m_strDataFolder = PortUtility::Utf82Unicode_ND(strFullPath).c_str();
+	}
+
+	strFilePath = PortUtility::wstring2String(m_strDataFolder.GetBuffer(m_strDataFolder.GetLength())) + "\\cacheFiles\\voicemail\\";
 
 	PortUtility::CheckFilePath(strFilePath);
 	return strFilePath;
@@ -1933,7 +1941,6 @@ void CSystemEx::InitUserOptions()
 	if (m_pOptions->m_strRecordFolder.empty()==false)
 	{
 		PortUtility::CheckFilePath(m_pOptions->m_strRecordFolder);
-	
 	}
 	InitAudioCodecsFormDB();
 	InitUserLocalSIPSettings();
@@ -2373,7 +2380,13 @@ std::wstring CSystemEx::GetFileSavePathByMsgType(ENUM_MSG_TYPE enumMsgType)
 {
 	std::string strFullPath = "";
 	PortUtility::getCurrentlyPath(strFullPath);
-	std::wstring strWorkPath = PortUtility::string2WString(strFullPath);
+	if (m_strDataFolder.IsEmpty())
+	{
+		LOG4_ERROR("save file path is error");
+		m_strDataFolder = PortUtility::Utf82Unicode_ND(strFullPath).c_str();
+	}
+
+	std::wstring strWorkPath = m_strDataFolder.GetBuffer(m_strDataFolder.GetLength());
 	strWorkPath = strWorkPath+L"\\cacheFiles\\";
 	switch (enumMsgType)
 	{
@@ -3366,9 +3379,15 @@ int CSystemEx::RegisteModule()
 		return -1;
 	}
 	std::string strFullPath = "";
-	PortUtility::getCurrentlyPath(strFullPath);
-	strFullPath += "\\clientlog";
-
+	CIUIString strTempDataFolder = GetDataFolder();
+	if (strTempDataFolder.IsEmpty())
+	{
+		LOG4_ERROR("save file path is error");
+		PortUtility::getCurrentlyPath(strFullPath);
+		strTempDataFolder = PortUtility::Utf82Unicode_ND(strFullPath).c_str();
+	}
+	strFullPath = PortUtility::Unicode2Utf8_ND(strTempDataFolder.GetBuffer(strTempDataFolder.GetLength()));
+	PortUtility::CheckFilePath(strFullPath);
 	bRet = CSystemEx::GetInstance()->InitSIPByUser((TRANSPORT_TYPE)CSystemEx::GetInstance()->GetGlobalUser()->GetProtocolMode(), PORTSIP_LOG_NONE, strFullPath.c_str(), 0, 0, false, strErrorInfo, m_pUser);
 	if (bRet == false)
 	{

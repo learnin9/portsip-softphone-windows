@@ -98,7 +98,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>BUILDING_LIBCURL;HTTP_ONLY;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\Program Files (x86)\Visual Leak Detector\include;../IUI/;../jsoncpp/include/;./;include;include/ICUC4;include/libvlc_include;include/SDL;include/breakpad</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../IUI/;../jsoncpp/include/;./;include;include/ICUC4;include/libvlc_include;include/breakpad</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -142,7 +142,7 @@
       <PreprocessorDefinitions>BUILDING_LIBCURL;HTTP_ONLYWIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>../IUI/;../jsoncpp/include/;./;include;include/ICUC4;include/libvlc_include;include/SDL;include/breakpad</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../IUI/;../jsoncpp/include/;./;include;include/ICUC4;include/libvlc_include;include/breakpad</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

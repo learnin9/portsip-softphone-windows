@@ -15,16 +15,9 @@ public:
 	CBaseThread();
 	~CBaseThread();
 public:
-    //启动线程
     BOOL BeginThread(unsigned int (*apStartFunc)(void *),void *apParam);
-
-    //线程休眠
     void static Sleep(DWORD dwMilliseconds);
-
-    //得到毫秒级系统时间
     INT64 static GetSystemTime();
-
-    //关闭线程
     //BOOL Close(WORD awWaitMilliSecond);
 private:
     struct STRU_THREAD_INFO

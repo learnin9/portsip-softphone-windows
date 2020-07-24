@@ -9,7 +9,7 @@ using namespace log4cplus;
 
 class LoggerLocal  {
 public:
-    static bool init(std::string  config);
+    static bool init(std::string despath, const wchar_t* format);
     static log4cplus::Logger logger_obj;
 	static void setloglevel(std::string strloglevel);
 private:

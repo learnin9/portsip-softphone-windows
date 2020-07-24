@@ -20,8 +20,6 @@ typedef float               FLOAT;
 typedef WORD				WCHAR;
 //typedef int				socklen_t;  
 
-//2011-12-30
-//在Linux平台上，未定义UNICODE时，TCHAR当作char使用
 #ifdef UNICODE
 typedef	short				TCHAR;
 #else
@@ -65,6 +63,6 @@ typedef double				DOUBLE;
 #define TRUE                1
 #endif
 
-#define CP_GBK				936		//简体中文gb2312的编码
+#define CP_GBK				936		
 
 #endif

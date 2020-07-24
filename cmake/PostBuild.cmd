@@ -43,7 +43,6 @@ copy /y %batDir%\..\PortSIPUC\Bin\icuin64.dll ..\..\softphone\
 copy /y  %batDir%\..\PortSIPUC\Bin\icuuc64.dll ..\..\softphone\
 copy /y  %batDir%\..\PortSIPUC\Bin\libvlc.dll ..\..\softphone\
 copy /y  %batDir%\..\PortSIPUC\Bin\libvlccore.dll ..\..\softphone\
-copy /y  %batDir%\..\PortSIPUC\Bin\log.properties ..\..\softphone\
 copy /y  %batDir%\..\PortSIPUC\Bin\log4cplus.dll ..\..\softphone\
 copy /y  %batDir%\..\PortSIPUC\Bin\log4cplusU.dll ..\..\softphone\
 copy /y  %batDir%\..\PortSIPUC\Bin\log4cplusD.dll ..\..\softphone\

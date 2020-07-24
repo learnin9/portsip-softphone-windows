@@ -359,8 +359,14 @@ void CLoginDlg::DoLoginNext()
 	}
 	std::string strFullPath = "";
 	PortUtility::getCurrentlyPath(strFullPath);
-	strFullPath += "\\clientlog";
-
+	CIUIString strTempDataFolder = CSystemEx::GetInstance()->GetDataFolder();
+	if (strTempDataFolder.IsEmpty())
+	{
+		LOG4_ERROR("save file path is error");
+		strTempDataFolder = PortUtility::Utf82Unicode_ND(strFullPath).c_str();
+	}
+	strFullPath = PortUtility::wstring2String(strTempDataFolder.GetBuffer(strTempDataFolder.GetLength())) + "\\clientlog";
+	PortUtility::CheckFilePath(strFullPath);
 	bRet = CSystemEx::GetInstance()->InitSIPByUser((TRANSPORT_TYPE)CSystemEx::GetInstance()->GetGlobalUser()->GetProtocolMode(), PORTSIP_LOG_NONE, strFullPath.c_str(), 0, 0, false, strErrorInfo, m_pUser);
 	if (bRet == false)
 	{
